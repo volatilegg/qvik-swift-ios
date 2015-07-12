@@ -73,6 +73,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
+  s.exclude_files = "QvikSwift/QvikSwift.playground"
   s.source_files  = "QvikSwift/**/*.{swift}"
 
   # s.public_header_files = "Classes/**/*.h"
