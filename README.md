@@ -5,15 +5,18 @@
 ## Usage
 
 To use the library in your projects, add the following to your Podfile:
+```ruby
+use_frameworks!
+source 'https://git.qvik.fi/qvik/QvikPodSpecs.git'
 
->use_frameworks!
->source 'https://git.qvik.fi/qvik/QvikPodSpecs.git'
->
->pod 'QvikSwift', '~> 0.0.2'
+pod 'QvikSwift', '~> 0.0.2'
+```
 
 And the following to your source:
 
-> import QvikSwift
+```ruby
+import QvikSwift
+```
 
 ## Contributing 
 
