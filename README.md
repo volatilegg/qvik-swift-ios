@@ -9,7 +9,7 @@ To use the library in your projects, add the following to your Podfile:
 >use_frameworks!
 >source 'https://git.qvik.fi/qvik/QvikPodSpecs.git'
 >
->pod 'QvikSwift', '~> 0.0.2'
+>pod 'QvikSwift', '~> 1.0.0'
 
 And the following to your source:
 

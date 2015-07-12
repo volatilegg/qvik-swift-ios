@@ -13,6 +13,9 @@
 		490C9DAC1B52408E0024945B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DAB1B52408E0024945B /* StringExtensions.swift */; };
 		490C9DAD1B52408E0024945B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DAB1B52408E0024945B /* StringExtensions.swift */; };
 		490C9DAF1B5242230024945B /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DAE1B5242230024945B /* StringExtensionsTests.swift */; };
+		490C9DE01B5292FC0024945B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */; };
+		490C9DE21B5294790024945B /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */; };
+		490C9DE31B5296F70024945B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 		490C9DAB1B52408E0024945B /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		490C9DAE1B5242230024945B /* StringExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		490C9DB01B5247020024945B /* QvikSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = QvikSwift.playground; sourceTree = "<group>"; };
+		490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
+		490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,9 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				490C9DAB1B52408E0024945B /* StringExtensions.swift */,
+				490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */,
 				490C9D921B523FB00024945B /* Supporting Files */,
-				490C9D941B523FB00024945B /* QvikSwift.h */,
-				490C9DB01B5247020024945B /* QvikSwift.playground */,
 			);
 			path = QvikSwift;
 			sourceTree = "<group>";
@@ -88,6 +92,8 @@
 		490C9D921B523FB00024945B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				490C9D941B523FB00024945B /* QvikSwift.h */,
+				490C9DB01B5247020024945B /* QvikSwift.playground */,
 				490C9D931B523FB00024945B /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -97,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				490C9DAE1B5242230024945B /* StringExtensionsTests.swift */,
+				490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */,
 				490C9DA11B523FB00024945B /* QvikSwiftTests.swift */,
 				490C9D9F1B523FB00024945B /* Supporting Files */,
 			);
@@ -219,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				490C9DAC1B52408E0024945B /* StringExtensions.swift in Sources */,
+				490C9DE01B5292FC0024945B /* UIImageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +236,9 @@
 			files = (
 				490C9DAF1B5242230024945B /* StringExtensionsTests.swift in Sources */,
 				490C9DAD1B52408E0024945B /* StringExtensions.swift in Sources */,
+				490C9DE31B5296F70024945B /* UIImageExtensions.swift in Sources */,
 				490C9DA21B523FB00024945B /* QvikSwiftTests.swift in Sources */,
+				490C9DE21B5294790024945B /* UIImageExtensionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +426,7 @@
 				490C9DA71B523FB00024945B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		490C9DA81B523FB00024945B /* Build configuration list for PBXNativeTarget "QvikSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +435,7 @@
 				490C9DAA1B523FB00024945B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
