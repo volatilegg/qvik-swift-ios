@@ -17,17 +17,10 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "QvikSwift"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A collection of utilities for Qvik's Swift projects."
-
-  s.description  = <<-DESC
-                   This module can be used in both internal and customer projects.
-                   DESC
-
-  #s.homepage     = "http://EXAMPLE/QvikSwift"
-  # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
-
-
+  s.homepage     = "https://git.qvik.fi/qvik/qvik-swift-ios"
+  
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  Licensing your code is important. See http://choosealicense.com for more info.
@@ -35,7 +28,6 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  #s.license      = "MIT (example)"
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
 
@@ -60,21 +52,17 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
-
-  #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
-  # s.osx.deployment_target = "10.7"
-
-
+  s.platform     = :ios
+  s.ios.deployment_target = '8.0'
+  s.requires_arc = true
+  
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  Specify the location from where the source should be retrieved.
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://git.qvik.fi/qvik/qvik-swift-ios.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://git.qvik.fi/qvik/qvik-swift-ios.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -110,7 +98,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  # s.framework  = "SomeFramework"
+  s.framework  = "UIKit"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
