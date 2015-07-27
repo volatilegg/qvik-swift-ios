@@ -1,13 +1,28 @@
+// The MIT License (MIT)
 //
-//  UIImageExtensions.swift
-//  QvikSwift
+// Copyright (c) 2015 Qvik (www.qvik.fi)
 //
-//  Created by Matti Dahlbom on 12.7.201528.
-//  Copyright (c) 2015 Qvik. All rights reserved.
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
 //
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 
 import Foundation
 import UIKit
+import Accelerate
 
 /// Extensions to the UIImage class
 extension UIImage {
@@ -87,5 +102,64 @@ extension UIImage {
         let image: UIImage = UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)!
         
         return image
+    }
+
+    /// Blur algorithms
+    enum BlurAlgorithm {
+        case BoxConvolve
+        case TentConvolve
+    }
+
+    /**
+    Returns a blurred version of the image.
+    
+    :param: radius radius of the blur kernel, in pixels.
+    :param: algorithm blur algorithm to use. .TentConvolve is faster than .BoxConvolve.
+    :returns: the blurred image.
+    */
+    func blur(#radius: Double, algorithm: BlurAlgorithm = .TentConvolve) -> UIImage {
+        let imageRect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        
+        func createEffectBuffer(context: CGContext) -> vImage_Buffer {
+            let data = CGBitmapContextGetData(context)
+            let width = vImagePixelCount(CGBitmapContextGetWidth(context))
+            let height = vImagePixelCount(CGBitmapContextGetHeight(context))
+            let rowBytes = CGBitmapContextGetBytesPerRow(context)
+            
+            return vImage_Buffer(data: data, height: height, width: width, rowBytes: rowBytes)
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.mainScreen().scale)
+        let effectInContext = UIGraphicsGetCurrentContext();
+        CGContextScaleCTM(effectInContext, 1.0, -1.0);
+        CGContextTranslateCTM(effectInContext, 0, -self.size.height);
+        CGContextDrawImage(effectInContext, imageRect, self.CGImage); // this takes time
+        var effectInBuffer = createEffectBuffer(effectInContext)
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.mainScreen().scale)
+        let effectOutContext = UIGraphicsGetCurrentContext()
+        var effectOutBuffer = createEffectBuffer(effectOutContext)
+        
+        let inputRadius = CGFloat(radius) * UIScreen.mainScreen().scale
+        var radius = UInt32(floor(inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI)) / 4 + 0.5))
+        if radius % 2 != 1 {
+            radius += 1 // force radius to be odd
+        }
+        
+        let imageEdgeExtendFlags = vImage_Flags(kvImageEdgeExtend)
+        
+        if algorithm == .BoxConvolve {
+            vImageBoxConvolve_ARGB8888(&effectInBuffer, &effectOutBuffer, nil, 0, 0, radius, radius, nil, imageEdgeExtendFlags)
+            vImageBoxConvolve_ARGB8888(&effectOutBuffer, &effectInBuffer, nil, 0, 0, radius, radius, nil, imageEdgeExtendFlags)
+            vImageBoxConvolve_ARGB8888(&effectInBuffer, &effectOutBuffer, nil, 0, 0, radius, radius, nil, imageEdgeExtendFlags)
+        } else {
+            vImageTentConvolve_ARGB8888(&effectInBuffer, &effectOutBuffer, nil, 0, 0, radius, radius, nil, imageEdgeExtendFlags)
+        }
+        
+        let effectImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        UIGraphicsEndImageContext()
+        
+        return effectImage
     }
 }

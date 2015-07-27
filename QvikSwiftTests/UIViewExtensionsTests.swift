@@ -20,14 +20,37 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#import <UIKit/UIKit.h>
+import Foundation
+import UIKit
+import XCTest
 
-//! Project version number for QvikSwift.
-FOUNDATION_EXPORT double QvikSwiftVersionNumber;
-
-//! Project version string for QvikSwift.
-FOUNDATION_EXPORT const unsigned char QvikSwiftVersionString[];
-
-// In this header, you should import all the public headers of your framework using statements like #import <QvikSwift/PublicHeader.h>
-
-
+class UIViewExtensionsTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
+    
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+    
+    func testScreenshot() {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        let image = view.screenshot()
+        XCTAssert(image.size.width == 300)
+        XCTAssert(image.size.height == 300)
+    }
+    
+    func testFrameDimensionAccess() {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
+        view.x = 10
+        XCTAssert(view.frame.origin.x == 10)
+        view.y = 20
+        XCTAssert(view.frame.origin.y == 20)
+        view.width = 10
+        XCTAssert(view.frame.size.width == 10)
+        view.height = 20
+        XCTAssert(view.frame.size.height == 20)
+    }
+}

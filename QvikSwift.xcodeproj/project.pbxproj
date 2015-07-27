@@ -16,6 +16,12 @@
 		490C9DE01B5292FC0024945B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */; };
 		490C9DE21B5294790024945B /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */; };
 		490C9DE31B5296F70024945B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */; };
+		4916ED021B66138E00E6A22D /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED011B66138D00E6A22D /* UIViewExtensions.swift */; };
+		4916ED041B66163300E6A22D /* UIViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED031B66163300E6A22D /* UIViewExtensionsTests.swift */; };
+		4916ED051B66163B00E6A22D /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED011B66138D00E6A22D /* UIViewExtensions.swift */; };
+		4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */; };
+		4916ED081B661AFE00E6A22D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */; };
+		4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,10 @@
 		490C9DB01B5247020024945B /* QvikSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = QvikSwift.playground; sourceTree = "<group>"; };
 		490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
+		4916ED011B66138D00E6A22D /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		4916ED031B66163300E6A22D /* UIViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionsTests.swift; sourceTree = "<group>"; };
+		4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +94,8 @@
 			children = (
 				490C9DAB1B52408E0024945B /* StringExtensions.swift */,
 				490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */,
+				4916ED011B66138D00E6A22D /* UIViewExtensions.swift */,
+				4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */,
 				490C9D921B523FB00024945B /* Supporting Files */,
 			);
 			path = QvikSwift;
@@ -104,6 +116,8 @@
 			children = (
 				490C9DAE1B5242230024945B /* StringExtensionsTests.swift */,
 				490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */,
+				4916ED031B66163300E6A22D /* UIViewExtensionsTests.swift */,
+				4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */,
 				490C9DA11B523FB00024945B /* QvikSwiftTests.swift */,
 				490C9D9F1B523FB00024945B /* Supporting Files */,
 			);
@@ -226,6 +240,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				490C9DAC1B52408E0024945B /* StringExtensions.swift in Sources */,
+				4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
+				4916ED021B66138E00E6A22D /* UIViewExtensions.swift in Sources */,
 				490C9DE01B5292FC0024945B /* UIImageExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,8 +251,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				490C9DAF1B5242230024945B /* StringExtensionsTests.swift in Sources */,
+				4916ED051B66163B00E6A22D /* UIViewExtensions.swift in Sources */,
 				490C9DAD1B52408E0024945B /* StringExtensions.swift in Sources */,
+				4916ED041B66163300E6A22D /* UIViewExtensionsTests.swift in Sources */,
 				490C9DE31B5296F70024945B /* UIImageExtensions.swift in Sources */,
+				4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */,
+				4916ED081B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
 				490C9DA21B523FB00024945B /* QvikSwiftTests.swift in Sources */,
 				490C9DE21B5294790024945B /* UIImageExtensionsTests.swift in Sources */,
 			);
