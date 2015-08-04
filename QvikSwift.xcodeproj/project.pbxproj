@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490605CE1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490605CD1B70D18200C055AF /* NSDateFormatterExtensions.swift */; };
+		490605CF1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490605CD1B70D18200C055AF /* NSDateFormatterExtensions.swift */; };
+		490605D21B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490605D01B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift */; };
 		490C9D951B523FB00024945B /* QvikSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 490C9D941B523FB00024945B /* QvikSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		490C9D9B1B523FB00024945B /* QvikSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490C9D8F1B523FB00024945B /* QvikSwift.framework */; };
 		490C9DA21B523FB00024945B /* QvikSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DA11B523FB00024945B /* QvikSwiftTests.swift */; };
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		490605CD1B70D18200C055AF /* NSDateFormatterExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateFormatterExtensions.swift; sourceTree = "<group>"; };
+		490605D01B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateFormatterExtensionsTests.swift; sourceTree = "<group>"; };
 		490C9D8F1B523FB00024945B /* QvikSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QvikSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490C9D931B523FB00024945B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490C9D941B523FB00024945B /* QvikSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QvikSwift.h; sourceTree = "<group>"; };
@@ -92,6 +97,7 @@
 		490C9D911B523FB00024945B /* QvikSwift */ = {
 			isa = PBXGroup;
 			children = (
+				490605CD1B70D18200C055AF /* NSDateFormatterExtensions.swift */,
 				490C9DAB1B52408E0024945B /* StringExtensions.swift */,
 				490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */,
 				4916ED011B66138D00E6A22D /* UIViewExtensions.swift */,
@@ -114,6 +120,7 @@
 		490C9D9E1B523FB00024945B /* QvikSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				490605D01B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift */,
 				490C9DAE1B5242230024945B /* StringExtensionsTests.swift */,
 				490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */,
 				4916ED031B66163300E6A22D /* UIViewExtensionsTests.swift */,
@@ -239,6 +246,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				490605CE1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */,
 				490C9DAC1B52408E0024945B /* StringExtensions.swift in Sources */,
 				4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
 				4916ED021B66138E00E6A22D /* UIViewExtensions.swift in Sources */,
@@ -255,8 +263,10 @@
 				490C9DAD1B52408E0024945B /* StringExtensions.swift in Sources */,
 				4916ED041B66163300E6A22D /* UIViewExtensionsTests.swift in Sources */,
 				490C9DE31B5296F70024945B /* UIImageExtensions.swift in Sources */,
+				490605CF1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */,
 				4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */,
 				4916ED081B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
+				490605D21B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift in Sources */,
 				490C9DA21B523FB00024945B /* QvikSwiftTests.swift in Sources */,
 				490C9DE21B5294790024945B /* UIImageExtensionsTests.swift in Sources */,
 			);

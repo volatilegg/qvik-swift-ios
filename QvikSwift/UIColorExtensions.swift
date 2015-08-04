@@ -32,7 +32,7 @@ extension UIColor {
     :param: blueInt value for blue (0-255)
     :param: alpha value for alpha (0-1.0)
     */
-    convenience init(redInt: Int, greenInt: Int, blueInt: Int, alpha: Double) {
+    public convenience init(redInt: Int, greenInt: Int, blueInt: Int, alpha: Double) {
         self.init(red: CGFloat(redInt)/255.0, green: CGFloat(greenInt)/255.0, blue: CGFloat(blueInt)/255.0, alpha: CGFloat(alpha))
     }
     
@@ -42,7 +42,7 @@ extension UIColor {
     
     :param: hexString the RGB or RGBA string
     */
-    convenience init(hexString: String) {
+    public convenience init(hexString: String) {
         if !hexString.hasPrefix("#") || ((hexString.length != 7) && (hexString.length != 9)) {
             // Color string is invalid format; return white
             self.init(white: 1.0, alpha: 1.0)

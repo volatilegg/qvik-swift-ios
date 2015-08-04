@@ -62,6 +62,7 @@ In other words, follow the following procedure to submit your code into the libr
 * Clone the library repository
 * Create a feature branch for your code
 * Code it, clean it up, test it thoroughly
+* Make sure all your methods meant to be public are defined as public
 * Push your branch
 * Create a pull request
 

@@ -26,7 +26,7 @@ import UIKit
 extension UIView {
     /// Provides an IB-configurable mechanism to set corner radius
     @IBInspectable
-    var cornerRadius: CGFloat {
+    public var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
@@ -41,7 +41,7 @@ extension UIView {
     
     :returns: the captured image
     */
-    func screenshot() -> UIImage {
+    public func screenshot() -> UIImage {
         UIGraphicsBeginImageContext(frame.size)
         layer.renderInContext(UIGraphicsGetCurrentContext())
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -51,7 +51,7 @@ extension UIView {
     }
 
     /// Shorthand access to view's frame x position
-    var x: CGFloat {
+    public var x: CGFloat {
         get {
             return frame.origin.x
         }
@@ -61,7 +61,7 @@ extension UIView {
     }
     
     /// Shorthand access to view's frame y position
-    var y: CGFloat {
+    public var y: CGFloat {
         get {
             return frame.origin.y
         }
@@ -71,7 +71,7 @@ extension UIView {
     }
     
     /// Shorthand access to view's frame width
-    var width: CGFloat {
+    public var width: CGFloat {
         get {
             return frame.size.width
         }
@@ -81,7 +81,7 @@ extension UIView {
     }
     
     /// Shorthand access to view's frame height
-    var height: CGFloat {
+    public var height: CGFloat {
         get {
             return frame.size.height
         }

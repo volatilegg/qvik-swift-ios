@@ -27,12 +27,12 @@ import Accelerate
 /// Extensions to the UIImage class
 extension UIImage {
     /** Provides a shorthand for image width. */
-    var width: Double {
+    public var width: Double {
         return Double(self.size.width)
     }
     
     /** Provides a shorthand for image height. */
-    var height: Double {
+    public var height: Double {
         return Double(self.size.height)
     }
     
@@ -105,7 +105,7 @@ extension UIImage {
     }
 
     /// Blur algorithms
-    enum BlurAlgorithm {
+    public enum BlurAlgorithm {
         case BoxConvolve
         case TentConvolve
     }
@@ -117,7 +117,7 @@ extension UIImage {
     :param: algorithm blur algorithm to use. .TentConvolve is faster than .BoxConvolve.
     :returns: the blurred image.
     */
-    func blur(#radius: Double, algorithm: BlurAlgorithm = .TentConvolve) -> UIImage {
+    public func blur(#radius: Double, algorithm: BlurAlgorithm = .TentConvolve) -> UIImage {
         let imageRect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
         
         func createEffectBuffer(context: CGContext) -> vImage_Buffer {

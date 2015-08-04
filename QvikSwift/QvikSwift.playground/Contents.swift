@@ -17,6 +17,35 @@ extension String {
 let foo = "abc 123 kek, bar"
 let s = foo.split(" ")
 
+extension NSDateFormatter {
+    public class func iso8601ZFormatter() -> NSDateFormatter {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'"
+        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
+        formatter.timeZone = NSTimeZone(name: "UTC")
+        
+        return formatter
+    }
+}
+
+let f = NSDateFormatter.iso8601ZFormatter()
+let date = f.dateFromString("2008-05-11T15:30:00.000Z")
+let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
+let comps = calendar?.components(.CalendarUnitYear | .CalendarUnitMonth |
+    .CalendarUnitDay | .CalendarUnitMinute | .CalendarUnitSecond | .CalendarUnitNanosecond, fromDate: date!)
+println(comps!.year)
+println(comps!.day)
+
+
+let components = NSDateComponents()
+components.year = 1987
+components.month = 3
+components.day = 17
+components.hour = 14
+components.minute = 20
+components.second = 0
+
+let date2 = calendar?.dateFromComponents(components)
 
 extension UIColor {
     convenience init(redInt: Int, greenInt: Int, blueInt: Int, alpha: Double) {
@@ -68,3 +97,6 @@ let image = UIImage(data: imageData!)
 
 let croppedImage = image!.cropImageToSquare()
 let scaledImage = image!.scaleDown(maxSize: CGSize(width: 350, height: 350))
+
+
+

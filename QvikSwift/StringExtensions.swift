@@ -39,7 +39,7 @@ extension String {
     :param: separator string to split the original string by
     :returns: the original string split into parts
     */
-    func split(separator: String) -> [String] {
+    public func split(separator: String) -> [String] {
         return componentsSeparatedByString(separator)
     }
     
