@@ -24,7 +24,7 @@ import Foundation
 import UIKit
 import XCTest
 
-class UIColorExtensionsTests: XCTestCase {
+class ArrayExtensionsTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -34,31 +34,17 @@ class UIColorExtensionsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
-    func expectValues(color: UIColor, red: Int, green: Int, blue: Int, alpha: Int) {
-        var fRed : CGFloat = 0
-        var fGreen : CGFloat = 0
-        var fBlue : CGFloat = 0
-        var fAlpha: CGFloat = 0
-        color.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha)
-        let iRed = Int(fRed * 255)
-        let iGreen = Int(fGreen * 255)
-        let iBlue = Int(fBlue * 255)
-        let iAlpha = Int(fAlpha * 255)
-        
-        XCTAssert(iRed == red)
-        XCTAssert(iGreen == green)
-        XCTAssert(iBlue == blue)
-        XCTAssert(iAlpha == alpha)
-    }
-    
-    func testIntInitializer() {
-        let color = UIColor(redInt: 100, greenInt: 120, blueInt: 255, alpha: 0.5)
-        expectValues(color, red: 100, green: 120, blue: 255, alpha: 127)
-    }
-    
-    func testHexInitializer() {
-        let color = UIColor(hexString: "#11223344")
-        expectValues(color, red: 17, green: 34, blue: 51, alpha: 68)
+
+    func testRemoveObject() {
+        var myArray = [1, 2, 3]
+        let res1 = myArray.removeObject("2")
+        let res2 = myArray.removeObject(4)
+        let res3 = myArray.removeObject(2)
+        XCTAssert(!res1)
+        XCTAssert(!res2)
+        XCTAssert(res3)
+        XCTAssert(myArray.count == 2)
+        XCTAssert(myArray[0] == 1)
+        XCTAssert(myArray[1] == 3)
     }
 }

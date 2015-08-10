@@ -25,6 +25,9 @@
 		4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */; };
 		4916ED081B661AFE00E6A22D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */; };
 		4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */; };
+		49CBE9DC1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */; };
+		49CBE9DD1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */; };
+		49CBE9E01B78DFA400B1819B /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DE1B78DFA400B1819B /* ArrayExtensionsTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,8 @@
 		4916ED031B66163300E6A22D /* UIViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionsTests.swift; sourceTree = "<group>"; };
 		4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionsTests.swift; sourceTree = "<group>"; };
+		49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		49CBE9DE1B78DFA400B1819B /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +107,7 @@
 				490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */,
 				4916ED011B66138D00E6A22D /* UIViewExtensions.swift */,
 				4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */,
+				49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */,
 				490C9D921B523FB00024945B /* Supporting Files */,
 			);
 			path = QvikSwift;
@@ -125,6 +131,7 @@
 				490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */,
 				4916ED031B66163300E6A22D /* UIViewExtensionsTests.swift */,
 				4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */,
+				49CBE9DE1B78DFA400B1819B /* ArrayExtensionsTests.swift */,
 				490C9DA11B523FB00024945B /* QvikSwiftTests.swift */,
 				490C9D9F1B523FB00024945B /* Supporting Files */,
 			);
@@ -247,6 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				490605CE1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */,
+				49CBE9DC1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */,
 				490C9DAC1B52408E0024945B /* StringExtensions.swift in Sources */,
 				4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
 				4916ED021B66138E00E6A22D /* UIViewExtensions.swift in Sources */,
@@ -265,6 +273,8 @@
 				490C9DE31B5296F70024945B /* UIImageExtensions.swift in Sources */,
 				490605CF1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */,
 				4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */,
+				49CBE9E01B78DFA400B1819B /* ArrayExtensionsTests.swift in Sources */,
+				49CBE9DD1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */,
 				4916ED081B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
 				490605D21B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift in Sources */,
 				490C9DA21B523FB00024945B /* QvikSwiftTests.swift in Sources */,
