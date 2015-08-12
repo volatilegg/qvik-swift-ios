@@ -4,6 +4,37 @@ import UIKit
 
 var str = "Hello, playground"
 
+extension CGPoint {
+    public func middlePoint(another: CGPoint) -> CGPoint {
+        return CGPoint(x: (self.x + another.x) / 2, y: (self.y + another.y) / 2)
+    }
+}
+
+extension CGRect {
+    
+    /**
+    Returns a scaled version of the rect.
+    
+    :param xScale
+    */
+    public func scaled(#x: CGFloat, y: CGFloat) -> CGRect {
+        let w = self.width * x
+        let h = self.height * y
+        let wd = w - self.width
+        let hd = h - self.height
+        return CGRect(x: self.origin.x - (wd / 2), y: self.origin.y - (hd / 2), width: w, height: h)
+    }
+    
+}
+
+let p1 = CGPoint(x: 256, y: 234)
+let p2 = CGPoint(x: -231, y: 879)
+let p3 = p1.middlePoint(p2)
+
+let rect = CGRect(x: 5, y: 10, width: 20, height: 20)
+let scaled = rect.scaled(x: 2, y: 2)
+
+
 extension String {
     public var length: Int {
         return count(self)

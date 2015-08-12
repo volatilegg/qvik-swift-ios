@@ -26,14 +26,35 @@ import Accelerate
 
 /// Extensions to the UIImage class
 extension UIImage {
-    /** Provides a shorthand for image width. */
-    public var width: Double {
-        return Double(self.size.width)
+    /// Provides a shorthand for image width.
+    public var width: CGFloat {
+        return self.size.width
     }
     
-    /** Provides a shorthand for image height. */
-    public var height: Double {
-        return Double(self.size.height)
+    /// Provides a shorthand for image height.
+    public var height: CGFloat {
+        return self.size.height
+    }
+    
+    /**
+    Returns an image with orientation 'removed', ie. rendered again so that
+    imageOrientation is always 'Up'. If this was the case already, the original image is returned.
+    
+    :returns: a copy of this image with orientation setting set to 'up'.
+    */
+    public func imageWithNormalizedOrientation() -> UIImage {
+        if ( imageOrientation == .Up ) {
+            return self;
+        }
+        
+        UIGraphicsBeginImageContextWithOptions(size, false, scale);
+        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        drawInRect(rect)
+        
+        var normalizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext();
+        
+        return normalizedImage;
     }
     
     /**
@@ -41,9 +62,10 @@ extension UIImage {
     original image if max size was not exceeded. Aspect ratio is preserved.
     
     :param: maxSize maximum size for the new image
+    :param: imageScale value for UIImage.scale. Specify 0.0 to match the scale of the device's screen.
     :returns: scaled-down image
     */
-    public func scaleDown(#maxSize: CGSize) -> UIImage {
+    public func scaleDown(#maxSize: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
         let myWidth = self.size.width
         let myHeight = self.size.height
         
@@ -58,9 +80,7 @@ extension UIImage {
         let ratio = min(xratio, yratio)
         
         let size = CGSizeApplyAffineTransform(self.size, CGAffineTransformMakeScale(ratio, ratio))
-        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
-        
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        UIGraphicsBeginImageContextWithOptions(size, false, imageScale)
         self.drawInRect(CGRect(origin: CGPointZero, size: size))
         
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()

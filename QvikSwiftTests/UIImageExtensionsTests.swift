@@ -46,6 +46,15 @@ class UIImageExtensionsTests: XCTestCase {
         return blankImage
     }
     
+    func testImageWithNormalizedOrientation() {
+        let image = createImage()
+        let normalized = image.imageWithNormalizedOrientation()
+        
+        XCTAssert(image.width == normalized.width)
+        XCTAssert(image.height == normalized.height)
+        XCTAssert(normalized.imageOrientation == .Up)
+    }
+    
     func testScaleDown() {
         let image = createImage()
         let scaledDown = image.scaleDown(maxSize: CGSize(width: 200, height: 150))
