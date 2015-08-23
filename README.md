@@ -7,9 +7,9 @@
 To use the library in your projects, add the following to your Podfile:
 ```ruby
 use_frameworks!
-source 'https://git.qvik.fi/qvik/QvikPodSpecs.git'
+source 'https://git.qvik.fi/pods/QvikPodSpecs.git'
 
-pod 'QvikSwift', '~> 1.0.0'
+pod 'QvikSwift', '>= 1.0.4'
 ```
 
 And the following to your source:

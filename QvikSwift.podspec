@@ -1,5 +1,5 @@
 # coding: utf-8
-#
+q#
 #  Be sure to run `pod spec lint QvikSwift.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
@@ -17,9 +17,9 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "QvikSwift"
-  s.version      = "1.0.2"
+  s.version      = "1.0.4"
   s.summary      = "A collection of utilities for Qvik's Swift projects."
-  s.homepage     = "https://git.qvik.fi/qvik/qvik-swift-ios"
+  s.homepage     = "https://git.qvik.fi/pods/qvik-swift-ios"
   
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -62,7 +62,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://git.qvik.fi/qvik/qvik-swift-ios.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://git.qvik.fi/pods/qvik-swift-ios.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
