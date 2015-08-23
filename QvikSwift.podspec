@@ -17,9 +17,9 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "QvikSwift"
-  s.version      = "1.0.3"
+  s.version      = "1.0.5"
   s.summary      = "A collection of utilities for Qvik's Swift projects."
-  s.homepage     = "https://git.qvik.fi/qvik/qvik-swift-ios"
+  s.homepage     = "https://git.qvik.fi/pods/qvik-swift-ios"
   
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -62,7 +62,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://git.qvik.fi/qvik/qvik-swift-ios.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://git.qvik.fi/pods/qvik-swift-ios.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
