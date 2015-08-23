@@ -1,5 +1,5 @@
 # coding: utf-8
-q#
+#
 #  Be sure to run `pod spec lint QvikSwift.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #

@@ -4,7 +4,7 @@
 
 ## Usage
 
-To use the library in your projects, add the following to your Podfile:
+To use the library in your projects, add the following (or what ever suits your needs) to your Podfile:
 ```ruby
 use_frameworks!
 source 'https://git.qvik.fi/pods/QvikPodSpecs.git'
@@ -78,6 +78,10 @@ As a contributor you do not need to do this; we'll update the pod whenever neede
 * Create a new tag following [Semantic Versioning](http://semver.org/); eg. `git tag -a 1.2.0 -m "Your tag comment"`
 * `git push --tags`
 * `pod repo push QvikPodSpecs QvikSwift.podspec`
+
+Unless already set up, you might do the following steps to set up the pod repo:
+
+* ```pod repo add QvikPodSpecs https://git.qvik.fi/pods/QvikPodSpecs.git```
 
 ## Contact
 
