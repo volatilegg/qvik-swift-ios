@@ -25,6 +25,9 @@
 		4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */; };
 		4916ED081B661AFE00E6A22D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */; };
 		4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */; };
+		499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F0E1B93191E00E50D8D /* Utils.swift */; };
+		499D6F131B931C8A00E50D8D /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */; };
+		499D6F141B931C8A00E50D8D /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */; };
 		49CBE9DC1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */; };
 		49CBE9DD1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */; };
 		49CBE9E01B78DFA400B1819B /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DE1B78DFA400B1819B /* ArrayExtensionsTests.swift */; };
@@ -67,6 +70,8 @@
 		4916ED031B66163300E6A22D /* UIViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionsTests.swift; sourceTree = "<group>"; };
 		4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensionsTests.swift; sourceTree = "<group>"; };
+		499D6F0E1B93191E00E50D8D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataExtensions.swift; sourceTree = "<group>"; };
 		49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		49CBE9DE1B78DFA400B1819B /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
 		49CBEA131B7B888C00B1819B /* CGRectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
@@ -126,6 +131,8 @@
 				4916ED011B66138D00E6A22D /* UIViewExtensions.swift */,
 				4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */,
 				49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */,
+				499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */,
+				499D6F0E1B93191E00E50D8D /* Utils.swift */,
 				490C9D921B523FB00024945B /* Supporting Files */,
 			);
 			path = QvikSwift;
@@ -279,6 +286,8 @@
 				49CBEA141B7B888C00B1819B /* CGRectExtensions.swift in Sources */,
 				49CBEA1A1B7B8AA200B1819B /* ReadWriteLock.swift in Sources */,
 				490C9DAC1B52408E0024945B /* StringExtensions.swift in Sources */,
+				499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */,
+				499D6F131B931C8A00E50D8D /* NSDataExtensions.swift in Sources */,
 				4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
 				4916ED021B66138E00E6A22D /* UIViewExtensions.swift in Sources */,
 				49CBEA171B7B892500B1819B /* CGPointExtensions.swift in Sources */,
@@ -306,6 +315,7 @@
 				4916ED081B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
 				490605D21B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift in Sources */,
 				490C9DA21B523FB00024945B /* QvikSwiftTests.swift in Sources */,
+				499D6F141B931C8A00E50D8D /* NSDataExtensions.swift in Sources */,
 				49CBEA1B1B7B8AA200B1819B /* ReadWriteLock.swift in Sources */,
 				490C9DE21B5294790024945B /* UIImageExtensionsTests.swift in Sources */,
 				49CBEA211B7B917300B1819B /* CGRectExtensionsTests.swift in Sources */,
@@ -327,6 +337,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -364,6 +375,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CommonCrypto/";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -375,6 +387,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -405,6 +418,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CommonCrypto/";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -415,6 +429,7 @@
 		490C9DA61B523FB00024945B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -426,6 +441,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CommonCrypto/";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -433,6 +449,7 @@
 		490C9DA71B523FB00024945B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -444,6 +461,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CommonCrypto/";
 			};
 			name = Release;
 		};
@@ -461,6 +479,7 @@
 				INFOPLIST_FILE = QvikSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CommonCrypto/";
 			};
 			name = Debug;
 		};
@@ -474,6 +493,7 @@
 				INFOPLIST_FILE = QvikSwiftTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CommonCrypto/";
 			};
 			name = Release;
 		};
