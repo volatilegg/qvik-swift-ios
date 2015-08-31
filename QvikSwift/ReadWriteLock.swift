@@ -53,7 +53,7 @@ public class ReadWriteLock {
         pthread_rwlock_destroy(&lock)
     }
     
-    init() {
+    public init() {
         lock = pthread_rwlock_t()
         pthread_rwlock_init(&lock, nil)
     }
