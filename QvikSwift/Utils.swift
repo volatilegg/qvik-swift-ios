@@ -12,3 +12,12 @@ func runInBackground(task: Void -> Void) {
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), task)
 }
 
+func runOnMainThread(task: Void -> Void) {
+    if NSThread.isMainThread() {
+        // Already on main UI thread - call directly
+        task()
+    } else {
+        dispatch_async(dispatch_get_main_queue(), task)
+    }
+}
+
