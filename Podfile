@@ -1,16 +1,18 @@
 platform :ios, '8.0'
 use_frameworks!
 
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://git.qvik.fi/pods/QvikPodSpecs.git'
+
 target 'QvikSwift' do
 
+  pod 'CommonCryptoSwift'
+  
 end
 
 target 'QvikSwiftTests' do
 
+  pod 'CommonCryptoSwift'
+  
 end
 
-post_install do |installer|
-  installer.pods_project.build_configuration_list.build_configurations.each do |configuration|
-    configuration.build_settings['CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES'] = 'YES'
-  end
-end
