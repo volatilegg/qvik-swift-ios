@@ -34,24 +34,6 @@ extension String {
     }
     
     /**
-    Returns a hex-formatted MD5 hash of the string's UTF8 representation.
-    
-    :return: MD5 hash in hex format
-    */
-    func MD5() -> String {
-        return (self as NSString).dataUsingEncoding(NSUTF8StringEncoding)!.MD5().hexString()
-    }
-    
-    /**
-    Returns a hex-formatted SHA1 hash of the string's UTF8 representation.
-    
-    :return: SHA1 hash in hex format
-    */
-    func SHA1() -> String {
-        return (self as NSString).dataUsingEncoding(NSUTF8StringEncoding)!.SHA1().hexString()
-    }
-    
-    /**
     Convenience method for a more familiar name for string splitting.
     
     :param: separator string to split the original string by

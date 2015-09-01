@@ -21,7 +21,6 @@
 // SOFTWARE.
 
 import Foundation
-import CommonCrypto
 
 // Extensions to the NSData class
 extension NSData {
@@ -37,27 +36,5 @@ extension NSData {
             string += String(format:"%02x", i)
         }
         return string
-    }
-    
-    /**
-    Returns a MD5 hash of this data's bytes.
-    
-    :return: MD5 hash in hex format
-    */
-    func MD5() -> NSData {
-        let result = NSMutableData(length: Int(CC_MD5_DIGEST_LENGTH))!
-        CC_MD5(bytes, CC_LONG(length), UnsafeMutablePointer<UInt8>(result.mutableBytes))
-        return NSData(data: result)
-    }
-    
-    /**
-    Returns a SHA1 hash of this data's bytes.
-    
-    :return: SHA1 hash in hex format
-    */
-    func SHA1() -> NSData {
-        let result = NSMutableData(length: Int(CC_SHA1_DIGEST_LENGTH))!
-        CC_SHA1(bytes, CC_LONG(length), UnsafeMutablePointer<UInt8>(result.mutableBytes))
-        return NSData(data: result)
     }
 }

@@ -81,11 +81,4 @@ class StringExtensionsTests: XCTestCase {
         XCTAssert(parts2[2] == "56")
         XCTAssert(parts2[3] == "7")
     }
-    
-    func testMD5() {
-        let res1 = "foo bar".MD5()
-        XCTAssert(res1 == "327b6f07435811239bc47e1544353273")
-        let res2 = "hello, world!".MD5()
-        XCTAssert(res2 == "3adbbad1791fbae3ec908894c4963870")
-    }
 }
