@@ -24,24 +24,6 @@ import Foundation
 
 /// Extensions to the array class
 extension Array {
-    /**
-    Removes the given (equatable) object from the array - equality is decided 
-    using the == operator.
-    
-    :param: object object to remove
-    :returns: true if object found and removed, false if not found
-    */
-    mutating func removeObject<U: Equatable>(object: U) -> Bool {
-        for (index, objectToCompare) in enumerate(self) {
-            if let to = objectToCompare as? U {
-                if object == to {
-                    removeAtIndex(index)
-                    return true
-                }
-            }
-        }
-        
-        return false
-    }
+
 }
 

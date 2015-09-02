@@ -30,7 +30,7 @@ extension NSData {
     
     :return: hex string of this data's bytes
     */
-    func hexString() -> String {
+    public func hexString() -> String {
         var string = String()
         for i in UnsafeBufferPointer<UInt8>(start: UnsafeMutablePointer<UInt8>(bytes), count: length) {
             string += String(format:"%02x", i)

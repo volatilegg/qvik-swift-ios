@@ -35,16 +35,4 @@ class ArrayExtensionsTests: XCTestCase {
         super.tearDown()
     }
 
-    func testRemoveObject() {
-        var myArray = [1, 2, 3]
-        let res1 = myArray.removeObject("2")
-        let res2 = myArray.removeObject(4)
-        let res3 = myArray.removeObject(2)
-        XCTAssert(!res1)
-        XCTAssert(!res2)
-        XCTAssert(res3)
-        XCTAssert(myArray.count == 2)
-        XCTAssert(myArray[0] == 1)
-        XCTAssert(myArray[1] == 3)
-    }
 }

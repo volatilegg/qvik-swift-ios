@@ -34,7 +34,7 @@ Intending to use this class? You probably should see about redesigning
 your code and / or using GCD.
 */
 public class ReadWriteLock {
-    var lock: pthread_rwlock_t
+    private var lock: pthread_rwlock_t
     
     /// Lock for reading. Blocks until the lock is acquired.
     public func lockToRead() {
