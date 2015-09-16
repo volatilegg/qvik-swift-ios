@@ -40,8 +40,7 @@ class NSDateFormatterExtensionsTests: XCTestCase {
         let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
         calendar!.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         calendar!.timeZone = NSTimeZone(name: "UTC")!
-        let c = calendar!.components(.CalendarUnitYear | .CalendarUnitMonth |
-            .CalendarUnitDay | .CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond | .CalendarUnitNanosecond, fromDate: date!)
+        let c = calendar!.components([.Year, .Month, .Day, .Hour, .Minute, .Second, .Nanosecond], fromDate: date!)
         
         let millis = round(Double(c.nanosecond) / 1000000.0)
         

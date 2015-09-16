@@ -29,10 +29,10 @@ extension CGRect {
     Returns a scaled version of the rect. The rect will be scaled around it's
     midpoint.
     
-    :param: x x scaler
-    :param: y y scaler
+    - parameter x: x scaler
+    - parameter y: y scaler
     */
-    public func scaled(#x: CGFloat, y: CGFloat) -> CGRect {
+    public func scaled(x x: CGFloat, y: CGFloat) -> CGRect {
         let w = self.width * x
         let h = self.height * y
         let wd = w - self.width

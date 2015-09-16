@@ -40,7 +40,7 @@ extension UIImage {
     Returns an image with orientation 'removed', ie. rendered again so that
     imageOrientation is always 'Up'. If this was the case already, the original image is returned.
     
-    :returns: a copy of this image with orientation setting set to 'up'.
+    - returns: a copy of this image with orientation setting set to 'up'.
     */
     public func imageWithNormalizedOrientation() -> UIImage {
         if ( imageOrientation == .Up ) {
@@ -51,7 +51,7 @@ extension UIImage {
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         drawInRect(rect)
         
-        var normalizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext();
         
         return normalizedImage;
@@ -61,11 +61,11 @@ extension UIImage {
     Returns an scaled-down (to the max size) image of the original image, or the
     original image if max size was not exceeded. Aspect ratio is preserved.
     
-    :param: maxSize maximum size for the new image
-    :param: imageScale value for UIImage.scale. Specify 0.0 to match the scale of the device's screen.
-    :returns: scaled-down image
+    - parameter maxSize: maximum size for the new image
+    - parameter imageScale: value for UIImage.scale. Specify 0.0 to match the scale of the device's screen.
+    - returns: scaled-down image
     */
-    public func scaleDown(#maxSize: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
+    public func scaleDown(maxSize maxSize: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
         let myWidth = self.size.width
         let myHeight = self.size.height
         
@@ -93,10 +93,10 @@ extension UIImage {
     Crops the image to a square; from the middle of the original image, using the largest
     possible square area that fits in the original image.
     
-    :returns: the cropped image. Note that the dimensions may be off by +-1 pixels.
+    - returns: the cropped image. Note that the dimensions may be off by +-1 pixels.
     */
     public func cropImageToSquare() -> UIImage {
-        let contextImage: UIImage = UIImage(CGImage: self.CGImage)!
+        let contextImage: UIImage = UIImage(CGImage: self.CGImage!)
         
         let contextSize: CGSize = contextImage.size
         
@@ -118,8 +118,8 @@ extension UIImage {
         }
         
         let rect: CGRect = CGRectMake(posX, posY, width, height)
-        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)
-        let image: UIImage = UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)!
+        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
+        let image: UIImage = UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
         
         return image
     }
@@ -133,11 +133,11 @@ extension UIImage {
     /**
     Returns a blurred version of the image.
     
-    :param: radius radius of the blur kernel, in pixels.
-    :param: algorithm blur algorithm to use. .TentConvolve is faster than .BoxConvolve.
-    :returns: the blurred image.
+    - parameter radius: radius of the blur kernel, in pixels.
+    - parameter algorithm: blur algorithm to use. .TentConvolve is faster than .BoxConvolve.
+    - returns: the blurred image.
     */
-    public func blur(#radius: Double, algorithm: BlurAlgorithm = .TentConvolve) -> UIImage {
+    public func blur(radius radius: Double, algorithm: BlurAlgorithm = .TentConvolve) -> UIImage {
         let imageRect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
         
         func createEffectBuffer(context: CGContext) -> vImage_Buffer {
@@ -154,11 +154,11 @@ extension UIImage {
         CGContextScaleCTM(effectInContext, 1.0, -1.0);
         CGContextTranslateCTM(effectInContext, 0, -self.size.height);
         CGContextDrawImage(effectInContext, imageRect, self.CGImage); // this takes time
-        var effectInBuffer = createEffectBuffer(effectInContext)
+        var effectInBuffer = createEffectBuffer(effectInContext!)
         
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.mainScreen().scale)
         let effectOutContext = UIGraphicsGetCurrentContext()
-        var effectOutBuffer = createEffectBuffer(effectOutContext)
+        var effectOutBuffer = createEffectBuffer(effectOutContext!)
         
         let inputRadius = CGFloat(radius) * UIScreen.mainScreen().scale
         var radius = UInt32(floor(inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI)) / 4 + 0.5))

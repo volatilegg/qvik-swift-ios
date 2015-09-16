@@ -12,6 +12,14 @@ source 'https://git.qvik.fi/pods/QvikPodSpecs.git'
 pod 'QvikSwift', '>= 1.0.4'
 ```
 
+To use this library in Swift 2 projects, add the following (or what ever suits your needs) to your Podfile:
+```ruby
+use_frameworks!
+source 'https://git.qvik.fi/pods/QvikPodSpecs.git'
+
+pod 'QvikSwift', '>= 2.0.0'
+```
+
 And the following to your source:
 
 ```ruby

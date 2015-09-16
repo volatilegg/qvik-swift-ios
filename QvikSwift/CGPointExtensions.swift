@@ -27,8 +27,8 @@ extension CGPoint {
     /**
     Calculates and returns the middle point between this point and another point.
     
-    :param: another another CGPoint
-    :returns: middle point between this point and the another point
+    - parameter another: another CGPoint
+    - returns: middle point between this point and the another point
     */
     public func middlePoint(another: CGPoint) -> CGPoint {
         return CGPoint(x: (self.x + another.x) / 2, y: (self.y + another.y) / 2)

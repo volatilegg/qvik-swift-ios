@@ -27,10 +27,10 @@ extension UIColor {
     /**
     Convenience initializer for constructing the UIColor with integer components.
     
-    :param: redInt value for red (0-255)
-    :param: greenInt value for green (0-255)
-    :param: blueInt value for blue (0-255)
-    :param: alpha value for alpha (0-1.0)
+    - parameter redInt: value for red (0-255)
+    - parameter greenInt: value for green (0-255)
+    - parameter blueInt: value for blue (0-255)
+    - parameter alpha: value for alpha (0-1.0)
     */
     public convenience init(redInt: Int, greenInt: Int, blueInt: Int, alpha: Double) {
         self.init(red: CGFloat(redInt)/255.0, green: CGFloat(greenInt)/255.0, blue: CGFloat(blueInt)/255.0, alpha: CGFloat(alpha))
@@ -40,7 +40,7 @@ extension UIColor {
     Convenience initializer for creating a UIColor from a hex string; accepted formats are #RRGGBB and #RRGGBBAA. If 
     an invalid input is given as the hex string, the color is initialized to white.
     
-    :param: hexString the RGB or RGBA string
+    - parameter hexString: the RGB or RGBA string
     */
     public convenience init(hexString: String) {
         if !hexString.hasPrefix("#") || ((hexString.length != 7) && (hexString.length != 9)) {

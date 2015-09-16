@@ -27,17 +27,17 @@ extension String {
     /**
     Adds a read-only length property to String.
     
-    :returns: String length in number of characters.
+    - returns: String length in number of characters.
     */
     public var length: Int {
-        return count(self)
+        return self.characters.count
     }
     
     /**
     Convenience method for a more familiar name for string splitting.
     
-    :param: separator string to split the original string by
-    :returns: the original string split into parts
+    - parameter separator: string to split the original string by
+    - returns: the original string split into parts
     */
     public func split(separator: String) -> [String] {
         return componentsSeparatedByString(separator)
@@ -46,8 +46,8 @@ extension String {
     /**
     Checks whether the string contains a given substring.
     
-    :param: s substring to check for
-    :returns: true if this string contained the given substring, false otherwise.
+    - parameter s: substring to check for
+    - returns: true if this string contained the given substring, false otherwise.
     */
     public func contains(s: String) -> Bool {
         return (self.rangeOfString(s) != nil)
@@ -56,13 +56,13 @@ extension String {
     /**
     Returns a substring of this string from a given index up the given length.
     
-    :param: startIndex index of the first character to include in the substring
-    :param: length number of characters to include in the substring
-    :returns: the substring
+    - parameter startIndex: index of the first character to include in the substring
+    - parameter length: number of characters to include in the substring
+    - returns: the substring
     */
-    public func substring(#startIndex: Int, length: Int) -> String {
-        let start = advance(self.startIndex, startIndex)
-        let end = advance(self.startIndex, startIndex + length)
+    public func substring(startIndex startIndex: Int, length: Int) -> String {
+        let start = self.startIndex.advancedBy(startIndex)
+        let end = self.startIndex.advancedBy(startIndex + length)
         
         return self[start..<end]
     }
@@ -70,11 +70,11 @@ extension String {
     /**
     Returns a substring of this string from a given index to the end of the string.
     
-    :param: startIndex index of the first character to include in the substring
-    :returns: the substring from startIndex to the end of this string
+    - parameter startIndex: index of the first character to include in the substring
+    - returns: the substring from startIndex to the end of this string
     */
-    public func substring(#startIndex: Int) -> String {
-        let start = advance(self.startIndex, startIndex)
+    public func substring(startIndex startIndex: Int) -> String {
+        let start = self.startIndex.advancedBy(startIndex)
         return self[start..<self.endIndex]
     }
     
@@ -82,10 +82,10 @@ extension String {
     Splits the string into substring of equal 'lengths'; any remainder string
     will be shorter than 'length' in case the original string length was not multiple of 'length'.
     
-    :param: length (max) length of each substring
-    :returns: the substrings array
+    - parameter length: (max) length of each substring
+    - returns: the substrings array
     */
-    public func splitEqually(#length: Int) -> [String] {
+    public func splitEqually(length length: Int) -> [String] {
         var index = 0
         let len = self.length
         var strings: [String] = []
