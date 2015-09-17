@@ -52,9 +52,5 @@ class CGRectExtensionsTests: XCTestCase {
         XCTAssert(r.x == 20)
         r.y = 30
         XCTAssert(r.y == 30)
-        r.width = 100
-        XCTAssert(r.width == 100)
-        r.height = 200
-        XCTAssert(r.height == 200)
     }
 }
