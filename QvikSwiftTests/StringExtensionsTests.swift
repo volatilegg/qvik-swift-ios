@@ -69,13 +69,13 @@ class StringExtensionsTests: XCTestCase {
     func testSplitEqually() {
         let s1 = "123abcdef"
         let parts1 = s1.splitEqually(length: 3)
-        XCTAssert(count(parts1) == 3, "Invalid part count")
+        XCTAssert(parts1.count == 3, "Invalid part count")
         XCTAssert(parts1[0] == "123")
         XCTAssert(parts1[1] == "abc")
         XCTAssert(parts1[2] == "def")
         let s2 = "1234567"
         let parts2 = s2.splitEqually(length: 2)
-        XCTAssert(count(parts2) == 4, "Invalid part count")
+        XCTAssert(parts2.count == 4, "Invalid part count")
         XCTAssert(parts2[0] == "12")
         XCTAssert(parts2[1] == "34")
         XCTAssert(parts2[2] == "56")

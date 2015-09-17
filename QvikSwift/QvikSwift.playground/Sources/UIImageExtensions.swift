@@ -18,7 +18,7 @@ extension UIImage {
     :param: maxSize maximum size for the new image
     :returns: scaled-down image
     */
-    public func scaleDown(#maxSize: CGSize) -> UIImage {
+    public func scaleDown(maxSize maxSize: CGSize) -> UIImage {
         let myWidth = self.size.width
         let myHeight = self.size.height
         
@@ -51,7 +51,7 @@ extension UIImage {
     :returns: the cropped image. Note that the dimensions may be off by +-1 pixels.
     */
     public func cropImageToSquare() -> UIImage {
-        let contextImage: UIImage = UIImage(CGImage: self.CGImage)!
+        let contextImage: UIImage = UIImage(CGImage: self.CGImage!)
         
         let contextSize: CGSize = contextImage.size
         
@@ -73,8 +73,8 @@ extension UIImage {
         }
         
         let rect: CGRect = CGRectMake(posX, posY, width, height)
-        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)
-        let image: UIImage = UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)!
+        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
+        let image: UIImage = UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
         
         return image
     }

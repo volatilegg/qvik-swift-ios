@@ -39,11 +39,11 @@ extension UIView {
     /** 
     Renders ("screenshots") the view into an image.
     
-    :returns: the captured image
+    - returns: the captured image
     */
     public func screenshot() -> UIImage {
         UIGraphicsBeginImageContext(frame.size)
-        layer.renderInContext(UIGraphicsGetCurrentContext())
+        layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         

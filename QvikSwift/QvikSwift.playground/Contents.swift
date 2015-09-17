@@ -17,7 +17,7 @@ extension CGRect {
     
     :param xScale
     */
-    public func scaled(#x: CGFloat, y: CGFloat) -> CGRect {
+    public func scaled(x x: CGFloat, y: CGFloat) -> CGRect {
         let w = self.width * x
         let h = self.height * y
         let wd = w - self.width
@@ -37,7 +37,7 @@ let scaled = rect.scaled(x: 2, y: 2)
 
 extension String {
     public var length: Int {
-        return count(self)
+        return self.characters.count
     }
     
     func split(separator: String) -> [String] {
@@ -62,10 +62,9 @@ extension NSDateFormatter {
 let f = NSDateFormatter.iso8601ZFormatter()
 let date = f.dateFromString("2008-05-11T15:30:00.000Z")
 let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-let comps = calendar?.components(.CalendarUnitYear | .CalendarUnitMonth |
-    .CalendarUnitDay | .CalendarUnitMinute | .CalendarUnitSecond | .CalendarUnitNanosecond, fromDate: date!)
-println(comps!.year)
-println(comps!.day)
+let comps = calendar?.components([.Year, .Month, .Day, .Minute, .Second, .Nanosecond], fromDate: date!)
+print(comps!.year)
+print(comps!.day)
 
 
 let components = NSDateComponents()
@@ -104,7 +103,7 @@ extension UIColor {
                 let blue = (rgbaValue & 0x0000FF00) >> 8
                 let alpha = rgbaValue & 0x000000FF
                 
-                println("\(red) \(green) \(blue) \(alpha)")
+                print("\(red) \(green) \(blue) \(alpha)")
                 
                 self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0,
                     blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha) / 255.0)
