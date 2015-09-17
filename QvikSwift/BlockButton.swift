@@ -21,40 +21,25 @@
 // SOFTWARE.
 
 import UIKit
-import XCTest
 
-class CGRectExtensionsTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+//TODO move this to QvikSwift
+
+/**
+UIButton that provides a click handler using a callback block.
+*/
+public class BlockButton: UIButton {
+    private var pressedCallback: ((Void) -> (Void))?
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testScale() {
-        let rect = CGRect(x: 5, y: 10, width: 20, height: 20)
-        let scaled = rect.scaled(x: 2, y: 2)
+    public class func button(frame frame: CGRect, pressedCallback: ((Void) -> (Void))) -> BlockButton {
+        let button = BlockButton(type: .System)
+        button.frame = frame
+        button.pressedCallback = pressedCallback
+        button.addTarget(button, action: "pressed:", forControlEvents: .TouchUpInside)
         
-        XCTAssert(scaled.minX == -5)
-        XCTAssert(scaled.minY == 0)
-        XCTAssert(scaled.width == 40)
-        XCTAssert(scaled.height == 40)
+        return button
     }
-    
-    func testDimensions() {
-        var r = CGRect(x: 10, y: 10, width: 10, height: 10)
-        XCTAssert(r.width == 10)
-        XCTAssert(r.height == 10)
-        r.x = 20
-        XCTAssert(r.x == 20)
-        r.y = 30
-        XCTAssert(r.y == 30)
-        r.width = 100
-        XCTAssert(r.width == 100)
-        r.height = 200
-        XCTAssert(r.height == 200)
+
+    func pressed(sender: UIButton) {
+        self.pressedCallback?()
     }
 }

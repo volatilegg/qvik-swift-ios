@@ -25,6 +25,7 @@
 		4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */; };
 		4916ED081B661AFE00E6A22D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */; };
 		4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */; };
+		499C48951BAAC60200892142 /* BlockButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* BlockButton.swift */; settings = {ASSET_TAGS = (); }; };
 		499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F0E1B93191E00E50D8D /* Utils.swift */; };
 		499D6F131B931C8A00E50D8D /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */; };
 		499D6F141B931C8A00E50D8D /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */; };
@@ -73,6 +74,7 @@
 		495E95101B958FFE006EEFC6 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 		498D0DBC1B959B0900339E2B /* QvikSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = QvikSwift.podspec; sourceTree = "<group>"; };
 		498D0DBD1B959B1600339E2B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		499C48941BAAC60200892142 /* BlockButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockButton.swift; sourceTree = "<group>"; };
 		499D6F0E1B93191E00E50D8D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataExtensions.swift; sourceTree = "<group>"; };
 		49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
@@ -128,17 +130,9 @@
 		490C9D911B523FB00024945B /* QvikSwift */ = {
 			isa = PBXGroup;
 			children = (
-				49CBEA191B7B8AA200B1819B /* ReadWriteLock.swift */,
-				49CBEA161B7B892500B1819B /* CGPointExtensions.swift */,
-				49CBEA131B7B888C00B1819B /* CGRectExtensions.swift */,
-				490605CD1B70D18200C055AF /* NSDateFormatterExtensions.swift */,
-				490C9DAB1B52408E0024945B /* StringExtensions.swift */,
-				490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */,
-				4916ED011B66138D00E6A22D /* UIViewExtensions.swift */,
-				4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */,
-				49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */,
-				499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */,
-				499D6F0E1B93191E00E50D8D /* Utils.swift */,
+				499C48931BAAC5E400892142 /* Custom controls */,
+				499C48911BAAC52F00892142 /* Utils */,
+				499C48901BAAC51E00892142 /* Extensions */,
 				490C9D921B523FB00024945B /* Supporting Files */,
 			);
 			path = QvikSwift;
@@ -186,6 +180,39 @@
 				495E95101B958FFE006EEFC6 /* libcommonCrypto.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		499C48901BAAC51E00892142 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				49CBEA161B7B892500B1819B /* CGPointExtensions.swift */,
+				49CBEA131B7B888C00B1819B /* CGRectExtensions.swift */,
+				490605CD1B70D18200C055AF /* NSDateFormatterExtensions.swift */,
+				490C9DAB1B52408E0024945B /* StringExtensions.swift */,
+				490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */,
+				4916ED011B66138D00E6A22D /* UIViewExtensions.swift */,
+				4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */,
+				49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */,
+				499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		499C48911BAAC52F00892142 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				499D6F0E1B93191E00E50D8D /* Utils.swift */,
+				49CBEA191B7B8AA200B1819B /* ReadWriteLock.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		499C48931BAAC5E400892142 /* Custom controls */ = {
+			isa = PBXGroup;
+			children = (
+				499C48941BAAC60200892142 /* BlockButton.swift */,
+			);
+			name = "Custom controls";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +335,7 @@
 				4916ED021B66138E00E6A22D /* UIViewExtensions.swift in Sources */,
 				49CBEA171B7B892500B1819B /* CGPointExtensions.swift in Sources */,
 				490C9DE01B5292FC0024945B /* UIImageExtensions.swift in Sources */,
+				499C48951BAAC60200892142 /* BlockButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -38,5 +38,45 @@ extension CGRect {
         let wd = w - self.width
         let hd = h - self.height
         return CGRect(x: self.origin.x - (wd / 2), y: self.origin.y - (hd / 2), width: w, height: h)
-    }    
+    }
+    
+    /// Shorthand access to the rect's width
+    var width: CGFloat {
+        get {
+            return size.width
+        }
+        set {
+            size.width = newValue
+        }
+    }
+    
+    /// Shorthand access to the rect's height
+    var height: CGFloat {
+        get {
+            return size.height
+        }
+        set {
+            size.height = newValue
+        }
+    }
+    
+    /// Shorthand access to the rect's upper left corner's x coordinate
+    var x: CGFloat {
+        get {
+            return origin.x
+        }
+        set {
+            origin.x = newValue
+        }
+    }
+    
+    /// Shorthand access to the rect's upper left corner's y coordinate
+    var y: CGFloat {
+        get {
+            return origin.y
+        }
+        set {
+            origin.y = newValue
+        }
+    }
 }

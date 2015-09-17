@@ -50,6 +50,13 @@ extension UIView {
         return image
     }
 
+    /// Shorthand access to view's (bounds') size
+    var size: CGSize {
+        get {
+            return bounds.size
+        }
+    }
+
     /// Shorthand access to view's frame x position
     public var x: CGFloat {
         get {
