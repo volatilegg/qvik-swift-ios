@@ -63,6 +63,24 @@ public class ReadWriteLock {
         pthread_rwlock_unlock(&lock)
     }
     
+    /// Executes a task within a write lock
+    public func withWriteLock(task: (Void -> Void)) {
+        defer {
+            unlock()
+        }
+        lockToWrite()
+        task()
+    }
+    
+    /// Executes a task within a read lock
+    public func withReadLock(task: (Void -> Void)) {
+        defer {
+            unlock()
+        }
+        lockToRead()
+        task()
+    }
+    
     deinit {
         pthread_rwlock_destroy(&lock)
     }
