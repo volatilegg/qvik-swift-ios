@@ -97,7 +97,7 @@ Any Swift developer in the company may - and is encouraged to - contribute to th
 * Meaningfulness. Discuss whether what you are about to contribute indeed belongs to this library in the first place before submitting a pull request.
 * Code style. Follow our [Swift style guide](https://github.com/qvik/swift) 100%.
 * Stability. No code in the library must ever crash; never place *assert()*s or implicit optional unwrapping in library methods.
-* Testing. Every method and function in the library must have unit tests, triggering both successful and unsuccessful calls.
+* Testing. Every util method, function and extension in the library must have unit tests, triggering both successful and unsuccessful calls. All custom views/controls should have proper documentation and usage examples.
 * Logging. No code in the library must write logs. Unit tests should log with *println()*.
 
 ### License

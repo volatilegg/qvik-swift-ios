@@ -42,6 +42,7 @@
 		49CBEA1D1B7B8BDD00B1819B /* ReadWriteLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA1C1B7B8BDD00B1819B /* ReadWriteLockTests.swift */; };
 		49CBEA1F1B7B90F800B1819B /* CGPointExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */; };
 		49CBEA211B7B917300B1819B /* CGRectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */; };
+		49DE443B1BB5209400D36782 /* TouchDetectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE443A1BB5209400D36782 /* TouchDetectView.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		49CBEA1C1B7B8BDD00B1819B /* ReadWriteLockTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWriteLockTests.swift; sourceTree = "<group>"; };
 		49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointExtensionsTests.swift; sourceTree = "<group>"; };
 		49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensionsTests.swift; sourceTree = "<group>"; };
+		49DE443A1BB5209400D36782 /* TouchDetectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchDetectView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		490C9D911B523FB00024945B /* QvikSwift */ = {
 			isa = PBXGroup;
 			children = (
+				49DE44391BB5208200D36782 /* Custom views */,
 				499C48931BAAC5E400892142 /* Custom controls */,
 				499C48911BAAC52F00892142 /* Utils */,
 				499C48901BAAC51E00892142 /* Extensions */,
@@ -216,6 +219,14 @@
 				492711E11BB4530A00FC99B0 /* UnderlinedLabel.swift */,
 			);
 			name = "Custom controls";
+			sourceTree = "<group>";
+		};
+		49DE44391BB5208200D36782 /* Custom views */ = {
+			isa = PBXGroup;
+			children = (
+				49DE443A1BB5209400D36782 /* TouchDetectView.swift */,
+			);
+			name = "Custom views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +349,7 @@
 				4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
 				4916ED021B66138E00E6A22D /* UIViewExtensions.swift in Sources */,
 				49CBEA171B7B892500B1819B /* CGPointExtensions.swift in Sources */,
+				49DE443B1BB5209400D36782 /* TouchDetectView.swift in Sources */,
 				490C9DE01B5292FC0024945B /* UIImageExtensions.swift in Sources */,
 				499C48951BAAC60200892142 /* BlockButton.swift in Sources */,
 			);

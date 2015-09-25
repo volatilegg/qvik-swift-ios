@@ -22,10 +22,15 @@
 
 import Foundation
 
+/// Asynchronously executes a task in a background thread.
 public func runInBackground(task: Void -> Void) {
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), task)
 }
 
+/**
+Asynchronously executes a task in the main thread. If the calling thread is
+the main thread itself, the task is executed immediately.
+*/
 public func runOnMainThread(task: Void -> Void) {
     if NSThread.isMainThread() {
         // Already on main UI thread - call directly

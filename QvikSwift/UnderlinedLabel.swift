@@ -26,20 +26,30 @@ import UIKit
 Label which automatically turns all its text into underlined text.
 */
 @IBDesignable
-public class UnderlinedLabel: UILabel {
+public class UnderlinedLabel: UILabel {    
     @IBInspectable
     override public var text: String? {
         get {
             return attributedText?.string
         }
         set {
-            if let newValue = newValue {
-                let underlineAttribute = [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
-                let underlineAttributedString = NSAttributedString(string: newValue, attributes: underlineAttribute)
-                attributedText = underlineAttributedString
-            } else {
-                attributedText = nil
-            }
+            setUnderlinedText(newValue)
         }
+    }
+    
+    private func setUnderlinedText(text: String?) {
+        if let text = text {
+            let underlineAttribute = [NSUnderlineStyleAttributeName: NSUnderlineStyle.StyleSingle.rawValue]
+            let underlineAttributedString = NSAttributedString(string: text, attributes: underlineAttribute)
+            attributedText = underlineAttributedString
+        } else {
+            attributedText = nil
+        }
+    }
+    
+    override public func awakeFromNib() {
+        super.awakeFromNib()
+        
+        setUnderlinedText(text)
     }
 }
