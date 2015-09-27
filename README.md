@@ -30,6 +30,10 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.2 
+	* Added a high-level API for ReadWriteLock
+* 2.0.1
+	* Added ExpandingTextView
 * 2.0.0
 	* Swift2 / iOS9 support
 	* Added more convenience extensions for UIView / CGRect
@@ -41,14 +45,6 @@ This library mostly provides more or less handy extensions to the platform class
 
 Most notable features are:
 
-* **BlockButton**
-This is a UIButton subclass that provides a callback closure (hence the name 'block' as in obj-c legacy naming..).
-```swift
-let button = BlockButton.button(frame: frame) { [weak self] in
-	// Handle the click
-}
-containerView.addSubview(button)
-```
 
 * **ReadWriteLock**
 A synchronization lock for interthread resource access. The implementation is based on **pthread_rwlock_t**.
