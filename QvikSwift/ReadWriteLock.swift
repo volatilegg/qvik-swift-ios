@@ -64,21 +64,23 @@ public class ReadWriteLock {
     }
     
     /// Executes a task within a write lock
-    public func withWriteLock(task: (Void -> Void)) {
+    public func withWriteLock<T>(task: (Void -> T)) -> T {
         defer {
             unlock()
         }
         lockToWrite()
-        task()
+        
+        return task()
     }
     
     /// Executes a task within a read lock
-    public func withReadLock(task: (Void -> Void)) {
+    public func withReadLock<T>(task: (Void -> T)) -> T {
         defer {
             unlock()
         }
         lockToRead()
-        task()
+        
+        return task()
     }
     
     deinit {

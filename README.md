@@ -52,8 +52,18 @@ containerView.addSubview(button)
 
 * **ReadWriteLock**
 A synchronization lock for interthread resource access. The implementation is based on **pthread_rwlock_t**.
+The recommended way to use the lock is via the higher level methods:
 ```swift
-let lock = ReadWriteLock()
+let value: Int = lock.withReadLock {
+	return myDataStructure.findValue(key)
+}
+// .. 
+lock.withWriteLock {
+	myDataStructure.insertValue(newValue, key: key)
+}
+```
+Or you can use the lower level API for finer-grained control:
+```swift
 func foo() {}
 	defer {
 		lock.unlock()
