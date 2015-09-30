@@ -22,46 +22,36 @@
 
 import UIKit
 
-// obj association keys; this merely consumes minimal amount of space and
-// provides per-process unique address to be used as the key
-private var colorMapAssociationKey: UInt8 = 0
-
-// Wraps a UInt -> UIColor dictionary in an object to remove the need to copy a dictionary around.
-private class ColorMap {
-    private var map = [UInt: UIColor]()
+/**
+UIButton that provides several utility features.
+*/
+public class QvikButton: UIButton {
+    private var pressedCallback: (Void -> Void)?
     
-    subscript(index: UIControlState) -> UIColor? {
-        get {
-            return map[index.rawValue]
-        }
-        set {
-            map[index.rawValue] = newValue
-        }
+    // State color map (UIControlState raw value -> color map)
+    private var colorMap = [UInt: UIColor]()
+    
+    public class func button(frame frame: CGRect, pressedCallback: (Void -> Void)) -> QvikButton {
+        let button = QvikButton(type: .System)
+        button.frame = frame
+        button.pressedCallback = pressedCallback
+        button.addTarget(button, action: "pressed:", forControlEvents: .TouchUpInside)
+        
+        return button
     }
-}
 
-/// Extensions to the UIButton class
-extension UIButton {
-    // Returns the association object (UIControlState raw value -> color map), creating one if it doesnt exist
-    private func getColorMap() -> ColorMap {
-        if let map = objc_getAssociatedObject(self, &colorMapAssociationKey) as? ColorMap {
-            return map
-        } else {
-            let map = ColorMap()
-            objc_setAssociatedObject(self, &colorMapAssociationKey, map, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            return map
-        }
+    func pressed(sender: UIButton) {
+        self.pressedCallback?()
     }
     
     /**
     Sets a background color for a control state.
     
-    - param color: new background color for the control state
-    - param state: control state to set the color for
+    - parameter color: new background color for the control state
+    - parameter state: control state to set the color for
     */
     public func setBackgroundColor(color: UIColor, forControlState: UIControlState) {
-        let map = getColorMap()
-        map[forControlState] = color
+        colorMap[forControlState.rawValue] = color
         
         if state == forControlState {
             // This is the current control state; set the color immediately
@@ -71,10 +61,9 @@ extension UIButton {
     
     // Sets the background color for the current control state, if one is defined
     private func updateBackGroundColor() {
-        let map = getColorMap()
-        if let color = map[state] {
+        if let color = colorMap[state.rawValue] {
             backgroundColor = color
-        } else if let color = map[UIControlState.Normal] {
+        } else if let color = colorMap[UIControlState.Normal.rawValue] {
             // Default to .Normal if color for current state is not set
             backgroundColor = color
         }

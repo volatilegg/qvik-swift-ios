@@ -30,6 +30,9 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.4
+    * Removed the UIButtonExtensions that was causing problems
+    * Renamed BlockButton -> QvikButton and added the UIButtonExtensions stuff to it
 * 2.0.2 
 	* Added a high-level API for ReadWriteLock
 * 2.0.1

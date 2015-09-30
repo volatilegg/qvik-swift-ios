@@ -23,7 +23,7 @@
 import UIKit
 import XCTest
 
-class UIButtonExtensionsTests: XCTestCase {
+class QvikButtonTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -41,19 +41,19 @@ class UIButtonExtensionsTests: XCTestCase {
         let green = UIColor.greenColor()
 
         // Test setting .Normal state (current) bg color
-        let button1 = UIButton()
+        let button1 = QvikButton(type: .System)
         button1.setBackgroundColor(blue, forControlState: .Normal)
         XCTAssert(button1.state == .Normal)
         XCTAssert(button1.backgroundColor == blue)
         
         // Test .Normal feedback in case of missing state color
-        let button2 = UIButton()
+        let button2 = QvikButton(type: .System)
         button2.setBackgroundColor(blue, forControlState: .Normal)
         button2.selected = true
         XCTAssert(button2.backgroundColor == blue)
         
         // Test that bg color changes when state changes
-        let button3 = UIButton()
+        let button3 = QvikButton(type: .System)
         button3.setBackgroundColor(clear, forControlState: .Normal)
         button3.setBackgroundColor(blue, forControlState: .Disabled)
         button3.setBackgroundColor(red, forControlState: .Highlighted)
