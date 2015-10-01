@@ -36,7 +36,33 @@ extension UIView {
         }
     }
     
-    /** 
+    /// Provides an IB-configurable mechanism to set border color
+    @IBInspectable
+    public var borderColor: UIColor? {
+        get {
+            if let borderColor = layer.borderColor {
+                return UIColor(CGColor: borderColor)
+            } else {
+                return nil
+            }
+        }
+        set {
+            layer.borderColor = newValue?.CGColor
+        }
+    }
+    
+    /// Provides an IB-configurable mechanism to set border width
+    @IBInspectable
+    public var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    /**
     Renders ("screenshots") the view into an image.
     
     - returns: the captured image
