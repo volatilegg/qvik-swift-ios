@@ -44,7 +44,6 @@
 		49CBEA1F1B7B90F800B1819B /* CGPointExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */; };
 		49CBEA211B7B917300B1819B /* CGRectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */; };
 		49DE443B1BB5209400D36782 /* TouchDetectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE443A1BB5209400D36782 /* TouchDetectView.swift */; settings = {ASSET_TAGS = (); }; };
-		49DE443D1BB5244400D36782 /* ExpandingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE443C1BB5244400D36782 /* ExpandingTextView.swift */; settings = {ASSET_TAGS = (); }; };
 		49FFA0691BBC1DAD007B5B15 /* QvikButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* QvikButton.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -93,7 +92,6 @@
 		49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointExtensionsTests.swift; sourceTree = "<group>"; };
 		49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensionsTests.swift; sourceTree = "<group>"; };
 		49DE443A1BB5209400D36782 /* TouchDetectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchDetectView.swift; sourceTree = "<group>"; };
-		49DE443C1BB5244400D36782 /* ExpandingTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +219,6 @@
 		499C48931BAAC5E400892142 /* Custom controls */ = {
 			isa = PBXGroup;
 			children = (
-				49DE443C1BB5244400D36782 /* ExpandingTextView.swift */,
 				499C48941BAAC60200892142 /* QvikButton.swift */,
 				492711E11BB4530A00FC99B0 /* UnderlinedLabel.swift */,
 			);
@@ -348,7 +345,6 @@
 				490605CE1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */,
 				49CBE9DC1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */,
 				49CBEA141B7B888C00B1819B /* CGRectExtensions.swift in Sources */,
-				49DE443D1BB5244400D36782 /* ExpandingTextView.swift in Sources */,
 				49CBEA1A1B7B8AA200B1819B /* ReadWriteLock.swift in Sources */,
 				490C9DAC1B52408E0024945B /* StringExtensions.swift in Sources */,
 				499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */,
