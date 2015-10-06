@@ -32,7 +32,18 @@ extension String {
     public var length: Int {
         return self.characters.count
     }
+
+    /**
+    Returns an URL encoded string of this string.
     
+    - returns: String that is an URL-encoded representation of this string.
+    */
+    public var urlEncoded: String? {
+        get {
+            return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+        }
+    }
+
     /**
     Convenience method for a more familiar name for string splitting.
     
