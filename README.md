@@ -30,6 +30,8 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.5
+    * Added QvikImageView; added String.urlEncoded
 * 2.0.4
     * Removed the UIButtonExtensions that was causing problems
     * Renamed BlockButton -> QvikButton and added the UIButtonExtensions stuff to it

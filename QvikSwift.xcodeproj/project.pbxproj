@@ -31,6 +31,8 @@
 		499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F0E1B93191E00E50D8D /* Utils.swift */; };
 		499D6F131B931C8A00E50D8D /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */; };
 		499D6F141B931C8A00E50D8D /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */; };
+		49A970B91BC501CC0074B6F2 /* QvikImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A970B81BC501CC0074B6F2 /* QvikImageView.swift */; settings = {ASSET_TAGS = (); }; };
+		49A970BA1BC501CC0074B6F2 /* QvikImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A970B81BC501CC0074B6F2 /* QvikImageView.swift */; settings = {ASSET_TAGS = (); }; };
 		49CBE9DC1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */; };
 		49CBE9DD1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */; };
 		49CBE9E01B78DFA400B1819B /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DE1B78DFA400B1819B /* ArrayExtensionsTests.swift */; };
@@ -83,6 +85,7 @@
 		499C48941BAAC60200892142 /* QvikButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvikButton.swift; sourceTree = "<group>"; };
 		499D6F0E1B93191E00E50D8D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataExtensions.swift; sourceTree = "<group>"; };
+		49A970B81BC501CC0074B6F2 /* QvikImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvikImageView.swift; sourceTree = "<group>"; };
 		49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
 		49CBE9DE1B78DFA400B1819B /* ArrayExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayExtensionsTests.swift; sourceTree = "<group>"; };
 		49CBEA131B7B888C00B1819B /* CGRectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
@@ -221,6 +224,7 @@
 			children = (
 				499C48941BAAC60200892142 /* QvikButton.swift */,
 				492711E11BB4530A00FC99B0 /* UnderlinedLabel.swift */,
+				49A970B81BC501CC0074B6F2 /* QvikImageView.swift */,
 			);
 			name = "Custom controls";
 			sourceTree = "<group>";
@@ -346,6 +350,7 @@
 				49CBE9DC1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */,
 				49CBEA141B7B888C00B1819B /* CGRectExtensions.swift in Sources */,
 				49CBEA1A1B7B8AA200B1819B /* ReadWriteLock.swift in Sources */,
+				49A970B91BC501CC0074B6F2 /* QvikImageView.swift in Sources */,
 				490C9DAC1B52408E0024945B /* StringExtensions.swift in Sources */,
 				499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */,
 				492711E21BB4530A00FC99B0 /* UnderlinedLabel.swift in Sources */,
@@ -370,6 +375,7 @@
 				4916ED041B66163300E6A22D /* UIViewExtensionsTests.swift in Sources */,
 				49CBEA1D1B7B8BDD00B1819B /* ReadWriteLockTests.swift in Sources */,
 				490C9DE31B5296F70024945B /* UIImageExtensions.swift in Sources */,
+				49A970BA1BC501CC0074B6F2 /* QvikImageView.swift in Sources */,
 				490605CF1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */,
 				4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */,
 				49CBEA181B7B892500B1819B /* CGPointExtensions.swift in Sources */,
