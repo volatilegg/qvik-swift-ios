@@ -30,6 +30,8 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.6 
+    * Improved UIColor(hexString:) input format support
 * 2.0.5
     * Added QvikImageView; added String.urlEncoded
 * 2.0.4

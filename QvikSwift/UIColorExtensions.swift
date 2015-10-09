@@ -37,25 +37,29 @@ extension UIColor {
     }
     
     /**
-    Convenience initializer for creating a UIColor from a hex string; accepted formats are #RRGGBB and #RRGGBBAA. If 
-    an invalid input is given as the hex string, the color is initialized to white.
+    Convenience initializer for creating a UIColor from a hex string; accepted formats are
+    RRGGBB, RRGGBBAA, #RRGGBB, #RRGGBBAA. If an invalid input is given as the hex string,
+    the color is initialized to white.
     
     - parameter hexString: the RGB or RGBA string
     */
     public convenience init(hexString: String) {
-        if !hexString.hasPrefix("#") || ((hexString.length != 7) && (hexString.length != 9)) {
+        var hexString = hexString;
+        
+        if hexString.hasPrefix("#") {
+            hexString = hexString.substring(startIndex: 1)
+        }
+        
+        if (hexString.length != 6) && (hexString.length != 8) {
             // Color string is invalid format; return white
             self.init(white: 1.0, alpha: 1.0)
         } else {
-            var hex = hexString
-            
-            // If the format is #RRGGBB instead of #RRGGBBAA, use FF as alpha component
-            if hex.length == 7 {
-                hex = "\(hexString)FF"
+            // If the format is RRGGBB instead of RRGGBBAA, use FF as alpha component
+            if hexString.length == 6 {
+                hexString = "\(hexString)FF"
             }
             
-            let scanner = NSScanner(string: hex)
-            scanner.scanLocation = 1 // Bypass '#' character
+            let scanner = NSScanner(string: hexString)
             var rgbaValue: UInt32 = 0
             if scanner.scanHexInt(&rgbaValue) {
                 let red = (rgbaValue & 0xFF000000) >> 24
