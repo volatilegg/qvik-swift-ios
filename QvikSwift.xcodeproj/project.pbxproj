@@ -25,14 +25,14 @@
 		4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */; };
 		4916ED081B661AFE00E6A22D /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */; };
 		4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */; };
-		492711E21BB4530A00FC99B0 /* UnderlinedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492711E11BB4530A00FC99B0 /* UnderlinedLabel.swift */; settings = {ASSET_TAGS = (); }; };
-		499345E11BBA6B9500AFB685 /* QvikButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */; settings = {ASSET_TAGS = (); }; };
-		499C48951BAAC60200892142 /* QvikButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* QvikButton.swift */; settings = {ASSET_TAGS = (); }; };
+		492711E21BB4530A00FC99B0 /* UnderlinedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492711E11BB4530A00FC99B0 /* UnderlinedLabel.swift */; };
+		499345E11BBA6B9500AFB685 /* QvikButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */; };
+		499C48951BAAC60200892142 /* QvikButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* QvikButton.swift */; };
 		499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F0E1B93191E00E50D8D /* Utils.swift */; };
 		499D6F131B931C8A00E50D8D /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */; };
 		499D6F141B931C8A00E50D8D /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */; };
-		49A970B91BC501CC0074B6F2 /* QvikImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A970B81BC501CC0074B6F2 /* QvikImageView.swift */; settings = {ASSET_TAGS = (); }; };
-		49A970BA1BC501CC0074B6F2 /* QvikImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A970B81BC501CC0074B6F2 /* QvikImageView.swift */; settings = {ASSET_TAGS = (); }; };
+		49A970B91BC501CC0074B6F2 /* QvikImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A970B81BC501CC0074B6F2 /* QvikImageView.swift */; };
+		49A970BA1BC501CC0074B6F2 /* QvikImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A970B81BC501CC0074B6F2 /* QvikImageView.swift */; };
 		49CBE9DC1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */; };
 		49CBE9DD1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */; };
 		49CBE9E01B78DFA400B1819B /* ArrayExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DE1B78DFA400B1819B /* ArrayExtensionsTests.swift */; };
@@ -45,8 +45,9 @@
 		49CBEA1D1B7B8BDD00B1819B /* ReadWriteLockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA1C1B7B8BDD00B1819B /* ReadWriteLockTests.swift */; };
 		49CBEA1F1B7B90F800B1819B /* CGPointExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */; };
 		49CBEA211B7B917300B1819B /* CGRectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */; };
-		49DE443B1BB5209400D36782 /* TouchDetectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE443A1BB5209400D36782 /* TouchDetectView.swift */; settings = {ASSET_TAGS = (); }; };
-		49FFA0691BBC1DAD007B5B15 /* QvikButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* QvikButton.swift */; settings = {ASSET_TAGS = (); }; };
+		49DE443B1BB5209400D36782 /* TouchDetectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE443A1BB5209400D36782 /* TouchDetectView.swift */; };
+		49E97C881BD929D700AEEB5D /* NSBundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E97C871BD929D700AEEB5D /* NSBundleExtensions.swift */; };
+		49FFA0691BBC1DAD007B5B15 /* QvikButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* QvikButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointExtensionsTests.swift; sourceTree = "<group>"; };
 		49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensionsTests.swift; sourceTree = "<group>"; };
 		49DE443A1BB5209400D36782 /* TouchDetectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchDetectView.swift; sourceTree = "<group>"; };
+		49E97C871BD929D700AEEB5D /* NSBundleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundleExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +208,7 @@
 				4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */,
 				49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */,
 				499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */,
+				49E97C871BD929D700AEEB5D /* NSBundleExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -360,6 +363,7 @@
 				49CBEA171B7B892500B1819B /* CGPointExtensions.swift in Sources */,
 				49DE443B1BB5209400D36782 /* TouchDetectView.swift in Sources */,
 				490C9DE01B5292FC0024945B /* UIImageExtensions.swift in Sources */,
+				49E97C881BD929D700AEEB5D /* NSBundleExtensions.swift in Sources */,
 				499C48951BAAC60200892142 /* QvikButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
