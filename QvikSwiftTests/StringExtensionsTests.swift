@@ -41,6 +41,13 @@ class StringExtensionsTests: XCTestCase {
         XCTAssert(s2.length == 6)
     }
     
+    func testTrim() {
+        XCTAssert(" foo bar ".trim() == "foo bar")
+        XCTAssert("foo\nbar".trim() == "foo\nbar")
+        XCTAssert("http://foo/bar ".trim() == "http://foo/bar")
+        XCTAssert("\rfoo\nbar \n".trim() == "foo\nbar")
+    }
+    
     func testUrlEncoding() {
         let s = "foo bar kek! bur & diu : dau"
         let encoded = s.urlEncoded

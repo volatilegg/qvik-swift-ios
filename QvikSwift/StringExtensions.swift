@@ -33,6 +33,15 @@ extension String {
         return self.characters.count
     }
 
+    /** 
+     Trims all the whitespace-y / newline characters off the begin/end of the string.
+     
+     - returns: a new string with all the newline/whitespace characters removed from the ends of the original string
+     */
+    public func trim() -> String {
+        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    }
+
     /**
     Returns an URL encoded string of this string.
     

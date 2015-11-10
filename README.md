@@ -32,6 +32,7 @@ import QvikSwift
 
 * 2.0.7
     * Added NSBundle extensions for retrieving app / build version strings
+    * Added String.trim()
 * 2.0.6 
     * Improved UIColor(hexString:) input format support
 * 2.0.5
