@@ -23,11 +23,11 @@
 import Foundation
 
 extension NSBundle {
-    var versionNumber: String? {
+    public var versionNumber: String? {
         return self.infoDictionary?["CFBundleShortVersionString"] as? String
     }
     
-    var buildNumber: String? {
+    public var buildNumber: String? {
         return self.infoDictionary?["CFBundleVersion"] as? String
     }
 }
