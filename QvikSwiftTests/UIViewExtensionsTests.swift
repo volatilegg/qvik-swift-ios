@@ -35,9 +35,9 @@ class UIViewExtensionsTests: XCTestCase {
         super.tearDown()
     }
     
-    func testScreenshot() {
+    func testSnapshot() {
         let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
-        let image = view.screenshot()
+        let image = view.snapshot()
         XCTAssert(image.size.width == 300)
         XCTAssert(image.size.height == 300)
     }

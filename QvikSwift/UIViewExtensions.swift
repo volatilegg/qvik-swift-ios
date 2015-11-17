@@ -63,17 +63,25 @@ extension UIView {
     }
     
     /**
-    Renders ("screenshots") the view into an image.
-    
-    - returns: the captured image
-    */
-    public func screenshot() -> UIImage {
-        UIGraphicsBeginImageContext(frame.size)
+     Renders (snapshots / "screenshots") the view into an image.
+     
+     - parameter opaque: whether the snapshot is opaque or not. Default is false.
+     - parameter scale: scale of the snapshot taken; default is 0.0 (matches main device screen)
+     - returns: the captured image
+     */
+    public func snapshot(opaque opaque: Bool = false, scale: CGFloat = 0.0) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(bounds.size, opaque, scale)
         layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         return image
+    }
+    
+    // DEPRECATED and will be removed in a future release.
+    @available(*, deprecated, message="use snapshot() instead")
+    public func screenshot() -> UIImage {
+        return snapshot()
     }
 
     /// Shorthand access to view's (bounds') size

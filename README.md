@@ -30,6 +30,8 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.9
+    * Deprecated UIView.screenshot() and introduced .snapshot() - with support for opaque / scale params.
 * 2.0.7
     * Added NSBundle extensions for retrieving app / build version strings
     * Added String.trim()
