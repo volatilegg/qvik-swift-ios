@@ -21,37 +21,24 @@
 // SOFTWARE.
 
 import Foundation
+import XCTest
 
-/**
- Asynchronously executes a task in a background queue.
- 
- - parameter task: Task to be executed
-*/
-public func runInBackground(task: (Void -> Void)) {
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), task)
-}
-
-/**
- Asynchronously executes a task in the main thread. If the calling thread is
- the main thread itself, the task is executed immediately.
- 
- - parameter task: Task to be executed
-*/
-public func runOnMainThread(task: (Void -> Void)) {
-    if NSThread.isMainThread() {
-        // Already on main UI thread - call directly
-        task()
-    } else {
-        dispatch_async(dispatch_get_main_queue(), task)
+class DoubleExtensionsTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
-}
-
-/**
- Executes a task on the main queue (UI thread) after a given delay.
- 
- - parameter delay: Delay in milliseconds
- - parameter task: Task to be executed
-*/
-func runOnMainThreadAfter(delay delay: NSTimeInterval, task: (Void -> Void)) {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), task)
+    
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+    
+    func testRandom() {
+        for _ in 0..<10000 {
+            let x = Double.random()
+            XCTAssert(x >= 0)
+            XCTAssert(x <= 1.0)
+        }
+    }
 }

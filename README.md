@@ -30,6 +30,8 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.10 (TODO)
+    * Added random() convenience methods to number types
 * 2.0.9
     * Deprecated UIView.screenshot() and introduced .snapshot() - with support for opaque / scale params.
 * 2.0.7

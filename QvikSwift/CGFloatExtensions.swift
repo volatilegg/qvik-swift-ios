@@ -20,38 +20,13 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
+import UIKit
 
-/**
- Asynchronously executes a task in a background queue.
- 
- - parameter task: Task to be executed
-*/
-public func runInBackground(task: (Void -> Void)) {
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), task)
-}
-
-/**
- Asynchronously executes a task in the main thread. If the calling thread is
- the main thread itself, the task is executed immediately.
- 
- - parameter task: Task to be executed
-*/
-public func runOnMainThread(task: (Void -> Void)) {
-    if NSThread.isMainThread() {
-        // Already on main UI thread - call directly
-        task()
-    } else {
-        dispatch_async(dispatch_get_main_queue(), task)
+/// Extensions to CGFloat type
+public extension CGFloat {
+    /// Returns a random number in the range of [0, 1] (inclusive).
+    public static func random() -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 }
 
-/**
- Executes a task on the main queue (UI thread) after a given delay.
- 
- - parameter delay: Delay in milliseconds
- - parameter task: Task to be executed
-*/
-func runOnMainThreadAfter(delay delay: NSTimeInterval, task: (Void -> Void)) {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), task)
-}

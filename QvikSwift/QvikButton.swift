@@ -23,16 +23,16 @@
 import UIKit
 
 /**
-UIButton that provides several utility features.
+ UIButton that provides several utility features.
 */
 public class QvikButton: UIButton {
-    private var pressedCallback: (Void -> Void)?
+    var pressedCallback: (Void -> Void)?
     
     // State color map (UIControlState raw value -> color map)
     private var colorMap = [UInt: UIColor]()
     
-    public class func button(frame frame: CGRect, pressedCallback: (Void -> Void)) -> QvikButton {
-        let button = QvikButton(type: .System)
+    public class func button(frame frame: CGRect, type: UIButtonType = .System, pressedCallback: (Void -> Void)? = nil) -> QvikButton {
+        let button = QvikButton(type: type)
         button.frame = frame
         button.pressedCallback = pressedCallback
         button.addTarget(button, action: "pressed:", forControlEvents: .TouchUpInside)
