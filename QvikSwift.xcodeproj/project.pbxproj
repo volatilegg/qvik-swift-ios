@@ -35,6 +35,9 @@
 		49516BC81C15BB8B00C56FDC /* DoubleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BBE1C15888300C56FDC /* DoubleExtensions.swift */; };
 		49516BCA1C15BC0400C56FDC /* DoubleExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BC91C15BC0400C56FDC /* DoubleExtensionsTests.swift */; };
 		49516BCC1C15BC5400C56FDC /* CGFloatExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BCB1C15BC5400C56FDC /* CGFloatExtensionsTests.swift */; };
+		49516BCE1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */; };
+		49516BCF1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */; };
+		49516BD11C181DFB00C56FDC /* CGSizeExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BD01C181DFB00C56FDC /* CGSizeExtensionsTests.swift */; };
 		499345E11BBA6B9500AFB685 /* QvikButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */; };
 		499C48951BAAC60200892142 /* QvikButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* QvikButton.swift */; };
 		499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F0E1B93191E00E50D8D /* Utils.swift */; };
@@ -94,6 +97,8 @@
 		49516BC41C15BB1100C56FDC /* IntExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensionsTests.swift; sourceTree = "<group>"; };
 		49516BC91C15BC0400C56FDC /* DoubleExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleExtensionsTests.swift; sourceTree = "<group>"; };
 		49516BCB1C15BC5400C56FDC /* CGFloatExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGFloatExtensionsTests.swift; sourceTree = "<group>"; };
+		49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtensions.swift; sourceTree = "<group>"; };
+		49516BD01C181DFB00C56FDC /* CGSizeExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtensionsTests.swift; sourceTree = "<group>"; };
 		495E95101B958FFE006EEFC6 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 		498D0DBC1B959B0900339E2B /* QvikSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = QvikSwift.podspec; sourceTree = "<group>"; };
 		498D0DBD1B959B1600339E2B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -179,6 +184,7 @@
 		490C9D9E1B523FB00024945B /* QvikSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				49516BD01C181DFB00C56FDC /* CGSizeExtensionsTests.swift */,
 				49516BC41C15BB1100C56FDC /* IntExtensionsTests.swift */,
 				49516BCB1C15BC5400C56FDC /* CGFloatExtensionsTests.swift */,
 				49516BC91C15BC0400C56FDC /* DoubleExtensionsTests.swift */,
@@ -230,6 +236,7 @@
 				49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */,
 				499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */,
 				49E97C871BD929D700AEEB5D /* NSBundleExtensions.swift */,
+				49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -380,6 +387,7 @@
 				490C9DAC1B52408E0024945B /* StringExtensions.swift in Sources */,
 				499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */,
 				492711E21BB4530A00FC99B0 /* UnderlinedLabel.swift in Sources */,
+				49516BCE1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */,
 				499D6F131B931C8A00E50D8D /* NSDataExtensions.swift in Sources */,
 				4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
 				4916ED021B66138E00E6A22D /* UIViewExtensions.swift in Sources */,
@@ -397,6 +405,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				490C9DAF1B5242230024945B /* StringExtensionsTests.swift in Sources */,
+				49516BD11C181DFB00C56FDC /* CGSizeExtensionsTests.swift in Sources */,
 				4916ED051B66163B00E6A22D /* UIViewExtensions.swift in Sources */,
 				49CBEA1F1B7B90F800B1819B /* CGPointExtensionsTests.swift in Sources */,
 				490C9DAD1B52408E0024945B /* StringExtensions.swift in Sources */,
@@ -406,6 +415,7 @@
 				49A970BA1BC501CC0074B6F2 /* QvikImageView.swift in Sources */,
 				490605CF1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */,
 				49516BC51C15BB1100C56FDC /* IntExtensionsTests.swift in Sources */,
+				49516BCF1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */,
 				4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */,
 				49CBEA181B7B892500B1819B /* CGPointExtensions.swift in Sources */,
 				49CBE9E01B78DFA400B1819B /* ArrayExtensionsTests.swift in Sources */,

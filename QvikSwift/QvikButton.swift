@@ -26,9 +26,10 @@ import UIKit
  UIButton that provides several utility features.
 */
 public class QvikButton: UIButton {
-    var pressedCallback: (Void -> Void)?
+    /// The callback for button being pressed
+    public var pressedCallback: (Void -> Void)?
     
-    // State color map (UIControlState raw value -> color map)
+    /// State color map (UIControlState raw value -> color map)
     private var colorMap = [UInt: UIColor]()
     
     public class func button(frame frame: CGRect, type: UIButtonType = .System, pressedCallback: (Void -> Void)? = nil) -> QvikButton {
