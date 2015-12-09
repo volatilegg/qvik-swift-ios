@@ -37,7 +37,7 @@ public extension CGSize {
             return self
         }
         
-        if (maxSize.width >= self.width) || (maxSize.height >= self.height) {
+        if (self.width <= maxSize.width) && (self.height <= maxSize.height) {
             return self
         }
         
