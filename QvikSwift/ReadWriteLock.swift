@@ -64,7 +64,7 @@ public class ReadWriteLock {
     }
     
     /// Executes a task within a write lock
-    public func withWriteLock<T>(task: (Void -> T)) -> T {
+    public func withWriteLock<T>(@noescape task: (Void -> T)) -> T {
         defer {
             unlock()
         }
@@ -74,7 +74,7 @@ public class ReadWriteLock {
     }
     
     /// Executes a task within a read lock
-    public func withReadLock<T>(task: (Void -> T)) -> T {
+    public func withReadLock<T>(@noescape task: (Void -> T)) -> T {
         defer {
             unlock()
         }
