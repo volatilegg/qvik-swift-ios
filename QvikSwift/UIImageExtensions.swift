@@ -37,11 +37,11 @@ extension UIImage {
     }
     
     /**
-    Returns an image with orientation 'removed', ie. rendered again so that
-    imageOrientation is always 'Up'. If this was the case already, the original image is returned.
-    
-    - returns: a copy of this image with orientation setting set to 'up'.
-    */
+     Returns an image with orientation 'removed', ie. rendered again so that
+     imageOrientation is always 'Up'. If this was the case already, the original image is returned.
+     
+     - returns: a copy of this image with orientation setting set to 'up'.
+     */
     public func imageWithNormalizedOrientation() -> UIImage {
         if ( imageOrientation == .Up ) {
             return self;
@@ -58,13 +58,13 @@ extension UIImage {
     }
     
     /**
-    Returns an scaled-down (to the max size) image of the original image, or the
-    original image if max size was not exceeded. Aspect ratio is preserved.
-    
-    - parameter maxSize: maximum size for the new image
-    - parameter imageScale: value for UIImage.scale. Specify 0.0 to match the scale of the device's screen.
-    - returns: scaled-down image
-    */
+     Returns an scaled-down (to the max size) image of the original image, or the
+     original image if max size was not exceeded. Aspect ratio is preserved.
+     
+     - parameter maxSize: maximum size for the new image
+     - parameter imageScale: value for UIImage.scale. Specify 0.0 to match the scale of the device's screen.
+     - returns: scaled-down image
+     */
     public func scaleDown(maxSize maxSize: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
         let myWidth = self.size.width
         let myHeight = self.size.height
@@ -75,9 +75,9 @@ extension UIImage {
         
         // Decide how much to scale down by looking at the differences in width/height
         // against the max size
-        let xratio = maxSize.width / myWidth
-        let yratio = maxSize.height / myHeight
-        let ratio = min(xratio, yratio)
+        let wratio = maxSize.width / myWidth
+        let hratio = maxSize.height / myHeight
+        let ratio = min(wratio, hratio)
         
         let size = CGSizeApplyAffineTransform(self.size, CGAffineTransformMakeScale(ratio, ratio))
         UIGraphicsBeginImageContextWithOptions(size, false, imageScale)
@@ -90,11 +90,28 @@ extension UIImage {
     }
     
     /**
-    Crops the image to a square; from the middle of the original image, using the largest
-    possible square area that fits in the original image.
+     Returns a scaled version of this image. The image is stretched to the given size, thus possibly 
+     changing the aspect ratio.
+     
+     - parameter scaledSize: size for the scaled image. Specify ```imageScale: 1.0``` to make this exact pixel size.
+     - parameter imageScale: value for UIImage.scale. Specify 0.0 to match the scale of the device's screen.
+     - returns: scaled-down image
+     */
+    public func scale(scaledSize scaledSize: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(scaledSize, false, imageScale)
+        self.drawInRect(CGRect(origin: CGPointZero, size: scaledSize))
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return scaledImage
+    }
     
-    - returns: the cropped image. Note that the dimensions may be off by +-1 pixels.
-    */
+    /**
+     Crops the image to a square; from the middle of the original image, using the largest
+     possible square area that fits in the original image.
+     
+     - returns: the cropped image. Note that the dimensions may be off by +-1 pixels.
+     */
     public func cropImageToSquare() -> UIImage {
         let contextImage: UIImage = UIImage(CGImage: self.CGImage!)
         
@@ -131,11 +148,11 @@ extension UIImage {
     }
 
     /**
-    Returns a blurred version of the image.
-    
-    - parameter radius: radius of the blur kernel, in pixels.
-    - parameter algorithm: blur algorithm to use. .TentConvolve is faster than .BoxConvolve.
-    - returns: the blurred image.
+     Returns a blurred version of the image.
+     
+     - parameter radius: radius of the blur kernel, in pixels.
+     - parameter algorithm: blur algorithm to use. .TentConvolve is faster than .BoxConvolve.
+     - returns: the blurred image.
     */
     public func blur(radius radius: Double, algorithm: BlurAlgorithm = .TentConvolve) -> UIImage {
         let imageRect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)

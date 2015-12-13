@@ -62,6 +62,15 @@ class UIImageExtensionsTests: XCTestCase {
         XCTAssert(scaledDown.size.height == 150)
     }
     
+    func testScale() {
+        let scaledSize = CGSize(width: 55, height: 66)
+        let image = createImage()
+        let scaled = image.scale(scaledSize: scaledSize)
+        XCTAssert(scaled.scale == 1.0)
+        XCTAssert(scaled.size.width == scaledSize.width)
+        XCTAssert(scaled.size.height == scaledSize.height)
+    }
+    
     func testCrop() {
         let image = createImage()
         let cropped = image.cropImageToSquare()
