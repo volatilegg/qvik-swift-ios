@@ -26,18 +26,13 @@ import UIKit
 public extension CGSize {
     
     /**
-     Calculates the maximum size (retaining aspect ratio) to fit the given maximum dimensions. If 
-     the original size is already smaller in both dimensions, the original size is returned.
+     Calculates the maximum size (retaining aspect ratio) to fit the given maximum dimensions. 
      
      - parameter maxDimensions: maximum dimensions to fit the size. neither value can be negative.
      - returns: fitted size with aspect ratio retained
      */
     public func aspectSizeToFit(maxDimensions maxSize: CGSize) -> CGSize {
         if (maxSize.width <= 0) || (maxSize.height <= 0) {
-            return self
-        }
-        
-        if (self.width <= maxSize.width) && (self.height <= maxSize.height) {
             return self
         }
         
