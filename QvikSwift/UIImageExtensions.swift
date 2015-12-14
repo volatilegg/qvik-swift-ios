@@ -75,18 +75,35 @@ extension UIImage {
         
         // Decide how much to scale down by looking at the differences in width/height
         // against the max size
-        let wratio = maxSize.width / myWidth
-        let hratio = maxSize.height / myHeight
-        let ratio = min(wratio, hratio)
+//        let wratio = maxSize.width / myWidth
+//        let hratio = maxSize.height / myHeight
+//        let ratio = min(wratio, hratio)
+//        
+//        let size = CGSizeApplyAffineTransform(self.size, CGAffineTransformMakeScale(ratio, ratio))
+//        UIGraphicsBeginImageContextWithOptions(size, false, imageScale)
+//        self.drawInRect(CGRect(origin: CGPointZero, size: size))
+//        
+//        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        
+//        return scaledImage
         
-        let size = CGSizeApplyAffineTransform(self.size, CGAffineTransformMakeScale(ratio, ratio))
-        UIGraphicsBeginImageContextWithOptions(size, false, imageScale)
-        self.drawInRect(CGRect(origin: CGPointZero, size: size))
+        let fittingSize = self.size.aspectSizeToFit(maxDimensions: maxSize)
         
-        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return scaledImage
+        return scale(scaledSize: fittingSize, imageScale: imageScale)
+    }
+    
+    /**
+     Returns a scaled version of this image that 'aspect-fits' inside a given size. Aspect ratio is retained.
+     
+     - parameter sizeToFit: max dimensions for the scaled image.
+     - parameter imageScale: value for UIImage.scale. Specify 0.0 to match the scale of the device's screen.
+     - returns: scaled image
+     */
+    public func scaleToFit(sizeToFit sizeToFit: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
+        let fittingSize = self.size.aspectSizeToFit(maxDimensions: sizeToFit)
+
+        return scale(scaledSize: fittingSize, imageScale: imageScale)
     }
     
     /**

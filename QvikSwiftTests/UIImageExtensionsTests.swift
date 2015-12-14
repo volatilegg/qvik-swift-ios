@@ -70,6 +70,21 @@ class UIImageExtensionsTests: XCTestCase {
         XCTAssert(scaled.size.width == scaledSize.width)
         XCTAssert(scaled.size.height == scaledSize.height)
     }
+
+    func testScaleToFit() {
+        let maxSize = CGSize(width: 77, height: 88)
+        let image = createImage()
+        let scaled1 = image.scaleToFit(sizeToFit: maxSize, imageScale: 1.0)
+        let scaled2 = image.scaleToFit(sizeToFit: maxSize, imageScale: 2.0)
+        let origAspect = image.width / image.height
+        XCTAssert(scaled1.scale == 1.0)
+        let aspect1 = scaled1.width / scaled1.height
+        XCTAssert(abs(aspect1 - origAspect) < 0.01)
+        XCTAssert(scaled1.scale == 1.0)
+        let aspect2 = scaled2.width / scaled2.height
+        XCTAssert(abs(aspect2 - origAspect) < 0.01)
+        XCTAssert(scaled2.scale == 2.0)
+    }
     
     func testCrop() {
         let image = createImage()
