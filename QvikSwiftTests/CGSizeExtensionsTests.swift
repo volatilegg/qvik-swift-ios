@@ -35,14 +35,8 @@ class CGSizeExtensionsTests: XCTestCase {
     }
 
     func testAspectSizeToFit() {
-        // Check that a size smaller than max comes out as original
-        let maxSize = CGSize(width: 800, height: 800)
-        let size1 = CGSize(width: 234, height: 98)
-        let fitted1 = size1.aspectSizeToFit(maxDimensions: maxSize)
-        XCTAssert(fitted1.width == size1.width)
-        XCTAssert(fitted1.height == size1.height)
-        
         // Check that fitted size dimensions fit max size AND aspect ratio is retained
+        let maxSize = CGSize(width: 800, height: 800)
         let size2 = CGSize(width: 1234, height: 950)
         let fitted2 = size2.aspectSizeToFit(maxDimensions: maxSize)
         XCTAssert(fitted2.width <= maxSize.width)

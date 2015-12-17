@@ -30,6 +30,9 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.11 
+    * Added image scaling methods. 
+    * Made ReadWriteLock:s closure methods @noescape
 * 2.0.10 
     * Added random() convenience methods to number types
     * Added CGSize.aspectSizeToFit() 
