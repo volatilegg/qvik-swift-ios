@@ -73,24 +73,9 @@ extension UIImage {
             return self
         }
         
-        // Decide how much to scale down by looking at the differences in width/height
-        // against the max size
-//        let wratio = maxSize.width / myWidth
-//        let hratio = maxSize.height / myHeight
-//        let ratio = min(wratio, hratio)
-//        
-//        let size = CGSizeApplyAffineTransform(self.size, CGAffineTransformMakeScale(ratio, ratio))
-//        UIGraphicsBeginImageContextWithOptions(size, false, imageScale)
-//        self.drawInRect(CGRect(origin: CGPointZero, size: size))
-//        
-//        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//        
-//        return scaledImage
-        
         let fittingSize = self.size.aspectSizeToFit(maxDimensions: maxSize)
         
-        return scale(scaledSize: fittingSize, imageScale: imageScale)
+        return scaleTo(size: fittingSize, imageScale: imageScale)
     }
     
     /**
@@ -103,7 +88,7 @@ extension UIImage {
     public func scaleToFit(sizeToFit sizeToFit: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
         let fittingSize = self.size.aspectSizeToFit(maxDimensions: sizeToFit)
 
-        return scale(scaledSize: fittingSize, imageScale: imageScale)
+        return scaleTo(size: fittingSize, imageScale: imageScale)
     }
     
     /**
@@ -114,9 +99,9 @@ extension UIImage {
      - parameter imageScale: value for UIImage.scale. Specify 0.0 to match the scale of the device's screen.
      - returns: scaled-down image
      */
-    public func scale(scaledSize scaledSize: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(scaledSize, false, imageScale)
-        self.drawInRect(CGRect(origin: CGPointZero, size: scaledSize))
+    public func scaleTo(size size: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(size, false, imageScale)
+        self.drawInRect(CGRect(origin: CGPointZero, size: size))
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 

@@ -30,6 +30,8 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.12
+    * Small bugfix release. Renamed UIImage.scale() -> UIImage.scaleTo() to avoid ambiguity.
 * 2.0.11 
     * Added image scaling methods. 
     * Made ReadWriteLock:s closure methods @noescape
