@@ -49,9 +49,9 @@ public func runOnMainThread(task: (Void -> Void)) {
 /**
  Executes a task on the main queue (UI thread) after a given delay.
  
- - parameter delay: Delay in milliseconds
+ - parameter delay: Delay in seconds
  - parameter task: Task to be executed
 */
-func runOnMainThreadAfter(delay delay: NSTimeInterval, task: (Void -> Void)) {
+public func runOnMainThreadAfter(delay delay: NSTimeInterval, task: (Void -> Void)) {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))),dispatch_get_main_queue(), task)
 }
