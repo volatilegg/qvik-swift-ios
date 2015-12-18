@@ -30,6 +30,8 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.13
+    * Bugfix to runOnMainThreadAfter()
 * 2.0.12
     * Small bugfix release. Renamed UIImage.scale() -> UIImage.scaleTo() to avoid ambiguity.
 * 2.0.11 
