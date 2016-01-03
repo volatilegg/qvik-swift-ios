@@ -30,6 +30,8 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.14
+    * Added UIResponderExtensions: getCurrentFirstResponder() / resignCurrentFirstResponder()
 * 2.0.13
     * Bugfix to runOnMainThreadAfter()
 * 2.0.12

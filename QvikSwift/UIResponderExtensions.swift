@@ -22,25 +22,32 @@
 
 import UIKit
 
-/// Extensions to CGSize type
-public extension CGSize {    
-    /**
-     Calculates the maximum size (retaining aspect ratio) to fit the given maximum dimensions. 
-     
-     - parameter maxDimensions: maximum dimensions to fit the size. neither value can be negative.
-     - returns: fitted size with aspect ratio retained
-     */
-    public func aspectSizeToFit(maxDimensions maxSize: CGSize) -> CGSize {
-        if (maxSize.width <= 0) || (maxSize.height <= 0) {
-            return self
-        }
+/// Extensions to the UIResponder class
+public extension UIResponder {
+    private struct CurrentFirstResponder {
+        static var currentFirstResponder: UIResponder?
+    }
+    
+    // MARK: Private methods
+    
+    func findFirstResponder() {
+        UIResponder.CurrentFirstResponder.currentFirstResponder = self
+    }
+    
+    // MARK: Public methods
+    
+    /// Returns the current first responder, if any
+    public class func getCurrentFirstResponder() -> UIResponder? {
+        CurrentFirstResponder.currentFirstResponder = nil
         
-        // Decide how much to scale down by looking at the differences in width/height
-        // against the max size
-        let xratio = maxSize.width / self.width
-        let yratio = maxSize.height / self.height
-        let ratio = min(xratio, yratio)
+        // Sends a message (any message) to the responder chain; the first responder to get it is the First Responder
+        UIApplication.sharedApplication().sendAction("findFirstResponder", to: nil, from: nil, forEvent: nil)
         
-        return CGSizeApplyAffineTransform(self, CGAffineTransformMakeScale(ratio, ratio))
+        return CurrentFirstResponder.currentFirstResponder
+    }
+    
+    /// Resigns the current first responder, if any
+    public class func resignCurrentFirstResponder() {
+        UIApplication.sharedApplication().sendAction("resignFirstResponder", to: nil, from: nil, forEvent: nil)
     }
 }
