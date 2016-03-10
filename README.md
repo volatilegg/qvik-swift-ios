@@ -6,18 +6,9 @@
 
 To use the library in your projects, add the following (or what ever suits your needs) to your Podfile:
 
-**Swift 1.2** (No longer receiving updates)
 ```ruby
 use_frameworks!
-source 'https://git.qvik.fi/pods/QvikPodSpecs.git'
-
-pod 'QvikSwift', '~> 1.0.4'
-```
-
-**Swift 2.0**
-```ruby
-use_frameworks!
-source 'https://git.qvik.fi/pods/QvikPodSpecs.git'
+source 'https://github.com/qvik/qvik-podspecs.git'
 
 pod 'QvikSwift', '~> 2.0.0'
 ```
@@ -30,6 +21,8 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.15
+    * Moved Podspec to point to Github
 * 2.0.14
     * Added UIResponderExtensions: getCurrentFirstResponder() / resignCurrentFirstResponder()
 * 2.0.13
