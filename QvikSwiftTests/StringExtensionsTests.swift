@@ -78,7 +78,13 @@ class StringExtensionsTests: XCTestCase {
         let s2 = "It's the end of the world."
         XCTAssert(s2.substring(startIndex: 16) == expected2)
     }
-    
+
+    func testSubscripts() {
+        let s1 = "abcdef"
+        XCTAssert(s1[1] == "b")
+        XCTAssert(s1[2..<4] == "cd")
+    }
+
     func testSplitEqually() {
         let s1 = "123abcdef"
         let parts1 = s1.splitEqually(length: 3)

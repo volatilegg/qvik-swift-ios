@@ -42,6 +42,7 @@
 		49516BCE1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */; };
 		49516BCF1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */; };
 		49516BD11C181DFB00C56FDC /* CGSizeExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BD01C181DFB00C56FDC /* CGSizeExtensionsTests.swift */; };
+		498770F31CBA8EED00BEC5C2 /* ParallaxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498770F21CBA8EED00BEC5C2 /* ParallaxView.swift */; };
 		499345E11BBA6B9500AFB685 /* QvikButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */; };
 		499C48951BAAC60200892142 /* QvikButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* QvikButton.swift */; };
 		499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F0E1B93191E00E50D8D /* Utils.swift */; };
@@ -106,6 +107,7 @@
 		49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtensions.swift; sourceTree = "<group>"; };
 		49516BD01C181DFB00C56FDC /* CGSizeExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGSizeExtensionsTests.swift; sourceTree = "<group>"; };
 		495E95101B958FFE006EEFC6 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
+		498770F21CBA8EED00BEC5C2 /* ParallaxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxView.swift; sourceTree = "<group>"; };
 		498D0DBC1B959B0900339E2B /* QvikSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = QvikSwift.podspec; sourceTree = "<group>"; };
 		498D0DBD1B959B1600339E2B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvikButtonTests.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 		49DE44391BB5208200D36782 /* Custom views */ = {
 			isa = PBXGroup;
 			children = (
+				498770F21CBA8EED00BEC5C2 /* ParallaxView.swift */,
 				49DE443A1BB5209400D36782 /* TouchDetectView.swift */,
 			);
 			name = "Custom views";
@@ -398,6 +401,7 @@
 				49516BCE1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */,
 				494558621C3934AA00F3E8FC /* UIResponderExtensions.swift in Sources */,
 				499D6F131B931C8A00E50D8D /* NSDataExtensions.swift in Sources */,
+				498770F31CBA8EED00BEC5C2 /* ParallaxView.swift in Sources */,
 				4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
 				4916ED021B66138E00E6A22D /* UIViewExtensions.swift in Sources */,
 				49CBEA171B7B892500B1819B /* CGPointExtensions.swift in Sources */,

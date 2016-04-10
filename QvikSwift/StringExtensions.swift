@@ -97,7 +97,30 @@ extension String {
         let start = self.startIndex.advancedBy(startIndex)
         return self[start..<self.endIndex]
     }
-    
+
+    /**
+     Returns the i:th character in the string. 
+     
+     - parameter i: index of the character to return
+     - returns: i:th character in the string
+     */
+    subscript (i: Int) -> Character {
+        return self[self.startIndex.advancedBy(i)]
+    }
+
+    /**
+     Returns a substring matching the given range.
+     
+     - parameter r: range for substring to return
+     - returns: substring matching the range r
+     */
+    subscript (r: Range<Int>) -> String {
+        let start = startIndex.advancedBy(r.startIndex)
+        let end = start.advancedBy(r.endIndex - r.startIndex)
+        
+        return self[Range(start ..< end)]
+    }
+
     /**
     Splits the string into substring of equal 'lengths'; any remainder string
     will be shorter than 'length' in case the original string length was not multiple of 'length'.

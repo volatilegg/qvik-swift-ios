@@ -21,6 +21,9 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.16
+    * Added ParallaxView
+    * Added subscript operators to StringExtensions
 * 2.0.15
     * Moved Podspec to point to Github
 * 2.0.14
