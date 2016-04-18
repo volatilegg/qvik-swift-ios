@@ -41,13 +41,13 @@ public extension UIResponder {
         CurrentFirstResponder.currentFirstResponder = nil
         
         // Sends a message (any message) to the responder chain; the first responder to get it is the First Responder
-        UIApplication.sharedApplication().sendAction("findFirstResponder", to: nil, from: nil, forEvent: nil)
+        UIApplication.sharedApplication().sendAction(#selector(findFirstResponder), to: nil, from: nil, forEvent: nil)
         
         return CurrentFirstResponder.currentFirstResponder
     }
     
     /// Resigns the current first responder, if any
     public class func resignCurrentFirstResponder() {
-        UIApplication.sharedApplication().sendAction("resignFirstResponder", to: nil, from: nil, forEvent: nil)
+        UIApplication.sharedApplication().sendAction(#selector(resignFirstResponder), to: nil, from: nil, forEvent: nil)
     }
 }
