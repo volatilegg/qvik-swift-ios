@@ -34,4 +34,3 @@ extension CGPoint {
         return CGPoint(x: (self.x + another.x) / 2, y: (self.y + another.y) / 2)
     }
 }
-

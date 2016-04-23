@@ -36,9 +36,9 @@ class UIColorExtensionsTests: XCTestCase {
     }
     
     func expectValues(color: UIColor, red: Int, green: Int, blue: Int, alpha: Int) {
-        var fRed : CGFloat = 0
-        var fGreen : CGFloat = 0
-        var fBlue : CGFloat = 0
+        var fRed: CGFloat = 0
+        var fGreen: CGFloat = 0
+        var fBlue: CGFloat = 0
         var fAlpha: CGFloat = 0
         color.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha)
         let iRed = Int(fRed * 255)

@@ -43,4 +43,3 @@ class CGPointExtensionsTests: XCTestCase {
         XCTAssert(p3.y == 556.5)
     }
 }
-

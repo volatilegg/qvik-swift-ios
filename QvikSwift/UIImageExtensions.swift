@@ -43,18 +43,18 @@ extension UIImage {
      - returns: a copy of this image with orientation setting set to 'up'.
      */
     public func imageWithNormalizedOrientation() -> UIImage {
-        if ( imageOrientation == .Up ) {
-            return self;
+        if imageOrientation == .Up {
+            return self
         }
         
-        UIGraphicsBeginImageContextWithOptions(size, false, scale);
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         drawInRect(rect)
         
         let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext();
+        UIGraphicsEndImageContext()
         
-        return normalizedImage;
+        return normalizedImage
     }
     
     /**
@@ -101,7 +101,7 @@ extension UIImage {
      */
     public func scaleTo(size size: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, imageScale)
-        self.drawInRect(CGRect(origin: CGPointZero, size: size))
+        self.drawInRect(CGRect(origin: CGPoint.zero, size: size))
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
@@ -135,8 +135,8 @@ extension UIImage {
             width = contextSize.width
             height = contextSize.width
         }
-        
-        let rect: CGRect = CGRectMake(posX, posY, width, height)
+
+        let rect = CGRect(x: posX, y: posY, width: width, height: height)
         let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
         let image: UIImage = UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
         
@@ -169,10 +169,10 @@ extension UIImage {
         }
         
         UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.mainScreen().scale)
-        let effectInContext = UIGraphicsGetCurrentContext();
-        CGContextScaleCTM(effectInContext, 1.0, -1.0);
-        CGContextTranslateCTM(effectInContext, 0, -self.size.height);
-        CGContextDrawImage(effectInContext, imageRect, self.CGImage); // this takes time
+        let effectInContext = UIGraphicsGetCurrentContext()
+        CGContextScaleCTM(effectInContext, 1.0, -1.0)
+        CGContextTranslateCTM(effectInContext, 0, -self.size.height)
+        CGContextDrawImage(effectInContext, imageRect, self.CGImage) // this takes time
         var effectInBuffer = createEffectBuffer(effectInContext!)
         
         UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.mainScreen().scale)

@@ -48,7 +48,7 @@ extension UIImage {
         let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
         
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        self.drawInRect(CGRect(origin: CGPointZero, size: size))
+        drawInRect(CGRect(origin: CGPoint.zero, size: size))
         
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -83,8 +83,8 @@ extension UIImage {
             width = contextSize.width
             height = contextSize.width
         }
-        
-        let rect: CGRect = CGRectMake(posX, posY, width, height)
+
+        let rect: CGRect = CGRect(x: posX, y: posY, width: width, height: height)
         let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
         let image: UIImage = UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
         

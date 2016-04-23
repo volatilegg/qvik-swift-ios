@@ -41,4 +41,17 @@ class DoubleExtensionsTests: XCTestCase {
             XCTAssert(x <= 1.0)
         }
     }
+
+    func testClamp() {
+        let d1 = 10.5
+        let d2 = 3.2
+        let d3 = 12355.5
+
+        let minVal = 5.45
+        let maxVal = 16.72
+
+        XCTAssert(d1.clamp(minVal, maxVal) == d1)
+        XCTAssert(d2.clamp(minVal, maxVal) == minVal)
+        XCTAssert(d3.clamp(minVal, maxVal) == maxVal)
+    }
 }

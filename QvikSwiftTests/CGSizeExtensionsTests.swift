@@ -46,4 +46,3 @@ class CGSizeExtensionsTests: XCTestCase {
         XCTAssert(abs(fittedAspect2 - aspect2) < 0.0001)
     }
 }
-   

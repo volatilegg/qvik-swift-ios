@@ -127,6 +127,3 @@ let image = UIImage(data: imageData!)
 
 let croppedImage = image!.cropImageToSquare()
 let scaledImage = image!.scaleDown(maxSize: CGSize(width: 350, height: 350))
-
-
-

@@ -69,4 +69,3 @@ class QvikButtonTests: XCTestCase {
         XCTAssert(button3.backgroundColor == green)
     }
 }
-    

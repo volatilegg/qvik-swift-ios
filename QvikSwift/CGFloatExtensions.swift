@@ -28,5 +28,15 @@ public extension CGFloat {
     public static func random() -> CGFloat {
         return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
-}
 
+    /**
+     Returns a value of this value clamped to the certain limits.
+
+     - parameter minVal: clamp min range
+     - parameter maxVal: clamp max range
+     - returns: the clamped value
+     */
+    public func clamp(minVal: CGFloat, _ maxVal: CGFloat) -> CGFloat {
+        return Swift.min(maxVal, Swift.max(minVal, self))
+    }
+}

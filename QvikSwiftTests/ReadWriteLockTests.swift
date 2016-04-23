@@ -61,4 +61,3 @@ class ReadWriteLockTests: XCTestCase {
         lock.unlock()
     }
 }
-

@@ -298,6 +298,7 @@
 			buildConfigurationList = 490C9DA51B523FB00024945B /* Build configuration list for PBXNativeTarget "QvikSwift" */;
 			buildPhases = (
 				490C9D8A1B523FB00024945B /* Sources */,
+				490CB4AF1CCB3EB000057994 /* Swiftlint */,
 				490C9D8B1B523FB00024945B /* Frameworks */,
 				490C9D8C1B523FB00024945B /* Headers */,
 				490C9D8D1B523FB00024945B /* Resources */,
@@ -382,6 +383,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		490CB4AF1CCB3EB000057994 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"error: Swiftlint not installed - see https://github.com/realm/SwiftLint\"\nexit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		490C9D8A1B523FB00024945B /* Sources */ = {

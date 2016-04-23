@@ -44,7 +44,7 @@ extension UIColor {
     - parameter hexString: the RGB or RGBA string
     */
     public convenience init(hexString: String) {
-        var hexString = hexString;
+        var hexString = hexString
         
         if hexString.hasPrefix("#") {
             hexString = hexString.substring(startIndex: 1)
