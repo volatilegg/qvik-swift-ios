@@ -19,6 +19,7 @@
 		490C9DE01B5292FC0024945B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */; };
 		490C9DE21B5294790024945B /* UIImageExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */; };
 		490C9DE31B5296F70024945B /* UIImageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */; };
+		490F55C01CD74BAB001FF657 /* UIGestureRecognizerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490F55BF1CD74BAB001FF657 /* UIGestureRecognizerExtensions.swift */; };
 		4916ED021B66138E00E6A22D /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED011B66138D00E6A22D /* UIViewExtensions.swift */; };
 		4916ED041B66163300E6A22D /* UIViewExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED031B66163300E6A22D /* UIViewExtensionsTests.swift */; };
 		4916ED051B66163B00E6A22D /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4916ED011B66138D00E6A22D /* UIViewExtensions.swift */; };
@@ -91,6 +92,7 @@
 		490C9DB01B5247020024945B /* QvikSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = QvikSwift.playground; sourceTree = "<group>"; };
 		490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensions.swift; sourceTree = "<group>"; };
 		490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtensionsTests.swift; sourceTree = "<group>"; };
+		490F55BF1CD74BAB001FF657 /* UIGestureRecognizerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGestureRecognizerExtensions.swift; sourceTree = "<group>"; };
 		4916ED011B66138D00E6A22D /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		4916ED031B66163300E6A22D /* UIViewExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensionsTests.swift; sourceTree = "<group>"; };
 		4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		499C48901BAAC51E00892142 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				490F55BF1CD74BAB001FF657 /* UIGestureRecognizerExtensions.swift */,
 				494558611C3934AA00F3E8FC /* UIResponderExtensions.swift */,
 				49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */,
 				49516BBE1C15888300C56FDC /* DoubleExtensions.swift */,
@@ -420,6 +423,7 @@
 				494558621C3934AA00F3E8FC /* UIResponderExtensions.swift in Sources */,
 				499D6F131B931C8A00E50D8D /* NSDataExtensions.swift in Sources */,
 				498770F31CBA8EED00BEC5C2 /* ParallaxView.swift in Sources */,
+				490F55C01CD74BAB001FF657 /* UIGestureRecognizerExtensions.swift in Sources */,
 				4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
 				4916ED021B66138E00E6A22D /* UIViewExtensions.swift in Sources */,
 				49CBEA171B7B892500B1819B /* CGPointExtensions.swift in Sources */,
