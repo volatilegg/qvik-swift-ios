@@ -10,6 +10,9 @@ extension CGPoint {
     }
 }
 
+let array1 = [1, 2, 3, 4]
+let value1 = array1[1..<3]
+
 extension CGRect {
     
     /**
