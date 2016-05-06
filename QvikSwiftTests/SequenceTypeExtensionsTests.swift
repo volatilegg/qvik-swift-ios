@@ -29,11 +29,11 @@ class SequenceTypeExtensionsTests: XCTestCase {
 
     func testUnique() {
         let ints = [0, 1, 2, 3, 3, 4, 2, 5, 10, 11, 5, 12, 12, 23, 15, 23]
-        let uniqueInts: [Int] = [0, 1, 2, 3, 4, 5, 10, 11, 12, 23, 15]
+        let uniqueInts = [0, 1, 2, 3, 4, 5, 10, 11, 12, 23, 15]
         XCTAssert(ints.unique() == uniqueInts)
 
         let strings = ["kalle", "palle", "jarkko", "kerkko", "kalle", "kissa", "palle", "kerkko"]
-        let uniqueStrings: [String] = ["kalle", "palle", "jarkko", "kerkko", "kissa"]
+        let uniqueStrings = ["kalle", "palle", "jarkko", "kerkko", "kissa"]
         XCTAssert(strings.unique() == uniqueStrings)
     }
 }
