@@ -21,7 +21,7 @@ import QvikSwift
 
 ## Changelog
 
-* 2.0.17 
+* 2.0.18 
     * Added UIGestureRecognizerExtensions
 * 2.0.16
     * Added ParallaxView

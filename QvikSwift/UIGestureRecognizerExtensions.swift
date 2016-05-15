@@ -23,7 +23,7 @@
 import Foundation
 
 /// Extensions to the UIGestureRecognizer class
-extension UIGestureRecognizer {
+public extension UIGestureRecognizer {
     private struct InvokeCallback {
         static var invokeCallback: Any?
     }
