@@ -42,4 +42,12 @@ class CGPointExtensionsTests: XCTestCase {
         XCTAssert(p3.x == 12.5)
         XCTAssert(p3.y == 556.5)
     }
+
+    func testDistanceTo() {
+        let p1 = CGPoint(x: 0, y: 0)
+        let p2 = CGPoint(x: 2, y: 0)
+
+        let distance = p1.distanceTo(point: p2)
+        XCTAssert(distance == 2)
+    }
 }

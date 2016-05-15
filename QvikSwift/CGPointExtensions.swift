@@ -33,4 +33,17 @@ extension CGPoint {
     public func middlePoint(another: CGPoint) -> CGPoint {
         return CGPoint(x: (self.x + another.x) / 2, y: (self.y + another.y) / 2)
     }
+
+    /**
+     Calculates the distance between this point and another.
+     
+     - parameter point: another point
+     - returns: the distance between the points
+     */
+    public func distanceTo(point point: CGPoint) -> CGFloat {
+        let dx = self.x - point.x
+        let dy = self.y - point.y
+
+        return sqrt((dx * dx) + (dy * dy))
+    }
 }
