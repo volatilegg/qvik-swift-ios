@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "QvikSwift"
-  s.version      = "2.0.16"
+  s.version      = "2.0.17"
   s.summary      = "A collection of utilities for Qvik's Swift projects."
   s.homepage     = "https://github.com/qvik/qvik-swift-ios"
   
