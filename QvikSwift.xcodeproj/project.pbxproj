@@ -190,22 +190,22 @@
 		490C9D9E1B523FB00024945B /* QvikSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				494558641C39352A00F3E8FC /* UIResponderExtensionTests.swift */,
-				49516BD01C181DFB00C56FDC /* CGSizeExtensionsTests.swift */,
-				49516BC41C15BB1100C56FDC /* IntExtensionsTests.swift */,
-				49516BCB1C15BC5400C56FDC /* CGFloatExtensionsTests.swift */,
-				49516BC91C15BC0400C56FDC /* DoubleExtensionsTests.swift */,
-				499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */,
-				49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */,
-				49CBEA1C1B7B8BDD00B1819B /* ReadWriteLockTests.swift */,
-				49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */,
-				490605D01B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift */,
-				490C9DAE1B5242230024945B /* StringExtensionsTests.swift */,
-				490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */,
-				4916ED031B66163300E6A22D /* UIViewExtensionsTests.swift */,
-				4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */,
 				49CBE9DE1B78DFA400B1819B /* ArrayExtensionsTests.swift */,
+				49516BCB1C15BC5400C56FDC /* CGFloatExtensionsTests.swift */,
+				49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */,
+				49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */,
+				49516BD01C181DFB00C56FDC /* CGSizeExtensionsTests.swift */,
+				49516BC91C15BC0400C56FDC /* DoubleExtensionsTests.swift */,
+				49516BC41C15BB1100C56FDC /* IntExtensionsTests.swift */,
+				490605D01B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift */,
+				499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */,
 				490C9DA11B523FB00024945B /* QvikSwiftTests.swift */,
+				49CBEA1C1B7B8BDD00B1819B /* ReadWriteLockTests.swift */,
+				490C9DAE1B5242230024945B /* StringExtensionsTests.swift */,
+				4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */,
+				490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */,
+				494558641C39352A00F3E8FC /* UIResponderExtensionTests.swift */,
+				4916ED031B66163300E6A22D /* UIViewExtensionsTests.swift */,
 				490C9D9F1B523FB00024945B /* Supporting Files */,
 			);
 			path = QvikSwiftTests;
@@ -230,21 +230,21 @@
 		499C48901BAAC51E00892142 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				494558611C3934AA00F3E8FC /* UIResponderExtensions.swift */,
-				49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */,
-				49516BBE1C15888300C56FDC /* DoubleExtensions.swift */,
+				49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */,
 				49516BBF1C15888300C56FDC /* CGFloatExtensions.swift */,
-				49516BC01C15888300C56FDC /* IntExtensions.swift */,
 				49CBEA161B7B892500B1819B /* CGPointExtensions.swift */,
 				49CBEA131B7B888C00B1819B /* CGRectExtensions.swift */,
+				49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */,
+				49516BBE1C15888300C56FDC /* DoubleExtensions.swift */,
+				49516BC01C15888300C56FDC /* IntExtensions.swift */,
+				49E97C871BD929D700AEEB5D /* NSBundleExtensions.swift */,
+				499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */,
 				490605CD1B70D18200C055AF /* NSDateFormatterExtensions.swift */,
 				490C9DAB1B52408E0024945B /* StringExtensions.swift */,
-				490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */,
-				4916ED011B66138D00E6A22D /* UIViewExtensions.swift */,
 				4916ED061B661AFE00E6A22D /* UIColorExtensions.swift */,
-				49CBE9DB1B78DF3B00B1819B /* ArrayExtensions.swift */,
-				499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */,
-				49E97C871BD929D700AEEB5D /* NSBundleExtensions.swift */,
+				490C9DDF1B5292FC0024945B /* UIImageExtensions.swift */,
+				494558611C3934AA00F3E8FC /* UIResponderExtensions.swift */,
+				4916ED011B66138D00E6A22D /* UIViewExtensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -252,8 +252,8 @@
 		499C48911BAAC52F00892142 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				499D6F0E1B93191E00E50D8D /* Utils.swift */,
 				49CBEA191B7B8AA200B1819B /* ReadWriteLock.swift */,
+				499D6F0E1B93191E00E50D8D /* Utils.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -262,8 +262,8 @@
 			isa = PBXGroup;
 			children = (
 				499C48941BAAC60200892142 /* QvikButton.swift */,
-				492711E11BB4530A00FC99B0 /* UnderlinedLabel.swift */,
 				49A970B81BC501CC0074B6F2 /* QvikImageView.swift */,
+				492711E11BB4530A00FC99B0 /* UnderlinedLabel.swift */,
 			);
 			name = "Custom controls";
 			sourceTree = "<group>";
