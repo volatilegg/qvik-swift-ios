@@ -34,5 +34,10 @@ class ArrayExtensionsTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-
+    
+    func testSafeIndexing() {
+        let array = [1, 2, 3]
+        XCTAssert(array[safe: 0] == Optional(1))
+        XCTAssert(array[safe: 9001] == nil)
+    }
 }
