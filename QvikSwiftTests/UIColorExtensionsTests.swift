@@ -57,8 +57,13 @@ class UIColorExtensionsTests: XCTestCase {
         expectValues(color, red: 100, green: 120, blue: 255, alpha: 127)
     }
     
-    func testHexInitializer() {
+    func testHexStringInitializer() {
         let color = UIColor(hexString: "#11223344")
         expectValues(color, red: 17, green: 34, blue: 51, alpha: 68)
+    }
+    
+    func testHexInitializer() {
+        let color = UIColor(hex: 0x112233)
+        expectValues(color, red: 0x11, green: 0x22, blue: 0x33, alpha: 0xFF)
     }
 }
