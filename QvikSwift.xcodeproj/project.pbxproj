@@ -64,6 +64,7 @@
 		49DE443B1BB5209400D36782 /* TouchDetectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE443A1BB5209400D36782 /* TouchDetectView.swift */; };
 		49E97C881BD929D700AEEB5D /* NSBundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E97C871BD929D700AEEB5D /* NSBundleExtensions.swift */; };
 		49FFA0691BBC1DAD007B5B15 /* QvikButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* QvikButton.swift */; };
+		7430945A1D117E9E00B8E637 /* IBDefinedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E300081D11407200C3D4A2 /* IBDefinedUIView.swift */; };
 		74E300091D11407200C3D4A2 /* IBDefinedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E300081D11407200C3D4A2 /* IBDefinedUIView.swift */; };
 		74E3000B1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E3000A1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift */; };
 		74E3000D1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E3000C1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib */; };
@@ -439,6 +440,7 @@
 				49516BCF1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */,
 				4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */,
 				49CBEA181B7B892500B1819B /* CGPointExtensions.swift in Sources */,
+				7430945A1D117E9E00B8E637 /* IBDefinedUIView.swift in Sources */,
 				49CBE9E01B78DFA400B1819B /* ArrayExtensionsTests.swift in Sources */,
 				49CBE9DD1B78DF3B00B1819B /* ArrayExtensions.swift in Sources */,
 				74E3000B1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift in Sources */,
