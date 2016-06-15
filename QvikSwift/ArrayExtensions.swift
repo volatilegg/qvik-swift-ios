@@ -24,6 +24,15 @@ import Foundation
 
 /// Extensions to the array class
 extension Array {
-
+    
+    /**
+     Provides an alternative method for accessing array indices, returning
+     its contents as optional values and nil if the index is invalid.
+     
+     - parameter safe: array index
+     */
+    subscript (safe index: Int) -> Element? {
+        return indices ~= index ? self[index] : nil
+    }
 }
 
