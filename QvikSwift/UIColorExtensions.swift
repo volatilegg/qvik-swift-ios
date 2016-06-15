@@ -75,4 +75,14 @@ extension UIColor {
             }
         }
     }
+    
+    /**
+     Convenience initializer for creating a UIColor from an integer value of format
+     0xRRGGBB.
+     
+     - parameter hex: the color value as integer
+     */
+    public convenience init(hex: Int) {
+        self.init(redInt: (hex >> 16) & 0xff, greenInt: (hex >> 8) & 0xff, blueInt: hex & 0xff, alpha: 1)
+    }
 }
