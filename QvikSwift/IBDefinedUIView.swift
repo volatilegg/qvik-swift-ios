@@ -21,25 +21,25 @@
 import UIKit
 
 /**
- A UIView subclass that when further subclassed, loads the contents of a xib file
- with the same name as the class.
+ A UIView subclass that when further subclassed, allows defining the custom
+ view's contents with Interface Builder, using @IBOutlets, and having those
+ definitions automatically loaded.
  
- To use this, create a class that subclasses this one, and a xib file containing
- a single top level UIView object and the corresponding class set as the File's
- Owner (NOT as the custom class for the UIView). You may then connect objects in
- the xib to class's @IBOutlets and use the class in other xib files by setting it
- as a custom class of a UIView object.
+ To use this, create a class that subclasses this one, and a xib file with
+ the same name containing a single top level UIView object and the
+ corresponding class set as the File's Owner (NOT as the custom class for
+ the UIView).
  */
 public class IBDefinedUIView: UIView {
     
-    private var view : UIView!
+    private var view: UIView!
     
     private func loadViewFromNib(name: String) {
         let bundle = NSBundle(forClass: self.dynamicType)
         let nib = UINib(nibName: name, bundle: bundle)
         
-        // Assumes UIView is top level and only object in CustomView.xib file
-        view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+        // Assumes UIView is top level and only object in the CustomView.xib file
+        view = nib.instantiateWithOwner(self, options: nil).first as! UIView
         view.frame = bounds
         
         // Make the view stretch with containing view
