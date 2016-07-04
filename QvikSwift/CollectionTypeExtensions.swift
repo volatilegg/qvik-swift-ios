@@ -21,23 +21,14 @@
 // SOFTWARE.
 
 import Foundation
-import UIKit
-import XCTest
 
-class ArrayExtensionsTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+/// Extensions to the CollectionType protocol
+extension CollectionType {
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testSafeIndexing() {
-        let array = [1, 2, 3]
-        XCTAssert(array[safe: 0] == Optional(1))
-        XCTAssert(array[safe: 9001] == nil)
+    /// Returns the element at the specified index iff it is within bounds, otherwise nil.
+    // http://stackoverflow.com/questions/25329186/safe-bounds-checked-array-lookup-in-swift-through-optional-bindings/30593673#30593673
+    subscript (safe index: Index) -> Generator.Element? {
+        return indices.contains(index) ? self[index] : nil
     }
 }
+

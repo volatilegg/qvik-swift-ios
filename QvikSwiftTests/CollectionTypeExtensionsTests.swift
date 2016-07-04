@@ -21,18 +21,26 @@
 // SOFTWARE.
 
 import Foundation
+import XCTest
 
-/// Extensions to the array class
-extension Array {
+class CollectionTypeExtensionsTests: XCTestCase {
+    override func setUp() {
+        super.setUp()
+        // Put setup code here. This method is called before the invocation of each test method in the class.
+    }
     
-    /**
-     Provides an alternative method for accessing array indices, returning
-     its contents as optional values and nil if the index is invalid.
-     
-     - parameter safe: array index
-     */
-    subscript (safe index: Int) -> Element? {
-        return indices ~= index ? self[index] : nil
+    override func tearDown() {
+        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+    }
+    
+    func testSafeIndexing() {
+        let array = [1, 2, 3]
+        XCTAssert(array[safe: 1] == Optional(2))
+        XCTAssert(array[safe: 9001] == nil)
+        
+        let range = 1...3
+        XCTAssert(range[safe: 1] == Optional(1))
+        XCTAssert(range[safe: 9001] == nil)
     }
 }
-
