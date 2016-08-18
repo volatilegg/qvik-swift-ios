@@ -21,6 +21,8 @@ import QvikSwift
 
 ## Changelog
 
+* 2.0.19 
+    * Added various utils
 * 2.0.18 
     * Added UIGestureRecognizerExtensions
 * 2.0.16
