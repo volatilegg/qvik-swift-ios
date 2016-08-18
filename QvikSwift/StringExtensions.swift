@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015 Qvik (www.qvik.fi)
+// Copyright (c) 2015-2016 Qvik (www.qvik.fi)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Foundation
+import UIKit
 
 /// Extensions to the String class.
 extension String {
@@ -142,4 +142,20 @@ extension String {
         
         return strings
     }
+
+    /**
+     Returns the bounding rectangle that drawing required for drawing this string using
+     the given font. By default the string is drawn on a single line, but it can be
+     constrained to a specific width with the optional parameter constrainedToSize.
+     
+     - parameter font: font used
+     - parameter constrainedToSize: the constraints for drawing
+     - returns: the bounding rectangle required to draw the string
+     */
+    public func boundingRectWithFont(font: UIFont, constrainedToSize size: CGSize = CGSize(width: CGFloat.max, height: CGFloat.max)) -> CGRect {
+        let attributedString = NSAttributedString(string: self, attributes: [NSFontAttributeName: font])
+        return attributedString.boundingRectWithSize(size, options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
+    }
+
 }
+

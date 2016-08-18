@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015 Qvik (www.qvik.fi)
+// Copyright (c) 2016 Qvik (www.qvik.fi)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,10 +21,9 @@
 // SOFTWARE.
 
 import Foundation
-import UIKit
 import XCTest
 
-class ArrayExtensionsTests: XCTestCase {
+class NSLayoutConstraintTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -33,5 +32,22 @@ class ArrayExtensionsTests: XCTestCase {
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+    }
+    
+    func testSimplifiedInitializer() {
+        let view = UIView(frame: CGRectZero)
+        let subview = UIView(frame: CGRectZero)
+        view.addSubview(subview)
+        
+        let constraint1 = NSLayoutConstraint(item: view, toItem: subview, attribute: .Top)
+        let constraint2 = NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: subview, attribute: .Top, multiplier: 1, constant: 0)
+
+        XCTAssert(constraint1.firstItem === constraint2.firstItem)
+        XCTAssert(constraint1.firstAttribute == constraint2.firstAttribute)
+        XCTAssert(constraint1.relation == constraint2.relation)
+        XCTAssert(constraint1.secondItem === constraint2.secondItem)
+        XCTAssert(constraint1.secondAttribute == constraint2.secondAttribute)
+        XCTAssert(constraint1.multiplier == constraint2.multiplier)
+        XCTAssert(constraint1.constant == constraint2.constant)
     }
 }
