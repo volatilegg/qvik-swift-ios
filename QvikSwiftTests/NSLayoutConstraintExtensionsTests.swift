@@ -35,8 +35,8 @@ class NSLayoutConstraintTests: XCTestCase {
     }
     
     func testSimplifiedInitializer() {
-        let view = UIView(frame: CGRectZero)
-        let subview = UIView(frame: CGRectZero)
+        let view = UIView(frame: CGRect.zero)
+        let subview = UIView(frame: CGRect.zero)
         view.addSubview(subview)
         
         let constraint1 = NSLayoutConstraint(item: view, toItem: subview, attribute: .Top)

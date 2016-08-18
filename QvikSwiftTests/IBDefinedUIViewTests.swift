@@ -51,8 +51,7 @@ class IBDefinedUIViewTests: XCTestCase {
     
     // test that initialization succeeds, an IBOutlet works, and its contents match the xib file 
     func testIBDefinedView() {
-        let testView = IBDefinedTestUIView(frame: CGRectZero)
+        let testView = IBDefinedTestUIView(frame: CGRect.zero)
         XCTAssert(testView.testLabel.text == "Test label")
     }
 }
-    
