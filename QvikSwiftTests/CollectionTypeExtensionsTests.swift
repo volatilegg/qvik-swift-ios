@@ -21,10 +21,9 @@
 // SOFTWARE.
 
 import Foundation
-import UIKit
 import XCTest
 
-class UIColorExtensionsTests: XCTestCase {
+class CollectionTypeExtensionsTests: XCTestCase {
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -35,35 +34,13 @@ class UIColorExtensionsTests: XCTestCase {
         super.tearDown()
     }
     
-    func expectValues(color: UIColor, red: Int, green: Int, blue: Int, alpha: Int) {
-        var fRed: CGFloat = 0
-        var fGreen: CGFloat = 0
-        var fBlue: CGFloat = 0
-        var fAlpha: CGFloat = 0
-        color.getRed(&fRed, green: &fGreen, blue: &fBlue, alpha: &fAlpha)
-        let iRed = Int(fRed * 255)
-        let iGreen = Int(fGreen * 255)
-        let iBlue = Int(fBlue * 255)
-        let iAlpha = Int(fAlpha * 255)
+    func testSafeIndexing() {
+        let array = [1, 2, 3]
+        XCTAssert(array[safe: 1] == Optional(2))
+        XCTAssert(array[safe: 9001] == nil)
         
-        XCTAssert(iRed == red)
-        XCTAssert(iGreen == green)
-        XCTAssert(iBlue == blue)
-        XCTAssert(iAlpha == alpha)
-    }
-    
-    func testIntInitializer() {
-        let color = UIColor(redInt: 100, greenInt: 120, blueInt: 255, alpha: 0.5)
-        expectValues(color, red: 100, green: 120, blue: 255, alpha: 127)
-    }
-    
-    func testHexStringInitializer() {
-        let color = UIColor(hexString: "#11223344")
-        expectValues(color, red: 17, green: 34, blue: 51, alpha: 68)
-    }
-    
-    func testHexInitializer() {
-        let color = UIColor(hex: 0x112233)
-        expectValues(color, red: 0x11, green: 0x22, blue: 0x33, alpha: 0xFF)
+        let range = 1...3
+        XCTAssert(range[safe: 1] == Optional(1))
+        XCTAssert(range[safe: 9001] == nil)
     }
 }

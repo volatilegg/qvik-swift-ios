@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015 Qvik (www.qvik.fi)
+// Copyright (c) 2015-2016 Qvik (www.qvik.fi)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -74,5 +74,15 @@ extension UIColor {
                 self.init(white: 1.0, alpha: 1.0)
             }
         }
+    }
+    
+    /**
+     Convenience initializer for creating a UIColor from an integer value of format
+     0xRRGGBB.
+     
+     - parameter hex: the color value as integer
+     */
+    public convenience init(hex: Int) {
+        self.init(redInt: (hex >> 16) & 0xff, greenInt: (hex >> 8) & 0xff, blueInt: hex & 0xff, alpha: 1)
     }
 }

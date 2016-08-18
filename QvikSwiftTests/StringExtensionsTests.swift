@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015 Qvik (www.qvik.fi)
+// Copyright (c) 2015-2016 Qvik (www.qvik.fi)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -99,5 +99,39 @@ class StringExtensionsTests: XCTestCase {
         XCTAssert(parts2[1] == "34")
         XCTAssert(parts2[2] == "56")
         XCTAssert(parts2[3] == "7")
+    }
+    
+    /*
+     The comparison values in testBoundingRect() are what the size of a
+     UILabel with the same values ends up being, as manually tested in
+     interface builder. The boundingRectWithFont method is expected to
+     return sizes not identical to those, but slightly smaller and very
+     close.
+    */
+    func assertRect(rect: CGRect, matchesExpectedSize size: CGSize) {
+        XCTAssert(rect.origin == CGPoint(x: 0, y: 0))
+        XCTAssert(rect.width > size.width - 1)
+        XCTAssert(rect.width <= size.width)
+        XCTAssert(rect.height > size.height - 1)
+        XCTAssert(rect.height <= size.height)
+    }
+    
+    func testBoundingRect() {
+        let str1 = "Label"
+        let font1 = UIFont(name: "HelveticaNeue", size: 17)!
+        let rect1 = str1.boundingRectWithFont(font1)
+        let size1 = CGSize(width: 42, height: 20)
+        assertRect(rect1, matchesExpectedSize: size1)
+        let str2 = "Longer string with bold font"
+        let font2 = UIFont(name: "Courier-Bold", size: 12)!
+        let rect2 = str2.boundingRectWithFont(font2)
+        let size2 = CGSize(width: 202, height: 12)
+        assertRect(rect2, matchesExpectedSize: size2)
+        let str3 = "Even longer string with size constraint breaking it to multiple lines"
+        let font3 = UIFont(name: "TimesNewRomanPS-ItalicMT", size:20)!
+        let constraint3 = CGSize(width: 120, height: CGFloat.max)
+        let rect3 = str3.boundingRectWithFont(font3, constrainedToSize: constraint3)
+        let size3 = CGSize(width: 120, height: 111)
+        assertRect(rect3, matchesExpectedSize: size3)
     }
 }
