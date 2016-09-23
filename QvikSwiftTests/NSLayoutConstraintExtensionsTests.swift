@@ -41,7 +41,7 @@ class NSLayoutConstraintTests: XCTestCase {
         
         let constraint1 = NSLayoutConstraint(item: view, toItem: subview, attribute: .Top)
         let constraint2 = NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: subview, attribute: .Top, multiplier: 1, constant: 0)
-
+        
         XCTAssert(constraint1.firstItem === constraint2.firstItem)
         XCTAssert(constraint1.firstAttribute == constraint2.firstAttribute)
         XCTAssert(constraint1.relation == constraint2.relation)
@@ -49,5 +49,16 @@ class NSLayoutConstraintTests: XCTestCase {
         XCTAssert(constraint1.secondAttribute == constraint2.secondAttribute)
         XCTAssert(constraint1.multiplier == constraint2.multiplier)
         XCTAssert(constraint1.constant == constraint2.constant)
+        
+        let constraint3 = NSLayoutConstraint(item: view, toItem: subview, attribute: .Bottom, constant: 10)
+        let constraint4 = NSLayoutConstraint(item: view, attribute: .Bottom, relatedBy: .Equal, toItem: subview, attribute: .Bottom, multiplier: 1, constant: 10)
+        
+        XCTAssert(constraint3.firstItem === constraint4.firstItem)
+        XCTAssert(constraint3.firstAttribute == constraint4.firstAttribute)
+        XCTAssert(constraint3.relation == constraint4.relation)
+        XCTAssert(constraint3.secondItem === constraint4.secondItem)
+        XCTAssert(constraint3.secondAttribute == constraint4.secondAttribute)
+        XCTAssert(constraint3.multiplier == constraint4.multiplier)
+        XCTAssert(constraint3.constant == constraint4.constant)
     }
 }
