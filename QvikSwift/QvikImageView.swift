@@ -25,15 +25,15 @@ import UIKit
 /**
 Contains utilities related to UIImageViews that require subclassing.
 */
-public class QvikImageView: UIImageView {
+open class QvikImageView: UIImageView {
     /// Callback to be called when bounds changes
-    public var boundsChangedCallback: (Void -> Void)?
+    open var boundsChangedCallback: ((Void) -> Void)?
     
     /// Callback to be called when frame changes
-    public var frameChangedCallback: (Void -> Void)?
+    open var frameChangedCallback: ((Void) -> Void)?
     
     /// Captures changes to bounds and notifies a listener (if set)
-    override public var bounds: CGRect {
+    override open var bounds: CGRect {
         didSet {
             if oldValue != bounds {
                 boundsChangedCallback?()
@@ -42,7 +42,7 @@ public class QvikImageView: UIImageView {
     }
     
     /// Captures changes to frame and notifies a listener (if set)
-    override public var frame: CGRect {
+    override open var frame: CGRect {
         didSet {
             if oldValue != frame {
                 frameChangedCallback?()

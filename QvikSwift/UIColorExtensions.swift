@@ -59,9 +59,9 @@ extension UIColor {
                 hexString = "\(hexString)FF"
             }
             
-            let scanner = NSScanner(string: hexString)
+            let scanner = Scanner(string: hexString)
             var rgbaValue: UInt32 = 0
-            if scanner.scanHexInt(&rgbaValue) {
+            if scanner.scanHexInt32(&rgbaValue) {
                 let red = (rgbaValue & 0xFF000000) >> 24
                 let green = (rgbaValue & 0x00FF0000) >> 16
                 let blue = (rgbaValue & 0x0000FF00) >> 8

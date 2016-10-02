@@ -23,18 +23,18 @@
 import Foundation
 
 // Extensions to the NSDateFormatter class
-extension NSDateFormatter {
+extension DateFormatter {
     /**
     Creates and returns a date formatter for parsing full (all components present) 
     ISO8601 dates in UTC timezone; see https://en.wikipedia.org/wiki/ISO_8601
     
     Example of such date string: 2008-05-11T15:30:00.000Z
     */
-    public class func iso8601ZFormatter() -> NSDateFormatter {
-        let formatter = NSDateFormatter()
+    public class func iso8601ZFormatter() -> DateFormatter {
+        let formatter = DateFormatter()
         formatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'"
-        formatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        formatter.timeZone = NSTimeZone(name: "UTC")
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(identifier: "UTC")
         
         return formatter
     }

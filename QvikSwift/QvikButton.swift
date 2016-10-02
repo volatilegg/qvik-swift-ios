@@ -25,23 +25,23 @@ import UIKit
 /**
  UIButton that provides several utility features.
 */
-public class QvikButton: UIButton {
+open class QvikButton: UIButton {
     /// The callback for button being pressed
-    public var pressedCallback: (Void -> Void)?
+    open var pressedCallback: ((Void) -> Void)?
     
     /// State color map (UIControlState raw value -> color map)
-    private var colorMap = [UInt: UIColor]()
+    fileprivate var colorMap = [UInt: UIColor]()
     
-    public class func button(frame frame: CGRect, type: UIButtonType = .System, pressedCallback: (Void -> Void)? = nil) -> QvikButton {
+    open class func button(frame: CGRect, type: UIButtonType = .system, pressedCallback: ((Void) -> Void)? = nil) -> QvikButton {
         let button = QvikButton(type: type)
         button.frame = frame
         button.pressedCallback = pressedCallback
-        button.addTarget(button, action: #selector(QvikButton.pressed(_:)), forControlEvents: .TouchUpInside)
+        button.addTarget(button, action: #selector(QvikButton.pressed(_:)), for: .touchUpInside)
         
         return button
     }
 
-    func pressed(sender: UIButton) {
+    func pressed(_ sender: UIButton) {
         self.pressedCallback?()
     }
     
@@ -51,7 +51,7 @@ public class QvikButton: UIButton {
     - parameter color: new background color for the control state
     - parameter state: control state to set the color for
     */
-    public func setBackgroundColor(color: UIColor, forControlState: UIControlState) {
+    open func setBackgroundColor(_ color: UIColor, forControlState: UIControlState) {
         colorMap[forControlState.rawValue] = color
         
         if state == forControlState {
@@ -61,31 +61,31 @@ public class QvikButton: UIButton {
     }
     
     // Sets the background color for the current control state, if one is defined
-    private func updateBackGroundColor() {
+    fileprivate func updateBackGroundColor() {
         if let color = colorMap[state.rawValue] {
             backgroundColor = color
-        } else if let color = colorMap[UIControlState.Normal.rawValue] {
+        } else if let color = colorMap[UIControlState().rawValue] {
             // Default to .Normal if color for current state is not set
             backgroundColor = color
         }
     }
     
     // Hooks into enabled to change background color accordingly
-    override public var enabled: Bool {
+    override open var isEnabled: Bool {
         didSet {
             updateBackGroundColor()
         }
     }
     
     // Hooks into highlighted to change background color accordingly
-    override public var highlighted: Bool {
+    override open var isHighlighted: Bool {
         didSet {
             updateBackGroundColor()
         }
     }
     
     // Hooks into selected to change background color accordingly
-    override public var selected: Bool {
+    override open var isSelected: Bool {
         didSet {
             updateBackGroundColor()
         }

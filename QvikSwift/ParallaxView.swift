@@ -23,27 +23,27 @@ import CoreMotion
 
 /// Handles reading the accelerator sensor
 private class MotionManager {
-    private let updateInterval = 0.05
+    fileprivate let updateInterval = 0.05
     
     /// Motion manager for retrieving accelerometer data
-    private let motionManager = CMMotionManager()
+    fileprivate let motionManager = CMMotionManager()
     
     /// Listeners to the accelerometer values
-    private var listeners = [ParallaxView]()
+    fileprivate var listeners = [ParallaxView]()
     
     // MARK: Private methods
     
-    private func stopMotionManager() {
-        if motionManager.deviceMotionAvailable {
+    fileprivate func stopMotionManager() {
+        if motionManager.isDeviceMotionAvailable {
             motionManager.stopDeviceMotionUpdates()
         }
     }
     
-    private func startMotionManager() {
-        if motionManager.deviceMotionAvailable && !motionManager.deviceMotionActive {
+    fileprivate func startMotionManager() {
+        if motionManager.isDeviceMotionAvailable && !motionManager.isDeviceMotionActive {
             motionManager.deviceMotionUpdateInterval = updateInterval
-            motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue()) { [weak self] (deviceMotion, error) in
-                guard let deviceMotion = deviceMotion, strongSelf = self else {
+            motionManager.startDeviceMotionUpdates(to: OperationQueue.main) { [weak self] (deviceMotion, error) in
+                guard let deviceMotion = deviceMotion, let strongSelf = self else {
                     return
                 }
 
@@ -57,8 +57,8 @@ private class MotionManager {
     // MARK: Public methods
     
     /// Adds a new accelerometer value listener
-    func addListener(view: ParallaxView) {
-        assert(NSThread.isMainThread(), "May only be called on the main thread")
+    func addListener(_ view: ParallaxView) {
+        assert(Thread.isMainThread, "May only be called on the main thread")
         
         // Dont add if its there already
         if listeners.contains(view) {
@@ -77,8 +77,8 @@ private class MotionManager {
     }
     
     /// Removes a new accelerometer value listener
-    func removeListener(view: ParallaxView) {
-        assert(NSThread.isMainThread(), "May only be called on the main thread")
+    func removeListener(_ view: ParallaxView) {
+        assert(Thread.isMainThread, "May only be called on the main thread")
 
         listeners = listeners.filter() { $0 != view }
 //        log.debug("Removed motion manager listener; now we have \(listeners.count) listeners")
@@ -111,12 +111,12 @@ private class MotionManager {
  parallaxView.parentScrollView = myOuterTableView
  ```
 */
-public class ParallaxView: UIView {
-    private static let motionManager = MotionManager()
+open class ParallaxView: UIView {
+    fileprivate static let motionManager = MotionManager()
     
     /// Scale for the content; must be larger than 1.0; eg. use 1.1 for parallax content to be 10% larger
     /// than the actual view. The larger the value, more drastic the effect. Default is 1.1.
-    public var parallaxScale: CGFloat = 1.1 {
+    open var parallaxScale: CGFloat = 1.1 {
         didSet {
             assert(parallaxScale > 1.0)
             updateTransform()
@@ -127,7 +127,7 @@ public class ParallaxView: UIView {
     /// eg. use "0.1" to provide a tilt translation of max 10%. Not set by default. Value range is [0, 1].
     ///
     /// By setting this to nil, the view stops receiving accelerometer data and can thus save battery life.
-    public var accelerometerMagnitude: CGFloat? = nil {
+    open var accelerometerMagnitude: CGFloat? = nil {
         didSet {
             if let accelerometerMagnitude = accelerometerMagnitude {
                 assert(accelerometerMagnitude >= 0)
@@ -146,10 +146,10 @@ public class ParallaxView: UIView {
     /// Set this to use any custom view as content. Clears any existing content. Defaults to nil.
     /// If this is not set (nil), the first subview will be used as the parallax view. In this case, no
     /// constraints are set programmatically and they have to be set in the IB.
-    public var parallaxContentView: UIView? {
+    open var parallaxContentView: UIView? {
         didSet {
             if let currentConstraints = currentConstraints {
-                NSLayoutConstraint.deactivateConstraints(currentConstraints)
+                NSLayoutConstraint.deactivate(currentConstraints)
                 self.currentConstraints = nil
             }
             
@@ -171,48 +171,48 @@ public class ParallaxView: UIView {
             
             addSubview(parallaxContentView)
 
-            let leftConstraint = NSLayoutConstraint(item: parallaxContentView, attribute: .Left, relatedBy: .Equal, toItem: self, attribute: .Left, multiplier: 1, constant: 0)
-            let rightConstraint = NSLayoutConstraint(item: parallaxContentView, attribute: .Right, relatedBy: .Equal, toItem: self, attribute: .Right, multiplier: 1, constant: 0)
-            let topConstraint = NSLayoutConstraint(item: parallaxContentView, attribute: .Top, relatedBy: .Equal, toItem: self, attribute: .Top, multiplier: 1, constant: 0)
-            let bottomConstraint = NSLayoutConstraint(item: parallaxContentView, attribute: .Bottom, relatedBy: .Equal, toItem: self, attribute: .Bottom, multiplier: 1, constant: 0)
+            let leftConstraint = NSLayoutConstraint(item: parallaxContentView, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: 0)
+            let rightConstraint = NSLayoutConstraint(item: parallaxContentView, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: 0)
+            let topConstraint = NSLayoutConstraint(item: parallaxContentView, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: 0)
+            let bottomConstraint = NSLayoutConstraint(item: parallaxContentView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: 0)
             
             currentConstraints = [leftConstraint, rightConstraint, topConstraint, bottomConstraint]
-            NSLayoutConstraint.activateConstraints(currentConstraints!)
+            NSLayoutConstraint.activate(currentConstraints!)
         }
     }
     
     /// The scroll view to be used as the 'parent' ie. used for the parallax effect. If not set, the parent is 
     /// searched for automatically; this will be the nearest ancestral UICollectionView, UITableView or UIScrollView.
     /// Most often it is not required to set this.
-    public var parentScrollView: UIScrollView? = nil {
+    open var parentScrollView: UIScrollView? = nil {
         didSet {
             handleViewHierarchyChange()
         }
     }
     
     /// Relative (0..1) vertical position of this view on the scrollview
-    private var relativeVerticalPosition: CGFloat = 0.5
+    fileprivate var relativeVerticalPosition: CGFloat = 0.5
     
     /// Relative (0..1) horizontal position of this view on the scrollview
-    private var relativeHorizontalPosition: CGFloat = 0.5
+    fileprivate var relativeHorizontalPosition: CGFloat = 0.5
     
     /// Layout constraints for the current content view
-    private var currentConstraints: [NSLayoutConstraint]? = nil
+    fileprivate var currentConstraints: [NSLayoutConstraint]? = nil
     
     /// Latest gravity x axis sample of accelerometer
-    private var acceleratorGravityX: CGFloat = 0
+    fileprivate var acceleratorGravityX: CGFloat = 0
     
     /// Latest gravity y axis sample of accelerometer
-    private var acceleratorGravityY: CGFloat = 0
+    fileprivate var acceleratorGravityY: CGFloat = 0
     
     /// Reference to the nearest ancestral scroll view, if any; if not part of a scrollview, this is nil
-    private var scrollView: UIScrollView? = nil
+    fileprivate var scrollView: UIScrollView? = nil
     
     // MARK: Private methods
 
     /// Enumerates through the view hierarchy from this view to its top level ancestor and 
     /// returns a view selected by the callback.
-    private func enumerateViewHierarchy(callback: (UIView -> UIScrollView?)) -> UIScrollView? {
+    fileprivate func enumerateViewHierarchy(_ callback: ((UIView) -> UIScrollView?)) -> UIScrollView? {
         var v = self.superview
         
         while v != nil {
@@ -227,7 +227,7 @@ public class ParallaxView: UIView {
     }
     
     /// Returns the UIScrollView this view is part of, if any
-    private func getScrollView() -> UIScrollView? {
+    fileprivate func getScrollView() -> UIScrollView? {
         // If explicit parent view is set, use it
         if parentScrollView != nil {
             return parentScrollView
@@ -244,7 +244,7 @@ public class ParallaxView: UIView {
                 return tableView
             }
             
-            if let scrollView = view as? UIScrollView where firstScrollView == nil {
+            if let scrollView = view as? UIScrollView, firstScrollView == nil {
                 firstScrollView = scrollView
             }
             
@@ -259,7 +259,7 @@ public class ParallaxView: UIView {
     }
     
     /// Removes the key-value observer for the current scroll view, if any
-    private func removeScrollViewObserver() {
+    fileprivate func removeScrollViewObserver() {
         if let scrollView = scrollView {
             scrollView.removeObserver(self, forKeyPath: "contentOffset", context: nil)
             self.scrollView = nil
@@ -267,9 +267,9 @@ public class ParallaxView: UIView {
     }
     
     /// Attempts to start listening to scroll events if attached to a scrollview
-    private func handleViewHierarchyChange() {
+    fileprivate func handleViewHierarchyChange() {
         // If parallax content view is not set, use the first subview as one (if any) 
-        if let firstSubview = subviews.first where parallaxContentView == nil {
+        if let firstSubview = subviews.first, parallaxContentView == nil {
             parallaxContentView = firstSubview
         }
         
@@ -280,7 +280,7 @@ public class ParallaxView: UIView {
         scrollView = getScrollView()
 
         if let scrollView = scrollView {
-            scrollView.addObserver(self, forKeyPath: "contentOffset", options: .New, context: nil)
+            scrollView.addObserver(self, forKeyPath: "contentOffset", options: .new, context: nil)
             
             // Update initial transform
             updateScrollPosition()
@@ -288,12 +288,12 @@ public class ParallaxView: UIView {
     }
 
     /// Updates the transform of the content view; this is calculated from multiple factors
-    private func updateTransform() {
+    fileprivate func updateTransform() {
         guard let parallaxContentView = parallaxContentView else {
             return
         }
         
-        let scale = CGAffineTransformMakeScale(parallaxScale, parallaxScale)
+        let scale = CGAffineTransform(scaleX: parallaxScale, y: parallaxScale)
         
         // Translate the image by the relative horizontal position on the scrollview
         let extraHorizontalSpace = (parallaxScale - 1.0) * width
@@ -310,23 +310,23 @@ public class ParallaxView: UIView {
         
 //        log.debug("transform:  x,y: \(x), \(y), view: \(unsafeAddressOf(self))")
 //        log.debug("width: \(width), height: \(height), pos: \(relativeHorizontalPosition), \(relativeVerticalPosition)")
-        let translate = CGAffineTransformMakeTranslation(x, y)
+        let translate = CGAffineTransform(translationX: x, y: y)
 
-        parallaxContentView.transform = CGAffineTransformConcat(scale, translate)
+        parallaxContentView.transform = scale.concatenating(translate)
     }
     
     /// Updates the parallax effect based on the scroll view position
-    private func updateScrollPosition() {
-        guard let _ = window, scrollView = scrollView else {
+    fileprivate func updateScrollPosition() {
+        guard let _ = window, let scrollView = scrollView else {
             // If the view is not part of a window / view hierarchy under a scrollview, do nothing
             return
         }
         
         // Figure out my frame on the scrollview
-        var myFrame = superview!.convertRect(frame, toView: scrollView)
+        var myFrame = superview!.convert(frame, to: scrollView)
         
         if let collectionView = scrollView as? UICollectionView,
-            layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout where layout.scrollDirection == .Horizontal {
+            let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout, layout.scrollDirection == .horizontal {
                 // Horizontal scrolling within a collection view
                 myFrame.origin.x -= collectionView.contentOffset.x
                 let rangeWidth = collectionView.width + myFrame.width
@@ -348,19 +348,19 @@ public class ParallaxView: UIView {
         updateTransform()
     }
     
-    private func commonInit() {
+    fileprivate func commonInit() {
         clipsToBounds = true
     }
     
     // MARK: From NSKeyValueObserving
     
-    override public func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
+    override open func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         updateScrollPosition()
     }
     
     // MARK: From UIView
     
-    override public func didMoveToWindow() {
+    override open func didMoveToWindow() {
         if window != nil {
             // Moved to view hierarchy; re-enable accelerometer listening if is it enabled
             if let _ = accelerometerMagnitude {
@@ -374,13 +374,13 @@ public class ParallaxView: UIView {
         handleViewHierarchyChange()
     }
     
-    override public func didMoveToSuperview() {
+    override open func didMoveToSuperview() {
         handleViewHierarchyChange()
     }
     
     // MARK: 'Internal' methods
     
-    func accelerometerGravityValue(x x: CGFloat, y: CGFloat, update: Bool) {
+    func accelerometerGravityValue(x: CGFloat, y: CGFloat, update: Bool) {
         acceleratorGravityX = x
         acceleratorGravityY = y
         
@@ -391,7 +391,7 @@ public class ParallaxView: UIView {
     
     // MARK: Lifecycle etc
     
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         
         updateScrollPosition()

@@ -38,18 +38,18 @@ self?.hideSomethingAndDisposeOfDimmerView()
 window!.addSubview(dimmerView!)
 ```
 */
-public class TouchDetectView: UIView {
+open class TouchDetectView: UIView {
     /// Called when this view was touched.
-    public var touchedCallback: (Void -> Void)?
+    open var touchedCallback: ((Void) -> Void)?
     
     func tapped() {
         touchedCallback?()
     }
     
-    private func commonInit() {
+    fileprivate func commonInit() {
         alpha = 0.5
-        backgroundColor = UIColor.blackColor()
-        userInteractionEnabled = true
+        backgroundColor = UIColor.black
+        isUserInteractionEnabled = true
         
         // Add tap recognizer for the image
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapped))

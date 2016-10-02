@@ -23,18 +23,19 @@
 import Foundation
 
 // Extensions to the NSData class
-extension NSData {
+extension Data {
     /**
     Returns a hex string of the bytes of this data, each byte zero-padded to be represented by
     two hex characters.
     
     :return: hex string of this data's bytes
     */
-    public func hexString() -> String {
-        var string = String()
-        for i in UnsafeBufferPointer<UInt8>(start: UnsafeMutablePointer<UInt8>(bytes), count: length) {
-            string += String(format:"%02x", i)
-        }
-        return string
-    }
+//    public func hexString() -> String {
+//        var string = String()
+////        for i in UnsafeBufferPointer<UInt8>(start: UnsafeMutablePointer<UInt8>(bytes), count: count) {
+////            string += String(format:"%02x", i)
+////        }
+//
+//        return string
+//    }
 }

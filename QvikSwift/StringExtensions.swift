@@ -39,7 +39,7 @@ extension String {
      - returns: a new string with all the newline/whitespace characters removed from the ends of the original string
      */
     public func trim() -> String {
-        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
     }
 
     /**
@@ -49,7 +49,7 @@ extension String {
     */
     public var urlEncoded: String? {
         get {
-            return self.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
+            return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         }
     }
 
@@ -59,8 +59,8 @@ extension String {
     - parameter separator: string to split the original string by
     - returns: the original string split into parts
     */
-    public func split(separator: String) -> [String] {
-        return componentsSeparatedByString(separator)
+    public func split(_ separator: String) -> [String] {
+        return components(separatedBy: separator)
     }
     
     /**
@@ -69,8 +69,8 @@ extension String {
     - parameter s: substring to check for
     - returns: true if this string contained the given substring, false otherwise.
     */
-    public func contains(s: String) -> Bool {
-        return (self.rangeOfString(s) != nil)
+    public func contains(_ s: String) -> Bool {
+        return (self.range(of: s) != nil)
     }
     
     /**
@@ -80,9 +80,9 @@ extension String {
     - parameter length: number of characters to include in the substring
     - returns: the substring
     */
-    public func substring(startIndex startIndex: Int, length: Int) -> String {
-        let start = self.startIndex.advancedBy(startIndex)
-        let end = self.startIndex.advancedBy(startIndex + length)
+    public func substring(startIndex: Int, length: Int) -> String {
+        let start = self.characters.index(self.startIndex, offsetBy: startIndex)
+        let end = self.characters.index(self.startIndex, offsetBy: startIndex + length)
         
         return self[start..<end]
     }
@@ -93,8 +93,8 @@ extension String {
     - parameter startIndex: index of the first character to include in the substring
     - returns: the substring from startIndex to the end of this string
     */
-    public func substring(startIndex startIndex: Int) -> String {
-        let start = self.startIndex.advancedBy(startIndex)
+    public func substring(startIndex: Int) -> String {
+        let start = self.characters.index(self.startIndex, offsetBy: startIndex)
         return self[start..<self.endIndex]
     }
 
@@ -105,7 +105,7 @@ extension String {
      - returns: i:th character in the string
      */
     subscript (i: Int) -> Character {
-        return self[self.startIndex.advancedBy(i)]
+        return self[self.characters.index(self.startIndex, offsetBy: i)]
     }
 
     /**
@@ -115,8 +115,8 @@ extension String {
      - returns: substring matching the range r
      */
     subscript (r: Range<Int>) -> String {
-        let start = startIndex.advancedBy(r.startIndex)
-        let end = start.advancedBy(r.endIndex - r.startIndex)
+        let start = characters.index(startIndex, offsetBy: r.lowerBound)
+        let end = characters.index(start, offsetBy: r.upperBound - r.lowerBound)
         
         return self[Range(start ..< end)]
     }
@@ -128,7 +128,7 @@ extension String {
     - parameter length: (max) length of each substring
     - returns: the substrings array
     */
-    public func splitEqually(length length: Int) -> [String] {
+    public func splitEqually(length: Int) -> [String] {
         var index = 0
         let len = self.length
         var strings: [String] = []
@@ -152,9 +152,9 @@ extension String {
      - parameter constrainedToSize: the constraints for drawing
      - returns: the bounding rectangle required to draw the string
      */
-    public func boundingRectWithFont(font: UIFont, constrainedToSize size: CGSize = CGSize(width: CGFloat.max, height: CGFloat.max)) -> CGRect {
+    public func boundingRectWithFont(_ font: UIFont, constrainedToSize size: CGSize = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)) -> CGRect {
         let attributedString = NSAttributedString(string: self, attributes: [NSFontAttributeName: font])
-        return attributedString.boundingRectWithSize(size, options: NSStringDrawingOptions.UsesLineFragmentOrigin, context: nil)
+        return attributedString.boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
     }
 
 }

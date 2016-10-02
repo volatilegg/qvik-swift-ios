@@ -76,6 +76,8 @@
 		74E300091D11407200C3D4A2 /* IBDefinedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E300081D11407200C3D4A2 /* IBDefinedUIView.swift */; };
 		74E3000B1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E3000A1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift */; };
 		74E3000D1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E3000C1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib */; };
+		D054AB0E29545B5823BC1383 /* Pods_QvikSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1840F3C66B3216950AA81EF6 /* Pods_QvikSwift.framework */; };
+		D645B93F6FB7BE2DA46E100F /* Pods_QvikSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31A2B317E95E84600DFB225A /* Pods_QvikSwiftTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1840F3C66B3216950AA81EF6 /* Pods_QvikSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QvikSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		31A2B317E95E84600DFB225A /* Pods_QvikSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QvikSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490605CD1B70D18200C055AF /* NSDateFormatterExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateFormatterExtensions.swift; sourceTree = "<group>"; };
 		490605D01B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateFormatterExtensionsTests.swift; sourceTree = "<group>"; };
 		490C9D8F1B523FB00024945B /* QvikSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QvikSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,11 +143,15 @@
 		49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensionsTests.swift; sourceTree = "<group>"; };
 		49DE443A1BB5209400D36782 /* TouchDetectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchDetectView.swift; sourceTree = "<group>"; };
 		49E97C871BD929D700AEEB5D /* NSBundleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundleExtensions.swift; sourceTree = "<group>"; };
+		6AA352E3F4142408C1B1F378 /* Pods-QvikSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QvikSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-QvikSwift/Pods-QvikSwift.release.xcconfig"; sourceTree = "<group>"; };
 		7430945B1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensions.swift; sourceTree = "<group>"; };
 		7430945E1D117FC800B8E637 /* NSLayoutConstraintExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensionsTests.swift; sourceTree = "<group>"; };
 		74E300081D11407200C3D4A2 /* IBDefinedUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDefinedUIView.swift; sourceTree = "<group>"; };
 		74E3000A1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDefinedUIViewTests.swift; sourceTree = "<group>"; };
 		74E3000C1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IBDefinedTestUIView.xib; sourceTree = "<group>"; };
+		7FEB4343640D3C6D682CB554 /* Pods-QvikSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QvikSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QvikSwift/Pods-QvikSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		81C0E98C1AC51BF1FDE7951B /* Pods-QvikSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QvikSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QvikSwiftTests/Pods-QvikSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		91855D6F393486323C6BCB2A /* Pods-QvikSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QvikSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QvikSwiftTests/Pods-QvikSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D054AB0E29545B5823BC1383 /* Pods_QvikSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,12 +168,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				490C9D9B1B523FB00024945B /* QvikSwift.framework in Frameworks */,
+				D645B93F6FB7BE2DA46E100F /* Pods_QvikSwiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		193C6CE9D316F3FBE66D6AF9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FEB4343640D3C6D682CB554 /* Pods-QvikSwift.debug.xcconfig */,
+				6AA352E3F4142408C1B1F378 /* Pods-QvikSwift.release.xcconfig */,
+				81C0E98C1AC51BF1FDE7951B /* Pods-QvikSwiftTests.debug.xcconfig */,
+				91855D6F393486323C6BCB2A /* Pods-QvikSwiftTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		490C9D851B523FB00024945B = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +195,7 @@
 				490C9D9E1B523FB00024945B /* QvikSwiftTests */,
 				495E95161B9594BE006EEFC6 /* Frameworks */,
 				490C9D901B523FB00024945B /* Products */,
+				193C6CE9D316F3FBE66D6AF9 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,6 +270,8 @@
 			isa = PBXGroup;
 			children = (
 				495E95101B958FFE006EEFC6 /* libcommonCrypto.dylib */,
+				1840F3C66B3216950AA81EF6 /* Pods_QvikSwift.framework */,
+				31A2B317E95E84600DFB225A /* Pods_QvikSwiftTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -324,11 +348,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 490C9DA51B523FB00024945B /* Build configuration list for PBXNativeTarget "QvikSwift" */;
 			buildPhases = (
+				6774BCC2E4E759B89BC6654E /* [CP] Check Pods Manifest.lock */,
 				490C9D8A1B523FB00024945B /* Sources */,
 				490CB4AF1CCB3EB000057994 /* Swiftlint */,
 				490C9D8B1B523FB00024945B /* Frameworks */,
 				490C9D8C1B523FB00024945B /* Headers */,
 				490C9D8D1B523FB00024945B /* Resources */,
+				970E9A976A4F6BF494B3DD6E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -343,9 +369,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 490C9DA81B523FB00024945B /* Build configuration list for PBXNativeTarget "QvikSwiftTests" */;
 			buildPhases = (
+				E2A1920BB9BD027E2E692203 /* [CP] Check Pods Manifest.lock */,
 				490C9D961B523FB00024945B /* Sources */,
 				490C9D971B523FB00024945B /* Frameworks */,
 				490C9D981B523FB00024945B /* Resources */,
+				92E1255733A95F2F4B1AB470 /* [CP] Embed Pods Frameworks */,
+				9B0A39041178A228EE56B922 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -370,9 +399,12 @@
 				TargetAttributes = {
 					490C9D8E1B523FB00024945B = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 7UZ338E9K2;
+						LastSwiftMigration = 0800;
 					};
 					490C9D991B523FB00024945B = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -426,6 +458,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"error: Swiftlint not installed - see https://github.com/realm/SwiftLint\"\nexit 1\nfi\n";
+		};
+		6774BCC2E4E759B89BC6654E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		92E1255733A95F2F4B1AB470 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QvikSwiftTests/Pods-QvikSwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		970E9A976A4F6BF494B3DD6E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QvikSwift/Pods-QvikSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B0A39041178A228EE56B922 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QvikSwiftTests/Pods-QvikSwiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2A1920BB9BD027E2E692203 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -617,16 +724,19 @@
 		};
 		490C9DA61B523FB00024945B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FEB4343640D3C6D682CB554 /* Pods-QvikSwift.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7UZ338E9K2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = QvikSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -637,21 +747,24 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		490C9DA71B523FB00024945B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AA352E3F4142408C1B1F378 /* Pods-QvikSwift.release.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7UZ338E9K2;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = QvikSwift/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -661,11 +774,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		490C9DA91B523FB00024945B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 81C0E98C1AC51BF1FDE7951B /* Pods-QvikSwiftTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -680,11 +795,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fi.qvik.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CommonCrypto/";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		490C9DAA1B523FB00024945B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91855D6F393486323C6BCB2A /* Pods-QvikSwiftTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -695,6 +812,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fi.qvik.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CommonCrypto/";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
