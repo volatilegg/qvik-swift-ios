@@ -30,12 +30,7 @@ extension Data {
     
     :return: hex string of this data's bytes
     */
-//    public func hexString() -> String {
-//        var string = String()
-////        for i in UnsafeBufferPointer<UInt8>(start: UnsafeMutablePointer<UInt8>(bytes), count: count) {
-////            string += String(format:"%02x", i)
-////        }
-//
-//        return string
-//    }
+    public func hexString() -> String {
+        return self.map { String(format: "%02x", $0) }.joined()
+    }
 }
