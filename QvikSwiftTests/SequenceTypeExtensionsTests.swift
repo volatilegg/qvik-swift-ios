@@ -10,9 +10,9 @@ import UIKit
 import XCTest
 
 class SequenceTypeExtensionsTests: XCTestCase {
-    private let window = UIWindow()
-    private let viewController = UIViewController()
-    private let textView = UITextView()
+    fileprivate let window = UIWindow()
+    fileprivate let viewController = UIViewController()
+    fileprivate let textView = UITextView()
 
     override func setUp() {
         super.setUp()

@@ -30,32 +30,32 @@ import UIKit
  corresponding class set as the File's Owner (NOT as the custom class for
  the UIView).
  */
-public class IBDefinedUIView: UIView {
+open class IBDefinedUIView: UIView {
     
-    private var view: UIView!
+    fileprivate var view: UIView!
     
-    private func loadViewFromNib(name: String) {
-        let bundle = NSBundle(forClass: self.dynamicType)
+    fileprivate func loadViewFromNib(_ name: String) {
+        let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: name, bundle: bundle)
         
         // Assumes UIView is top level and only object in the CustomView.xib file
-        view = nib.instantiateWithOwner(self, options: nil).first as! UIView
+        view = nib.instantiate(withOwner: self, options: nil).first as! UIView
         view.frame = bounds
         
         // Make the view stretch with containing view
-        view.autoresizingMask = [UIViewAutoresizing.FlexibleWidth, UIViewAutoresizing.FlexibleHeight]
+        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
         
         addSubview(view)
     }
     
     required override public init(frame: CGRect) {
         super.init(frame: frame)
-        loadViewFromNib(String(self.dynamicType))
+        loadViewFromNib(String(describing: type(of: self)))
     }
     
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        loadViewFromNib(String(self.dynamicType))
+        loadViewFromNib(String(describing: type(of: self)))
     }
     
 }

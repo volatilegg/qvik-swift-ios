@@ -39,8 +39,8 @@ class NSLayoutConstraintTests: XCTestCase {
         let subview = UIView(frame: CGRect.zero)
         view.addSubview(subview)
         
-        let constraint1 = NSLayoutConstraint(item: view, toItem: subview, attribute: .Top)
-        let constraint2 = NSLayoutConstraint(item: view, attribute: .Top, relatedBy: .Equal, toItem: subview, attribute: .Top, multiplier: 1, constant: 0)
+        let constraint1 = NSLayoutConstraint(item: view, toItem: subview, attribute: .top)
+        let constraint2 = NSLayoutConstraint(item: view, attribute: .top, relatedBy: .equal, toItem: subview, attribute: .top, multiplier: 1, constant: 0)
 
         XCTAssert(constraint1.firstItem === constraint2.firstItem)
         XCTAssert(constraint1.firstAttribute == constraint2.firstAttribute)

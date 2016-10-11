@@ -41,6 +41,6 @@ public extension CGSize {
         let yratio = maxSize.height / self.height
         let ratio = min(xratio, yratio)
         
-        return CGSizeApplyAffineTransform(self, CGAffineTransformMakeScale(ratio, ratio))
+        return self.applying(CGAffineTransform(scaleX: ratio, y: ratio))
     }
 }

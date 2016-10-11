@@ -36,7 +36,7 @@ public extension CGFloat {
      - parameter maxVal: clamp max range
      - returns: the clamped value
      */
-    public func clamp(minVal: CGFloat, _ maxVal: CGFloat) -> CGFloat {
+    public func clamp(_ minVal: CGFloat, _ maxVal: CGFloat) -> CGFloat {
         return Swift.min(maxVal, Swift.max(minVal, self))
     }
 }

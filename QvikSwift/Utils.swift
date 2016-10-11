@@ -27,8 +27,8 @@ import Foundation
  
  - parameter task: Task to be executed
 */
-public func runInBackground(task: (Void -> Void)) {
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0), task)
+public func runInBackground(_ task: @escaping ((Void) -> Void)) {
+    DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async(execute: task)
 }
 
 /**
@@ -37,12 +37,12 @@ public func runInBackground(task: (Void -> Void)) {
  
  - parameter task: Task to be executed
 */
-public func runOnMainThread(task: (Void -> Void)) {
-    if NSThread.isMainThread() {
+public func runOnMainThread(_ task: @escaping ((Void) -> Void)) {
+    if Thread.isMainThread {
         // Already on main UI thread - call directly
         task()
     } else {
-        dispatch_async(dispatch_get_main_queue(), task)
+        DispatchQueue.main.async(execute: task)
     }
 }
 
@@ -52,6 +52,6 @@ public func runOnMainThread(task: (Void -> Void)) {
  - parameter delay: Delay in seconds
  - parameter task: Task to be executed
 */
-public func runOnMainThreadAfter(delay delay: NSTimeInterval, task: (Void -> Void)) {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(delay * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), task)
+public func runOnMainThreadAfter(delay: TimeInterval, task: @escaping ((Void) -> Void)) {
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: task)
 }

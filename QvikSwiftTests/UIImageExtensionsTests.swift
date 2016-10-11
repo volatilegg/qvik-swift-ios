@@ -25,8 +25,8 @@ import UIKit
 import XCTest
 
 class UIImageExtensionsTests: XCTestCase {
-    private let imageWidth = 400
-    private let imageHeight = 300
+    fileprivate let imageWidth = 400
+    fileprivate let imageHeight = 300
     
     override func setUp() {
         super.setUp()
@@ -43,7 +43,7 @@ class UIImageExtensionsTests: XCTestCase {
         let blankImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return blankImage
+        return blankImage!
     }
     
     func testImageWithNormalizedOrientation() {
@@ -52,7 +52,7 @@ class UIImageExtensionsTests: XCTestCase {
         
         XCTAssert(image.width == normalized.width)
         XCTAssert(image.height == normalized.height)
-        XCTAssert(normalized.imageOrientation == .Up)
+        XCTAssert(normalized.imageOrientation == .up)
     }
     
     func testScaleDown() {
@@ -95,7 +95,7 @@ class UIImageExtensionsTests: XCTestCase {
     
     func testBlur() {
         let image = createImage()
-        let blurred = image.blur(radius: 5.0, algorithm: .TentConvolve)
+        let blurred = image.blur(radius: 5.0, algorithm: .tentConvolve)
         XCTAssert(image.width == blurred.width)
         XCTAssert(image.height == blurred.height)
     }

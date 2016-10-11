@@ -22,7 +22,7 @@
 
 import Foundation
 
-extension NSBundle {
+public extension Bundle {
     public var versionNumber: String? {
         return self.infoDictionary?["CFBundleShortVersionString"] as? String
     }

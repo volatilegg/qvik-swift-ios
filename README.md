@@ -21,6 +21,8 @@ import QvikSwift
 
 ## Changelog
 
+* 3.0.0
+    * Converted to Swift3
 * 2.0.19 
     * Added various utils
 * 2.0.18 

@@ -23,11 +23,10 @@
 import Foundation
 
 /// Extensions to the CollectionType protocol
-public extension CollectionType {
+public extension Collection {
     
     /// Returns the element at the specified index iff it is within bounds, otherwise nil.
-    // http://stackoverflow.com/questions/25329186/safe-bounds-checked-array-lookup-in-swift-through-optional-bindings/30593673#30593673
-    subscript (safe index: Index) -> Generator.Element? {
-        return indices.contains(index) ? self[index] : nil
+    subscript (safe index: Index) -> Iterator.Element? {
+        return index >= startIndex && index < endIndex ? self[index] : nil
     }
 }

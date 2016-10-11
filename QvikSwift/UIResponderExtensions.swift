@@ -24,7 +24,7 @@ import UIKit
 
 /// Extensions to the UIResponder class
 public extension UIResponder {
-    private struct CurrentFirstResponder {
+    fileprivate struct CurrentFirstResponder {
         static var currentFirstResponder: UIResponder?
     }
     
@@ -41,13 +41,13 @@ public extension UIResponder {
         CurrentFirstResponder.currentFirstResponder = nil
         
         // Sends a message (any message) to the responder chain; the first responder to get it is the First Responder
-        UIApplication.sharedApplication().sendAction(#selector(findFirstResponder), to: nil, from: nil, forEvent: nil)
+        UIApplication.shared.sendAction(#selector(findFirstResponder), to: nil, from: nil, for: nil)
         
         return CurrentFirstResponder.currentFirstResponder
     }
     
     /// Resigns the current first responder, if any
     public class func resignCurrentFirstResponder() {
-        UIApplication.sharedApplication().sendAction(#selector(resignFirstResponder), to: nil, from: nil, forEvent: nil)
+        UIApplication.shared.sendAction(#selector(resignFirstResponder), to: nil, from: nil, for: nil)
     }
 }

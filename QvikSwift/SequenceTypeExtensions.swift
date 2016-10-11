@@ -22,17 +22,17 @@
 
 import Foundation
 
-public extension SequenceType {
+public extension Sequence {
 }
 
-public extension SequenceType where Generator.Element: Hashable {
+public extension Sequence where Iterator.Element: Hashable {
     /**
      Returns a unique set of values from the array, preserving order. Runs in O(N) complexity.
 
      - returns: array containing unique set of values from this sequence
      */
-    public func unique() -> [Self.Generator.Element] {
-        var valueSet = Set<Generator.Element>()
+    public func unique() -> [Self.Iterator.Element] {
+        var valueSet = Set<Iterator.Element>()
         return filter {
             if !valueSet.contains($0) {
                 valueSet.insert($0)

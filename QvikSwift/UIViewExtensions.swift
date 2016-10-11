@@ -23,7 +23,7 @@
 import UIKit
 
 /// Extensions to the UIView class
-extension UIView {
+public extension UIView {
     /// Provides an IB-configurable mechanism to set corner radius
     @IBInspectable
     public var cornerRadius: CGFloat {
@@ -41,13 +41,13 @@ extension UIView {
     public var borderColor: UIColor? {
         get {
             if let borderColor = layer.borderColor {
-                return UIColor(CGColor: borderColor)
+                return UIColor(cgColor: borderColor)
             } else {
                 return nil
             }
         }
         set {
-            layer.borderColor = newValue?.CGColor
+            layer.borderColor = newValue?.cgColor
         }
     }
     
@@ -69,17 +69,17 @@ extension UIView {
      - parameter scale: scale of the snapshot taken; default is 0.0 (matches main device screen)
      - returns: the captured image
      */
-    public func snapshot(opaque opaque: Bool = false, scale: CGFloat = 0.0) -> UIImage {
+    public func snapshot(opaque: Bool = false, scale: CGFloat = 0.0) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(bounds.size, opaque, scale)
-        layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return image
+        return image!
     }
     
     // DEPRECATED and will be removed in a future release.
-    @available(*, deprecated, message="use snapshot() instead")
+    @available(*, deprecated, message: "use snapshot() instead")
     public func screenshot() -> UIImage {
         return snapshot()
     }

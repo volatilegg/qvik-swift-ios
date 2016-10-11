@@ -35,7 +35,7 @@ class UIColorExtensionsTests: XCTestCase {
         super.tearDown()
     }
     
-    func expectValues(color: UIColor, red: Int, green: Int, blue: Int, alpha: Int) {
+    func expectValues(_ color: UIColor, red: Int, green: Int, blue: Int, alpha: Int) {
         var fRed: CGFloat = 0
         var fGreen: CGFloat = 0
         var fBlue: CGFloat = 0

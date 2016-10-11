@@ -35,14 +35,14 @@ class NSDateFormatterExtensionsTests: XCTestCase {
     }
     
     func testParser() {
-        let f = NSDateFormatter.iso8601ZFormatter()
-        let date = f.dateFromString("2008-05-11T15:30:02.123Z")
-        let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-        calendar!.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        calendar!.timeZone = NSTimeZone(name: "UTC")!
-        let c = calendar!.components([.Year, .Month, .Day, .Hour, .Minute, .Second, .Nanosecond], fromDate: date!)
-        
-        let millis = round(Double(c.nanosecond) / 1000000.0)
+        let f = DateFormatter.iso8601ZFormatter()
+        let date = f.date(from: "2008-05-11T15:30:02.123Z")
+        var calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        calendar.locale = Locale(identifier: "en_US_POSIX")
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        let c = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second, .nanosecond], from: date!)
+
+        let millis = round(Double(c.nanosecond!) / 1000000.0)
         
         XCTAssert(c.year == 2008)
         XCTAssert(c.month == 5)
@@ -54,20 +54,20 @@ class NSDateFormatterExtensionsTests: XCTestCase {
     }
     
     func testRender() {
-        let f = NSDateFormatter.iso8601ZFormatter()
-        let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-        calendar!.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        calendar!.timeZone = NSTimeZone(name: "UTC")!
+        let f = DateFormatter.iso8601ZFormatter()
+        var calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        calendar.locale = Locale(identifier: "en_US_POSIX")
+        calendar.timeZone = TimeZone(identifier: "UTC")!
 
-        let c = NSDateComponents()
+        var c = DateComponents()
         c.year = 2011
         c.month = 10
         c.day = 12
         c.hour = 19
         c.minute = 26
         c.second = 45
-        let date = calendar!.dateFromComponents(c)
-        let s = f.stringFromDate(date!)
+        let date = calendar.date(from: c)
+        let s = f.string(from: date!)
         XCTAssert(s == "2011-10-12T19:26:45.000Z")
     }
 }

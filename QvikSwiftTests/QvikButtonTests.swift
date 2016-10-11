@@ -35,37 +35,37 @@ class QvikButtonTests: XCTestCase {
     }
     
     func testBackgroundColor() {
-        let clear = UIColor.clearColor()
-        let blue = UIColor.blueColor()
-        let red = UIColor.redColor()
-        let green = UIColor.greenColor()
+        let clear = UIColor.clear
+        let blue = UIColor.blue
+        let red = UIColor.red
+        let green = UIColor.green
 
         // Test setting .Normal state (current) bg color
-        let button1 = QvikButton(type: .System)
-        button1.setBackgroundColor(blue, forControlState: .Normal)
-        XCTAssert(button1.state == .Normal)
+        let button1 = QvikButton(type: .system)
+        button1.setBackgroundColor(blue, forControlState: UIControlState())
+        XCTAssert(button1.state == UIControlState())
         XCTAssert(button1.backgroundColor == blue)
         
         // Test .Normal feedback in case of missing state color
-        let button2 = QvikButton(type: .System)
-        button2.setBackgroundColor(blue, forControlState: .Normal)
-        button2.selected = true
+        let button2 = QvikButton(type: .system)
+        button2.setBackgroundColor(blue, forControlState: UIControlState())
+        button2.isSelected = true
         XCTAssert(button2.backgroundColor == blue)
         
         // Test that bg color changes when state changes
-        let button3 = QvikButton(type: .System)
-        button3.setBackgroundColor(clear, forControlState: .Normal)
-        button3.setBackgroundColor(blue, forControlState: .Disabled)
-        button3.setBackgroundColor(red, forControlState: .Highlighted)
-        button3.setBackgroundColor(green, forControlState: .Selected)
-        button3.enabled = false
+        let button3 = QvikButton(type: .system)
+        button3.setBackgroundColor(clear, forControlState: UIControlState())
+        button3.setBackgroundColor(blue, forControlState: .disabled)
+        button3.setBackgroundColor(red, forControlState: .highlighted)
+        button3.setBackgroundColor(green, forControlState: .selected)
+        button3.isEnabled = false
         XCTAssert(button3.backgroundColor == blue)
-        button3.enabled = true
+        button3.isEnabled = true
         XCTAssert(button3.backgroundColor == clear)
-        button3.highlighted = true
+        button3.isHighlighted = true
         XCTAssert(button3.backgroundColor == red)
-        button3.highlighted = false
-        button3.selected = true
+        button3.isHighlighted = false
+        button3.isSelected = true
         XCTAssert(button3.backgroundColor == green)
     }
 }

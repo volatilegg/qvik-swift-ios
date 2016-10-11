@@ -24,14 +24,14 @@ import Foundation
 
 /// Extensions to the UIGestureRecognizer class
 public extension UIGestureRecognizer {
-    private struct InvokeCallback {
+    fileprivate struct InvokeCallback {
         static var invokeCallback: Any?
     }
 
-    @objc private func invokeCallback(recognizer: UIGestureRecognizer) {
-        if let callbackWithRecognizer = InvokeCallback.invokeCallback as? (UIGestureRecognizer -> Void) {
+    @objc fileprivate func invokeCallback(_ recognizer: UIGestureRecognizer) {
+        if let callbackWithRecognizer = InvokeCallback.invokeCallback as? ((UIGestureRecognizer) -> Void) {
             callbackWithRecognizer(recognizer)
-        } else if let callback = InvokeCallback.invokeCallback as? (Void -> Void) {
+        } else if let callback = InvokeCallback.invokeCallback as? ((Void) -> Void) {
             callback()
         }
     }
@@ -42,7 +42,7 @@ public extension UIGestureRecognizer {
 
      - parameter callbackWithRecognizer: the callback closure that is called when a gesture is recognized.
      */
-    convenience init(callbackWithRecognizer: (UIGestureRecognizer -> Void)) {
+    convenience init(callbackWithRecognizer: @escaping ((UIGestureRecognizer) -> Void)) {
         self.init()
 
         InvokeCallback.invokeCallback = callbackWithRecognizer
@@ -55,7 +55,7 @@ public extension UIGestureRecognizer {
 
      - parameter callback: the callback closure that is called when a gesture is recognized.
      */
-    convenience init(callback: (Void -> Void)) {
+    convenience init(callback: @escaping ((Void) -> Void)) {
         self.init()
 
         InvokeCallback.invokeCallback = callback

@@ -17,8 +17,8 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "QvikSwift"
-  s.version      = "2.0.19"
-  s.summary      = "A collection of utilities for Qvik's Swift projects."
+  s.version      = "3.0.0"
+  s.summary      = "A collection of utilities for Qvik's Swift3 projects."
   s.homepage     = "https://github.com/qvik/qvik-swift-ios"
   
   # ―――  Spec License  ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -41,10 +41,8 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "Matti Dahlbom" => "matti.dahlbom@qvik.fi" }
-  # Or just: s.author    = "Matti Dahlbom"
-  # s.authors            = { "Matti Dahlbom" => "matti.dahlbom@qvik.fi" }
-  # s.social_media_url   = "http://twitter.com/Matti Dahlbom"
+  s.authors            = { "Matti Dahlbom" => "matti.dahlbom@qvik.fi",
+                           "Kosti Jokinen" => "kosti.jokinen@qvik.fi" }
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
@@ -62,7 +60,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/qvik/qvik-swift-ios.git", :tag => "#{s.version}" }
+  s.source = { :git => "https://github.com/qvik/qvik-swift-ios.git", :tag => "#{s.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #

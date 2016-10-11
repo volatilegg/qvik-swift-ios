@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		490605CE1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490605CD1B70D18200C055AF /* NSDateFormatterExtensions.swift */; };
-		490605CF1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490605CD1B70D18200C055AF /* NSDateFormatterExtensions.swift */; };
-		490605D21B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490605D01B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift */; };
+		04244098871DBC680A1B354C /* Pods_QvikSwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B3A14866F2FC42594FE4205 /* Pods_QvikSwiftTests.framework */; };
+		490605CE1B70D18200C055AF /* DateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490605CD1B70D18200C055AF /* DateFormatterExtensions.swift */; };
+		490605CF1B70D18200C055AF /* DateFormatterExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490605CD1B70D18200C055AF /* DateFormatterExtensions.swift */; };
+		490605D21B70D5E100C055AF /* DateFormatterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490605D01B70D5E100C055AF /* DateFormatterExtensionsTests.swift */; };
 		490C9D951B523FB00024945B /* QvikSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 490C9D941B523FB00024945B /* QvikSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		490C9D9B1B523FB00024945B /* QvikSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490C9D8F1B523FB00024945B /* QvikSwift.framework */; };
 		490C9DA21B523FB00024945B /* QvikSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DA11B523FB00024945B /* QvikSwiftTests.swift */; };
@@ -47,8 +48,8 @@
 		499345E11BBA6B9500AFB685 /* QvikButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */; };
 		499C48951BAAC60200892142 /* QvikButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* QvikButton.swift */; };
 		499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F0E1B93191E00E50D8D /* Utils.swift */; };
-		499D6F131B931C8A00E50D8D /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */; };
-		499D6F141B931C8A00E50D8D /* NSDataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */; };
+		499D6F131B931C8A00E50D8D /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* DataExtensions.swift */; };
+		499D6F141B931C8A00E50D8D /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* DataExtensions.swift */; };
 		49A970B91BC501CC0074B6F2 /* QvikImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A970B81BC501CC0074B6F2 /* QvikImageView.swift */; };
 		49A970BA1BC501CC0074B6F2 /* QvikImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A970B81BC501CC0074B6F2 /* QvikImageView.swift */; };
 		49AD57D41CDB2D410004DE08 /* SequenceTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD57D31CDB2D410004DE08 /* SequenceTypeExtensions.swift */; };
@@ -67,7 +68,8 @@
 		49CBEA1F1B7B90F800B1819B /* CGPointExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */; };
 		49CBEA211B7B917300B1819B /* CGRectExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */; };
 		49DE443B1BB5209400D36782 /* TouchDetectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE443A1BB5209400D36782 /* TouchDetectView.swift */; };
-		49E97C881BD929D700AEEB5D /* NSBundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E97C871BD929D700AEEB5D /* NSBundleExtensions.swift */; };
+		49DFEAF21DACEF7C00835200 /* DataExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DFEAF11DACEF7C00835200 /* DataExtensionsTests.swift */; };
+		49E97C881BD929D700AEEB5D /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E97C871BD929D700AEEB5D /* BundleExtensions.swift */; };
 		49FFA0691BBC1DAD007B5B15 /* QvikButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* QvikButton.swift */; };
 		7430945A1D117E9E00B8E637 /* IBDefinedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E300081D11407200C3D4A2 /* IBDefinedUIView.swift */; };
 		7430945C1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7430945B1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift */; };
@@ -76,6 +78,7 @@
 		74E300091D11407200C3D4A2 /* IBDefinedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E300081D11407200C3D4A2 /* IBDefinedUIView.swift */; };
 		74E3000B1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E3000A1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift */; };
 		74E3000D1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E3000C1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib */; };
+		E2AD0650D9B3EC400AB1BB84 /* Pods_QvikSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4681B3132FC6178DE75A26D6 /* Pods_QvikSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,8 +92,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		490605CD1B70D18200C055AF /* NSDateFormatterExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateFormatterExtensions.swift; sourceTree = "<group>"; };
-		490605D01B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateFormatterExtensionsTests.swift; sourceTree = "<group>"; };
+		3B3A14866F2FC42594FE4205 /* Pods_QvikSwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QvikSwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4681B3132FC6178DE75A26D6 /* Pods_QvikSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QvikSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		490605CD1B70D18200C055AF /* DateFormatterExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensions.swift; sourceTree = "<group>"; };
+		490605D01B70D5E100C055AF /* DateFormatterExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterExtensionsTests.swift; sourceTree = "<group>"; };
 		490C9D8F1B523FB00024945B /* QvikSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QvikSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		490C9D931B523FB00024945B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		490C9D941B523FB00024945B /* QvikSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QvikSwift.h; sourceTree = "<group>"; };
@@ -125,7 +130,7 @@
 		499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvikButtonTests.swift; sourceTree = "<group>"; };
 		499C48941BAAC60200892142 /* QvikButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvikButton.swift; sourceTree = "<group>"; };
 		499D6F0E1B93191E00E50D8D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDataExtensions.swift; sourceTree = "<group>"; };
+		499D6F121B931C8A00E50D8D /* DataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		49A970B81BC501CC0074B6F2 /* QvikImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvikImageView.swift; sourceTree = "<group>"; };
 		49AD57D31CDB2D410004DE08 /* SequenceTypeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTypeExtensions.swift; sourceTree = "<group>"; };
 		49AD57D61CDB2D840004DE08 /* SequenceTypeExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTypeExtensionsTests.swift; sourceTree = "<group>"; };
@@ -138,12 +143,17 @@
 		49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointExtensionsTests.swift; sourceTree = "<group>"; };
 		49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensionsTests.swift; sourceTree = "<group>"; };
 		49DE443A1BB5209400D36782 /* TouchDetectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchDetectView.swift; sourceTree = "<group>"; };
-		49E97C871BD929D700AEEB5D /* NSBundleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBundleExtensions.swift; sourceTree = "<group>"; };
+		49DFEAF11DACEF7C00835200 /* DataExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtensionsTests.swift; sourceTree = "<group>"; };
+		49E97C871BD929D700AEEB5D /* BundleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
 		7430945B1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensions.swift; sourceTree = "<group>"; };
 		7430945E1D117FC800B8E637 /* NSLayoutConstraintExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensionsTests.swift; sourceTree = "<group>"; };
 		74E300081D11407200C3D4A2 /* IBDefinedUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDefinedUIView.swift; sourceTree = "<group>"; };
 		74E3000A1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDefinedUIViewTests.swift; sourceTree = "<group>"; };
 		74E3000C1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IBDefinedTestUIView.xib; sourceTree = "<group>"; };
+		8FB62C1710F4FA9393F8FE46 /* Pods-QvikSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QvikSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QvikSwiftTests/Pods-QvikSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		A72107FE784F9DC6A54670E7 /* Pods-QvikSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QvikSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QvikSwift/Pods-QvikSwift.debug.xcconfig"; sourceTree = "<group>"; };
+		E2C4881BD371CED5B735A1F4 /* Pods-QvikSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QvikSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QvikSwiftTests/Pods-QvikSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E5609EA368E9EEE1E89786A8 /* Pods-QvikSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QvikSwift.release.xcconfig"; path = "Pods/Target Support Files/Pods-QvikSwift/Pods-QvikSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2AD0650D9B3EC400AB1BB84 /* Pods_QvikSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,12 +170,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				490C9D9B1B523FB00024945B /* QvikSwift.framework in Frameworks */,
+				04244098871DBC680A1B354C /* Pods_QvikSwiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2697B8683CDDEC4A0C7A3B5B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A72107FE784F9DC6A54670E7 /* Pods-QvikSwift.debug.xcconfig */,
+				E5609EA368E9EEE1E89786A8 /* Pods-QvikSwift.release.xcconfig */,
+				E2C4881BD371CED5B735A1F4 /* Pods-QvikSwiftTests.debug.xcconfig */,
+				8FB62C1710F4FA9393F8FE46 /* Pods-QvikSwiftTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		490C9D851B523FB00024945B = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +197,7 @@
 				490C9D9E1B523FB00024945B /* QvikSwiftTests */,
 				495E95161B9594BE006EEFC6 /* Frameworks */,
 				490C9D901B523FB00024945B /* Products */,
+				2697B8683CDDEC4A0C7A3B5B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -220,7 +244,8 @@
 				74E3000A1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift */,
 				74E3000C1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib */,
 				49516BC41C15BB1100C56FDC /* IntExtensionsTests.swift */,
-				490605D01B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift */,
+				49DFEAF11DACEF7C00835200 /* DataExtensionsTests.swift */,
+				490605D01B70D5E100C055AF /* DateFormatterExtensionsTests.swift */,
 				7430945E1D117FC800B8E637 /* NSLayoutConstraintExtensionsTests.swift */,
 				499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */,
 				49CBEA1C1B7B8BDD00B1819B /* ReadWriteLockTests.swift */,
@@ -248,6 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				495E95101B958FFE006EEFC6 /* libcommonCrypto.dylib */,
+				4681B3132FC6178DE75A26D6 /* Pods_QvikSwift.framework */,
+				3B3A14866F2FC42594FE4205 /* Pods_QvikSwiftTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -262,9 +289,9 @@
 				49CBE9DB1B78DF3B00B1819B /* CollectionTypeExtensions.swift */,
 				49516BBE1C15888300C56FDC /* DoubleExtensions.swift */,
 				49516BC01C15888300C56FDC /* IntExtensions.swift */,
-				49E97C871BD929D700AEEB5D /* NSBundleExtensions.swift */,
-				499D6F121B931C8A00E50D8D /* NSDataExtensions.swift */,
-				490605CD1B70D18200C055AF /* NSDateFormatterExtensions.swift */,
+				49E97C871BD929D700AEEB5D /* BundleExtensions.swift */,
+				499D6F121B931C8A00E50D8D /* DataExtensions.swift */,
+				490605CD1B70D18200C055AF /* DateFormatterExtensions.swift */,
 				7430945B1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift */,
 				49AD57D31CDB2D410004DE08 /* SequenceTypeExtensions.swift */,
 				490C9DAB1B52408E0024945B /* StringExtensions.swift */,
@@ -324,11 +351,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 490C9DA51B523FB00024945B /* Build configuration list for PBXNativeTarget "QvikSwift" */;
 			buildPhases = (
+				8A103DD486811186A2F8FF92 /* [CP] Check Pods Manifest.lock */,
 				490C9D8A1B523FB00024945B /* Sources */,
 				490CB4AF1CCB3EB000057994 /* Swiftlint */,
 				490C9D8B1B523FB00024945B /* Frameworks */,
 				490C9D8C1B523FB00024945B /* Headers */,
 				490C9D8D1B523FB00024945B /* Resources */,
+				DF50ED3A6247E05A07CFE084 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -343,9 +372,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 490C9DA81B523FB00024945B /* Build configuration list for PBXNativeTarget "QvikSwiftTests" */;
 			buildPhases = (
+				AC9050E74E294DBC5549CDB0 /* [CP] Check Pods Manifest.lock */,
 				490C9D961B523FB00024945B /* Sources */,
 				490C9D971B523FB00024945B /* Frameworks */,
 				490C9D981B523FB00024945B /* Resources */,
+				4F237E7220E4A74DDA625B1A /* [CP] Embed Pods Frameworks */,
+				2A2BB6FAFE59E10E81E4F580 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -365,14 +397,16 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Qvik;
 				TargetAttributes = {
 					490C9D8E1B523FB00024945B = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 					490C9D991B523FB00024945B = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -413,6 +447,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2A2BB6FAFE59E10E81E4F580 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QvikSwiftTests/Pods-QvikSwiftTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		490CB4AF1CCB3EB000057994 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,6 +476,66 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"error: Swiftlint not installed - see https://github.com/realm/SwiftLint\"\nexit 1\nfi\n";
 		};
+		4F237E7220E4A74DDA625B1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QvikSwiftTests/Pods-QvikSwiftTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A103DD486811186A2F8FF92 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AC9050E74E294DBC5549CDB0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DF50ED3A6247E05A07CFE084 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QvikSwift/Pods-QvikSwift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -434,7 +543,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				490605CE1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */,
+				490605CE1B70D18200C055AF /* DateFormatterExtensions.swift in Sources */,
 				49CBE9DC1B78DF3B00B1819B /* CollectionTypeExtensions.swift in Sources */,
 				49516BC21C15888300C56FDC /* CGFloatExtensions.swift in Sources */,
 				74E300091D11407200C3D4A2 /* IBDefinedUIView.swift in Sources */,
@@ -448,7 +557,7 @@
 				49AD57D41CDB2D410004DE08 /* SequenceTypeExtensions.swift in Sources */,
 				49516BCE1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */,
 				494558621C3934AA00F3E8FC /* UIResponderExtensions.swift in Sources */,
-				499D6F131B931C8A00E50D8D /* NSDataExtensions.swift in Sources */,
+				499D6F131B931C8A00E50D8D /* DataExtensions.swift in Sources */,
 				498770F31CBA8EED00BEC5C2 /* ParallaxView.swift in Sources */,
 				490F55C01CD74BAB001FF657 /* UIGestureRecognizerExtensions.swift in Sources */,
 				4916ED071B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
@@ -457,7 +566,7 @@
 				49516BC11C15888300C56FDC /* DoubleExtensions.swift in Sources */,
 				49DE443B1BB5209400D36782 /* TouchDetectView.swift in Sources */,
 				490C9DE01B5292FC0024945B /* UIImageExtensions.swift in Sources */,
-				49E97C881BD929D700AEEB5D /* NSBundleExtensions.swift in Sources */,
+				49E97C881BD929D700AEEB5D /* BundleExtensions.swift in Sources */,
 				7430945C1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift in Sources */,
 				499C48951BAAC60200892142 /* QvikButton.swift in Sources */,
 			);
@@ -479,7 +588,7 @@
 				743094601D117FC800B8E637 /* NSLayoutConstraintExtensionsTests.swift in Sources */,
 				49A970BA1BC501CC0074B6F2 /* QvikImageView.swift in Sources */,
 				494558661C3939AE00F3E8FC /* Utils.swift in Sources */,
-				490605CF1B70D18200C055AF /* NSDateFormatterExtensions.swift in Sources */,
+				490605CF1B70D18200C055AF /* DateFormatterExtensions.swift in Sources */,
 				49516BC51C15BB1100C56FDC /* IntExtensionsTests.swift in Sources */,
 				49516BCF1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */,
 				4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */,
@@ -495,10 +604,11 @@
 				49516BCA1C15BC0400C56FDC /* DoubleExtensionsTests.swift in Sources */,
 				494558651C39352A00F3E8FC /* UIResponderExtensionsTests.swift in Sources */,
 				4916ED081B661AFE00E6A22D /* UIColorExtensions.swift in Sources */,
-				490605D21B70D5E100C055AF /* NSDateFormatterExtensionsTests.swift in Sources */,
+				490605D21B70D5E100C055AF /* DateFormatterExtensionsTests.swift in Sources */,
 				494558631C3934AA00F3E8FC /* UIResponderExtensions.swift in Sources */,
+				49DFEAF21DACEF7C00835200 /* DataExtensionsTests.swift in Sources */,
 				490C9DA21B523FB00024945B /* QvikSwiftTests.swift in Sources */,
-				499D6F141B931C8A00E50D8D /* NSDataExtensions.swift in Sources */,
+				499D6F141B931C8A00E50D8D /* DataExtensions.swift in Sources */,
 				49516BC71C15BB8700C56FDC /* CGFloatExtensions.swift in Sources */,
 				49516BC61C15BB8200C56FDC /* IntExtensions.swift in Sources */,
 				49516BC81C15BB8B00C56FDC /* DoubleExtensions.swift in Sources */,
@@ -535,8 +645,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -586,8 +698,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -608,6 +722,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -617,9 +732,11 @@
 		};
 		490C9DA61B523FB00024945B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A72107FE784F9DC6A54670E7 /* Pods-QvikSwift.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -637,14 +754,17 @@
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		490C9DA71B523FB00024945B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5609EA368E9EEE1E89786A8 /* Pods-QvikSwift.release.xcconfig */;
 			buildSettings = {
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -661,11 +781,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		490C9DA91B523FB00024945B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2C4881BD371CED5B735A1F4 /* Pods-QvikSwiftTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -680,11 +802,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fi.qvik.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CommonCrypto/";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		490C9DAA1B523FB00024945B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FB62C1710F4FA9393F8FE46 /* Pods-QvikSwiftTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -695,6 +819,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fi.qvik.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CommonCrypto/";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

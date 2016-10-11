@@ -37,7 +37,7 @@ public extension Double {
      - parameter maxVal: clamp max range
      - returns: the clamped value
      */
-    public func clamp(minVal: Double, _ maxVal: Double) -> Double {
+    public func clamp(_ minVal: Double, _ maxVal: Double) -> Double {
         return min(maxVal, max(minVal, self))
     }
 }

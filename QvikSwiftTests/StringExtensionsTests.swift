@@ -108,7 +108,7 @@ class StringExtensionsTests: XCTestCase {
      return sizes not identical to those, but slightly smaller and very
      close.
     */
-    func assertRect(rect: CGRect, matchesExpectedSize size: CGSize) {
+    func assertRect(_ rect: CGRect, matchesExpectedSize size: CGSize) {
         XCTAssert(rect.origin == CGPoint(x: 0, y: 0))
         XCTAssert(rect.width > size.width - 1)
         XCTAssert(rect.width <= size.width)
@@ -129,7 +129,7 @@ class StringExtensionsTests: XCTestCase {
         assertRect(rect2, matchesExpectedSize: size2)
         let str3 = "Even longer string with size constraint breaking it to multiple lines"
         let font3 = UIFont(name: "TimesNewRomanPS-ItalicMT", size:20)!
-        let constraint3 = CGSize(width: 120, height: CGFloat.max)
+        let constraint3 = CGSize(width: 120, height: CGFloat.greatestFiniteMagnitude)
         let rect3 = str3.boundingRectWithFont(font3, constrainedToSize: constraint3)
         let size3 = CGSize(width: 120, height: 111)
         assertRect(rect3, matchesExpectedSize: size3)

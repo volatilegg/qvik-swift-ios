@@ -25,7 +25,7 @@ import UIKit
 import Accelerate
 
 /// Extensions to the UIImage class
-extension UIImage {
+public extension UIImage {
     /// Provides a shorthand for image width.
     public var width: CGFloat {
         return self.size.width
@@ -43,18 +43,18 @@ extension UIImage {
      - returns: a copy of this image with orientation setting set to 'up'.
      */
     public func imageWithNormalizedOrientation() -> UIImage {
-        if imageOrientation == .Up {
+        if imageOrientation == .up {
             return self
         }
         
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
         let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
-        drawInRect(rect)
+        draw(in: rect)
         
         let normalizedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        return normalizedImage
+        return normalizedImage!
     }
     
     /**
@@ -65,7 +65,7 @@ extension UIImage {
      - parameter imageScale: value for UIImage.scale. Specify 0.0 to match the scale of the device's screen.
      - returns: scaled-down image
      */
-    public func scaleDown(maxSize maxSize: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
+    public func scaleDown(maxSize: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
         let myWidth = self.size.width
         let myHeight = self.size.height
         
@@ -85,7 +85,7 @@ extension UIImage {
      - parameter imageScale: value for UIImage.scale. Specify 0.0 to match the scale of the device's screen.
      - returns: scaled image
      */
-    public func scaleToFit(sizeToFit sizeToFit: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
+    public func scaleToFit(sizeToFit: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
         let fittingSize = self.size.aspectSizeToFit(maxDimensions: sizeToFit)
 
         return scaleTo(size: fittingSize, imageScale: imageScale)
@@ -99,13 +99,13 @@ extension UIImage {
      - parameter imageScale: value for UIImage.scale. Specify 0.0 to match the scale of the device's screen.
      - returns: scaled-down image
      */
-    public func scaleTo(size size: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
+    public func scaleTo(size: CGSize, imageScale: CGFloat = 1.0) -> UIImage {
         UIGraphicsBeginImageContextWithOptions(size, false, imageScale)
-        self.drawInRect(CGRect(origin: CGPoint.zero, size: size))
+        self.draw(in: CGRect(origin: CGPoint.zero, size: size))
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
-        return scaledImage
+        return scaledImage!
     }
     
     /**
@@ -115,7 +115,7 @@ extension UIImage {
      - returns: the cropped image. Note that the dimensions may be off by +-1 pixels.
      */
     public func cropImageToSquare() -> UIImage {
-        let contextImage: UIImage = UIImage(CGImage: self.CGImage!)
+        let contextImage: UIImage = UIImage(cgImage: self.cgImage!)
         
         let contextSize: CGSize = contextImage.size
         
@@ -137,16 +137,16 @@ extension UIImage {
         }
 
         let rect = CGRect(x: posX, y: posY, width: width, height: height)
-        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
-        let image: UIImage = UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
+        let imageRef: CGImage = contextImage.cgImage!.cropping(to: rect)!
+        let image: UIImage = UIImage(cgImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
         
         return image
     }
 
     /// Blur algorithms
     public enum BlurAlgorithm {
-        case BoxConvolve
-        case TentConvolve
+        case boxConvolve
+        case tentConvolve
     }
 
     /**
@@ -156,38 +156,39 @@ extension UIImage {
      - parameter algorithm: blur algorithm to use. .TentConvolve is faster than .BoxConvolve.
      - returns: the blurred image.
     */
-    public func blur(radius radius: Double, algorithm: BlurAlgorithm = .TentConvolve) -> UIImage {
+    public func blur(radius: Double, algorithm: BlurAlgorithm = .tentConvolve) -> UIImage {
         let imageRect = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
         
-        func createEffectBuffer(context: CGContext) -> vImage_Buffer {
-            let data = CGBitmapContextGetData(context)
-            let width = vImagePixelCount(CGBitmapContextGetWidth(context))
-            let height = vImagePixelCount(CGBitmapContextGetHeight(context))
-            let rowBytes = CGBitmapContextGetBytesPerRow(context)
+        func createEffectBuffer(_ context: CGContext) -> vImage_Buffer {
+            let data = context.data
+            let width = vImagePixelCount(context.width)
+            let height = vImagePixelCount(context.height)
+            let rowBytes = context.bytesPerRow
             
             return vImage_Buffer(data: data, height: height, width: width, rowBytes: rowBytes)
         }
         
-        UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.mainScreen().scale)
+        UIGraphicsBeginImageContextWithOptions(self.size, false, UIScreen.main.scale)
         let effectInContext = UIGraphicsGetCurrentContext()
-        CGContextScaleCTM(effectInContext, 1.0, -1.0)
-        CGContextTranslateCTM(effectInContext, 0, -self.size.height)
-        CGContextDrawImage(effectInContext, imageRect, self.CGImage) // this takes time
+        effectInContext?.scaleBy(x: 1.0, y: -1.0)
+        effectInContext?.translateBy(x: 0, y: -self.size.height)
+        effectInContext?.draw(self.cgImage!, in: imageRect) // this takes time
         var effectInBuffer = createEffectBuffer(effectInContext!)
         
-        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.mainScreen().scale)
+        UIGraphicsBeginImageContextWithOptions(size, false, UIScreen.main.scale)
         let effectOutContext = UIGraphicsGetCurrentContext()
         var effectOutBuffer = createEffectBuffer(effectOutContext!)
         
-        let inputRadius = CGFloat(radius) * UIScreen.mainScreen().scale
-        var radius = UInt32(floor(inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI)) / 4 + 0.5))
+        let inputRadius = CGFloat(radius) * UIScreen.main.scale
+        let f = inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI))
+        var radius = UInt32(floor((f / 4) + 0.5))
         if radius % 2 != 1 {
             radius += 1 // force radius to be odd
         }
         
         let imageEdgeExtendFlags = vImage_Flags(kvImageEdgeExtend)
         
-        if algorithm == .BoxConvolve {
+        if algorithm == .boxConvolve {
             vImageBoxConvolve_ARGB8888(&effectInBuffer, &effectOutBuffer, nil, 0, 0, radius, radius, nil, imageEdgeExtendFlags)
             vImageBoxConvolve_ARGB8888(&effectOutBuffer, &effectInBuffer, nil, 0, 0, radius, radius, nil, imageEdgeExtendFlags)
             vImageBoxConvolve_ARGB8888(&effectInBuffer, &effectOutBuffer, nil, 0, 0, radius, radius, nil, imageEdgeExtendFlags)
@@ -199,6 +200,6 @@ extension UIImage {
         UIGraphicsEndImageContext()
         UIGraphicsEndImageContext()
         
-        return effectImage
+        return effectImage!
     }
 }
