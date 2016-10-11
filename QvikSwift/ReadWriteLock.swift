@@ -23,16 +23,16 @@
 import Foundation
 
 /**
-Swift wrapper for pthread read/write lock, synchronization between threads to a resource.
+ Swift wrapper for pthread read/write lock, synchronization between threads to a resource.
 
-The lock can be acquired for reading when there are no writers waiting for the lock
-or owning the lock. 
+ The lock can be acquired for reading when there are no writers waiting for the lock
+ or owning the lock.
 
-The lock can be acquired for writing when there are no readers or other writers owning the lock.
+ The lock can be acquired for writing when there are no readers or other writers owning the lock.
 
-Intending to use this class? You probably should see about redesigning
-your code and / or using GCD.
-*/
+ Intending to use this class? You probably should see about redesigning
+ your code and / or using GCD.
+ */
 open class ReadWriteLock {
     fileprivate var lock: pthread_rwlock_t
     
