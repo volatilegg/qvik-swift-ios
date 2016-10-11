@@ -55,9 +55,9 @@
 		49AD57D41CDB2D410004DE08 /* SequenceTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD57D31CDB2D410004DE08 /* SequenceTypeExtensions.swift */; };
 		49AD57D51CDB2D410004DE08 /* SequenceTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD57D31CDB2D410004DE08 /* SequenceTypeExtensions.swift */; };
 		49AD57D81CDB2D840004DE08 /* SequenceTypeExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AD57D61CDB2D840004DE08 /* SequenceTypeExtensionsTests.swift */; };
-		49CBE9DC1B78DF3B00B1819B /* CollectionTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DB1B78DF3B00B1819B /* CollectionTypeExtensions.swift */; };
-		49CBE9DD1B78DF3B00B1819B /* CollectionTypeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DB1B78DF3B00B1819B /* CollectionTypeExtensions.swift */; };
-		49CBE9E01B78DFA400B1819B /* CollectionTypeExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DE1B78DFA400B1819B /* CollectionTypeExtensionsTests.swift */; };
+		49CBE9DC1B78DF3B00B1819B /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DB1B78DF3B00B1819B /* CollectionExtensions.swift */; };
+		49CBE9DD1B78DF3B00B1819B /* CollectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DB1B78DF3B00B1819B /* CollectionExtensions.swift */; };
+		49CBE9E01B78DFA400B1819B /* CollectionExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBE9DE1B78DFA400B1819B /* CollectionExtensionsTests.swift */; };
 		49CBEA141B7B888C00B1819B /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA131B7B888C00B1819B /* CGRectExtensions.swift */; };
 		49CBEA151B7B888C00B1819B /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA131B7B888C00B1819B /* CGRectExtensions.swift */; };
 		49CBEA171B7B892500B1819B /* CGPointExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBEA161B7B892500B1819B /* CGPointExtensions.swift */; };
@@ -134,8 +134,8 @@
 		49A970B81BC501CC0074B6F2 /* QvikImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvikImageView.swift; sourceTree = "<group>"; };
 		49AD57D31CDB2D410004DE08 /* SequenceTypeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTypeExtensions.swift; sourceTree = "<group>"; };
 		49AD57D61CDB2D840004DE08 /* SequenceTypeExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTypeExtensionsTests.swift; sourceTree = "<group>"; };
-		49CBE9DB1B78DF3B00B1819B /* CollectionTypeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTypeExtensions.swift; sourceTree = "<group>"; };
-		49CBE9DE1B78DFA400B1819B /* CollectionTypeExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTypeExtensionsTests.swift; sourceTree = "<group>"; };
+		49CBE9DB1B78DF3B00B1819B /* CollectionExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExtensions.swift; sourceTree = "<group>"; };
+		49CBE9DE1B78DFA400B1819B /* CollectionExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionExtensionsTests.swift; sourceTree = "<group>"; };
 		49CBEA131B7B888C00B1819B /* CGRectExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRectExtensions.swift; sourceTree = "<group>"; };
 		49CBEA161B7B892500B1819B /* CGPointExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPointExtensions.swift; sourceTree = "<group>"; };
 		49CBEA191B7B8AA200B1819B /* ReadWriteLock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadWriteLock.swift; sourceTree = "<group>"; };
@@ -239,7 +239,7 @@
 				49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */,
 				49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */,
 				49516BD01C181DFB00C56FDC /* CGSizeExtensionsTests.swift */,
-				49CBE9DE1B78DFA400B1819B /* CollectionTypeExtensionsTests.swift */,
+				49CBE9DE1B78DFA400B1819B /* CollectionExtensionsTests.swift */,
 				49516BC91C15BC0400C56FDC /* DoubleExtensionsTests.swift */,
 				74E3000A1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift */,
 				74E3000C1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib */,
@@ -286,7 +286,7 @@
 				49CBEA161B7B892500B1819B /* CGPointExtensions.swift */,
 				49CBEA131B7B888C00B1819B /* CGRectExtensions.swift */,
 				49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */,
-				49CBE9DB1B78DF3B00B1819B /* CollectionTypeExtensions.swift */,
+				49CBE9DB1B78DF3B00B1819B /* CollectionExtensions.swift */,
 				49516BBE1C15888300C56FDC /* DoubleExtensions.swift */,
 				49516BC01C15888300C56FDC /* IntExtensions.swift */,
 				49E97C871BD929D700AEEB5D /* BundleExtensions.swift */,
@@ -544,7 +544,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				490605CE1B70D18200C055AF /* DateFormatterExtensions.swift in Sources */,
-				49CBE9DC1B78DF3B00B1819B /* CollectionTypeExtensions.swift in Sources */,
+				49CBE9DC1B78DF3B00B1819B /* CollectionExtensions.swift in Sources */,
 				49516BC21C15888300C56FDC /* CGFloatExtensions.swift in Sources */,
 				74E300091D11407200C3D4A2 /* IBDefinedUIView.swift in Sources */,
 				49516BC31C15888300C56FDC /* IntExtensions.swift in Sources */,
@@ -594,8 +594,8 @@
 				4916ED0A1B66235F00E6A22D /* UIColorExtensionsTests.swift in Sources */,
 				49CBEA181B7B892500B1819B /* CGPointExtensions.swift in Sources */,
 				7430945A1D117E9E00B8E637 /* IBDefinedUIView.swift in Sources */,
-				49CBE9E01B78DFA400B1819B /* CollectionTypeExtensionsTests.swift in Sources */,
-				49CBE9DD1B78DF3B00B1819B /* CollectionTypeExtensions.swift in Sources */,
+				49CBE9E01B78DFA400B1819B /* CollectionExtensionsTests.swift in Sources */,
+				49CBE9DD1B78DF3B00B1819B /* CollectionExtensions.swift in Sources */,
 				74E3000B1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift in Sources */,
 				49CBEA151B7B888C00B1819B /* CGRectExtensions.swift in Sources */,
 				49AD57D81CDB2D840004DE08 /* SequenceTypeExtensionsTests.swift in Sources */,

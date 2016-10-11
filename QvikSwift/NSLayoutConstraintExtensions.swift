@@ -24,8 +24,15 @@ import UIKit
 
 /// Extensions to the NSLayoutConstraint class.
 public extension NSLayoutConstraint {
-    /// Creates a constraint that defines the relationship between the specified attribute of the given views as equal.
-    convenience init(item: UIView, toItem: UIView, attribute: NSLayoutAttribute) {
-        self.init(item: item, attribute: attribute, relatedBy: .equal, toItem: toItem, attribute: attribute, multiplier: 1, constant: 0)
+    /**
+     Creates a constraint that defines the relationship between the specified attribute of the given views with constant = 0 by default.
+     
+     - parameter item: first item
+     - parameter toItem: second item
+     - parameter attribute: which attribute to create the constraint for
+     - parameter constant: constant value to use (0 by default)
+     */
+    convenience init(item: UIView, toItem: UIView, attribute: NSLayoutAttribute, constant: CGFloat = 0) {
+        self.init(item: item, attribute: attribute, relatedBy: .equal, toItem: toItem, attribute: attribute, multiplier: 1, constant: constant)
     }
 }
