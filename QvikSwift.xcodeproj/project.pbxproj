@@ -78,6 +78,10 @@
 		49EA620B1DAE1596009874BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EA62091DAE1596009874BB /* Main.storyboard */; };
 		49EA620D1DAE1596009874BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EA620C1DAE1596009874BB /* Assets.xcassets */; };
 		49EA62101DAE1596009874BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EA620E1DAE1596009874BB /* LaunchScreen.storyboard */; };
+		49EA62201DAE41F0009874BB /* animated.gif in Resources */ = {isa = PBXBuildFile; fileRef = 49EA621C1DAE41F0009874BB /* animated.gif */; };
+		49EA62211DAE41F0009874BB /* empty.gif in Resources */ = {isa = PBXBuildFile; fileRef = 49EA621D1DAE41F0009874BB /* empty.gif */; };
+		49EA62221DAE41F0009874BB /* randombytes_broken.gif in Resources */ = {isa = PBXBuildFile; fileRef = 49EA621E1DAE41F0009874BB /* randombytes_broken.gif */; };
+		49EA62231DAE41F0009874BB /* working.gif in Resources */ = {isa = PBXBuildFile; fileRef = 49EA621F1DAE41F0009874BB /* working.gif */; };
 		49FFA0691BBC1DAD007B5B15 /* QvikButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* QvikButton.swift */; };
 		7430945A1D117E9E00B8E637 /* IBDefinedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E300081D11407200C3D4A2 /* IBDefinedUIView.swift */; };
 		7430945C1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7430945B1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift */; };
@@ -170,6 +174,10 @@
 		49EA620F1DAE1596009874BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49EA62111DAE1596009874BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49EA62151DAE15DC009874BB /* UnitTestHostApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnitTestHostApp.entitlements; sourceTree = "<group>"; };
+		49EA621C1DAE41F0009874BB /* animated.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = animated.gif; sourceTree = "<group>"; };
+		49EA621D1DAE41F0009874BB /* empty.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = empty.gif; sourceTree = "<group>"; };
+		49EA621E1DAE41F0009874BB /* randombytes_broken.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = randombytes_broken.gif; sourceTree = "<group>"; };
+		49EA621F1DAE41F0009874BB /* working.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = working.gif; sourceTree = "<group>"; };
 		7430945B1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensions.swift; sourceTree = "<group>"; };
 		7430945E1D117FC800B8E637 /* NSLayoutConstraintExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensionsTests.swift; sourceTree = "<group>"; };
 		74E300081D11407200C3D4A2 /* IBDefinedUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDefinedUIView.swift; sourceTree = "<group>"; };
@@ -269,6 +277,7 @@
 		490C9D9E1B523FB00024945B /* QvikSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				49EA621B1DAE41F0009874BB /* TestData */,
 				49EA61FC1DAE0EF4009874BB /* KeychainTests.swift */,
 				49516BCB1C15BC5400C56FDC /* CGFloatExtensionsTests.swift */,
 				49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */,
@@ -381,6 +390,17 @@
 				49EA62111DAE1596009874BB /* Info.plist */,
 			);
 			path = UnitTestHostApp;
+			sourceTree = "<group>";
+		};
+		49EA621B1DAE41F0009874BB /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				49EA621C1DAE41F0009874BB /* animated.gif */,
+				49EA621D1DAE41F0009874BB /* empty.gif */,
+				49EA621E1DAE41F0009874BB /* randombytes_broken.gif */,
+				49EA621F1DAE41F0009874BB /* working.gif */,
+			);
+			path = TestData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,6 +543,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				74E3000D1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib in Resources */,
+				49EA62201DAE41F0009874BB /* animated.gif in Resources */,
+				49EA62231DAE41F0009874BB /* working.gif in Resources */,
+				49EA62221DAE41F0009874BB /* randombytes_broken.gif in Resources */,
+				49EA62211DAE41F0009874BB /* empty.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,6 +23,7 @@
 import Foundation
 import UIKit
 import Accelerate
+import ImageIO
 
 /// Extensions to the UIImage class
 public extension UIImage {
@@ -201,5 +202,30 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         
         return effectImage!
+    }
+
+    /**
+     Creates an animated image from GIF data.
+     
+     - parameter gifData: The GIF image data
+     - parameter frameDuration: The duration for each frame, in seconds. Default is 0.1.
+     */
+    public class func animatedImage(gifData: Data, frameDuration: TimeInterval = 0.1) -> UIImage? {
+        guard let source = CGImageSourceCreateWithData(gifData as CFData, nil) else {
+            return nil
+        }
+
+        let numFrames = CGImageSourceGetCount(source)
+        var frames = [UIImage]()
+
+        for i in 0..<numFrames {
+            // Extract the image frame
+            guard let cgImage = CGImageSourceCreateImageAtIndex(source, i, nil) else {
+                continue
+            }
+            frames.append(UIImage(cgImage: cgImage))
+        }
+
+        return UIImage.animatedImage(with: frames, duration: frameDuration * Double(numFrames))
     }
 }

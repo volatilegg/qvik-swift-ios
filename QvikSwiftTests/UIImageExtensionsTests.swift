@@ -99,4 +99,36 @@ class UIImageExtensionsTests: XCTestCase {
         XCTAssert(image.width == blurred.width)
         XCTAssert(image.height == blurred.height)
     }
+
+    fileprivate func loadGif(_ name: String) -> UIImage? {
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: name, ofType: "gif")!
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path)) else {
+            return nil
+        }
+
+        return UIImage.animatedImage(gifData: data)
+    }
+
+    func testEmpty() {
+        let empty = loadGif("empty")
+        XCTAssert(empty == nil)
+    }
+
+    func testWorking() {
+        let working = loadGif("working")
+        XCTAssert(working != nil)
+        XCTAssert(working!.images!.count == 1)
+    }
+
+    func testBroken() {
+        let broken = loadGif("randombytes_broken")
+        XCTAssert(broken == nil)
+    }
+
+    func testAnimated() {
+        let animated = loadGif("animated")
+        XCTAssert(animated != nil)
+        XCTAssert(animated!.images!.count == 8)
+    }
 }
