@@ -1,6 +1,6 @@
 // The MIT License (MIT)
 //
-// Copyright (c) 2015-2016 Qvik (www.qvik.fi)
+// Copyright (c) 2016 Qvik (www.qvik.fi)
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,35 +23,44 @@
 import Foundation
 import XCTest
 
-class CGFloatExtensionsTests: XCTestCase {
+class KeychainTests: XCTestCase {
+    var keychain: Keychain!
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
+
+        keychain = Keychain(serviceName: "qvikswift.tests", accessMode: kSecAttrAccessibleAlways as String)
     }
-    
+
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
+
+        keychain = nil
     }
-    
-    func testRandom() {
-        for _ in 0..<10000 {
-            let x = CGFloat.random()
-            XCTAssert(x >= 0)
-            XCTAssert(x <= 1.0)
+
+    func testAddStringKey() {
+        let key = "my-test-key"
+        let value = "My test string"
+
+        defer {
+            // Cleanup
+            do {
+                try keychain.remove(key: key)
+            } catch {
+                print("Error at cleanup: \(error)")
+            }
         }
-    }
 
-    func testClamp() {
-        let d1: CGFloat = 10.5
-        let d2: CGFloat = 3.2
-        let d3: CGFloat = 12355.5
+        do {
+            try keychain.addValue(key: key, value: value)
+            let readValue = try keychain.getValue(key: key)
 
-        let minVal: CGFloat = 5.45
-        let maxVal: CGFloat = 16.72
-
-        XCTAssert(d1.clamp(minVal, maxVal) == d1)
-        XCTAssert(d2.clamp(minVal, maxVal) == minVal)
-        XCTAssert(d3.clamp(minVal, maxVal) == maxVal)
+            XCTAssert(readValue == value)
+        } catch {
+            print("Caught exception: \(error)")
+            XCTAssert(false)
+        }
     }
 }

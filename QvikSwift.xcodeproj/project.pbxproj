@@ -72,6 +72,12 @@
 		49E97C881BD929D700AEEB5D /* BundleExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E97C871BD929D700AEEB5D /* BundleExtensions.swift */; };
 		49EA61FA1DAD1C69009874BB /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA61F91DAD1C69009874BB /* Keychain.swift */; };
 		49EA61FB1DAD1C69009874BB /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA61F91DAD1C69009874BB /* Keychain.swift */; };
+		49EA61FD1DAE0EF4009874BB /* KeychainTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA61FC1DAE0EF4009874BB /* KeychainTests.swift */; };
+		49EA62061DAE1596009874BB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA62051DAE1596009874BB /* AppDelegate.swift */; };
+		49EA62081DAE1596009874BB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EA62071DAE1596009874BB /* ViewController.swift */; };
+		49EA620B1DAE1596009874BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EA62091DAE1596009874BB /* Main.storyboard */; };
+		49EA620D1DAE1596009874BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49EA620C1DAE1596009874BB /* Assets.xcassets */; };
+		49EA62101DAE1596009874BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49EA620E1DAE1596009874BB /* LaunchScreen.storyboard */; };
 		49FFA0691BBC1DAD007B5B15 /* QvikButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499C48941BAAC60200892142 /* QvikButton.swift */; };
 		7430945A1D117E9E00B8E637 /* IBDefinedUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E300081D11407200C3D4A2 /* IBDefinedUIView.swift */; };
 		7430945C1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7430945B1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift */; };
@@ -90,6 +96,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 490C9D8E1B523FB00024945B;
 			remoteInfo = QvikSwift;
+		};
+		49EA62161DAE1606009874BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 490C9D861B523FB00024945B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49EA62021DAE1596009874BB;
+			remoteInfo = UnitTestHostApp;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -148,6 +161,15 @@
 		49DFEAF11DACEF7C00835200 /* DataExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtensionsTests.swift; sourceTree = "<group>"; };
 		49E97C871BD929D700AEEB5D /* BundleExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BundleExtensions.swift; sourceTree = "<group>"; };
 		49EA61F91DAD1C69009874BB /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		49EA61FC1DAE0EF4009874BB /* KeychainTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainTests.swift; sourceTree = "<group>"; };
+		49EA62031DAE1596009874BB /* UnitTestHostApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UnitTestHostApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49EA62051DAE1596009874BB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49EA62071DAE1596009874BB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49EA620A1DAE1596009874BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49EA620C1DAE1596009874BB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49EA620F1DAE1596009874BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		49EA62111DAE1596009874BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49EA62151DAE15DC009874BB /* UnitTestHostApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UnitTestHostApp.entitlements; sourceTree = "<group>"; };
 		7430945B1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensions.swift; sourceTree = "<group>"; };
 		7430945E1D117FC800B8E637 /* NSLayoutConstraintExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensionsTests.swift; sourceTree = "<group>"; };
 		74E300081D11407200C3D4A2 /* IBDefinedUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDefinedUIView.swift; sourceTree = "<group>"; };
@@ -177,6 +199,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49EA62001DAE1596009874BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -198,6 +227,7 @@
 				498D0DBC1B959B0900339E2B /* QvikSwift.podspec */,
 				490C9D911B523FB00024945B /* QvikSwift */,
 				490C9D9E1B523FB00024945B /* QvikSwiftTests */,
+				49EA62041DAE1596009874BB /* UnitTestHostApp */,
 				495E95161B9594BE006EEFC6 /* Frameworks */,
 				490C9D901B523FB00024945B /* Products */,
 				2697B8683CDDEC4A0C7A3B5B /* Pods */,
@@ -209,6 +239,7 @@
 			children = (
 				490C9D8F1B523FB00024945B /* QvikSwift.framework */,
 				490C9D9A1B523FB00024945B /* QvikSwiftTests.xctest */,
+				49EA62031DAE1596009874BB /* UnitTestHostApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +269,7 @@
 		490C9D9E1B523FB00024945B /* QvikSwiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				49EA61FC1DAE0EF4009874BB /* KeychainTests.swift */,
 				49516BCB1C15BC5400C56FDC /* CGFloatExtensionsTests.swift */,
 				49CBEA1E1B7B90F800B1819B /* CGPointExtensionsTests.swift */,
 				49CBEA201B7B917300B1819B /* CGRectExtensionsTests.swift */,
@@ -337,6 +369,20 @@
 			name = "Custom views";
 			sourceTree = "<group>";
 		};
+		49EA62041DAE1596009874BB /* UnitTestHostApp */ = {
+			isa = PBXGroup;
+			children = (
+				49EA62151DAE15DC009874BB /* UnitTestHostApp.entitlements */,
+				49EA62051DAE1596009874BB /* AppDelegate.swift */,
+				49EA62071DAE1596009874BB /* ViewController.swift */,
+				49EA62091DAE1596009874BB /* Main.storyboard */,
+				49EA620C1DAE1596009874BB /* Assets.xcassets */,
+				49EA620E1DAE1596009874BB /* LaunchScreen.storyboard */,
+				49EA62111DAE1596009874BB /* Info.plist */,
+			);
+			path = UnitTestHostApp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -387,11 +433,29 @@
 			);
 			dependencies = (
 				490C9D9D1B523FB00024945B /* PBXTargetDependency */,
+				49EA62171DAE1606009874BB /* PBXTargetDependency */,
 			);
 			name = QvikSwiftTests;
 			productName = QvikSwiftTests;
 			productReference = 490C9D9A1B523FB00024945B /* QvikSwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		49EA62021DAE1596009874BB /* UnitTestHostApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49EA62121DAE1596009874BB /* Build configuration list for PBXNativeTarget "UnitTestHostApp" */;
+			buildPhases = (
+				49EA61FF1DAE1596009874BB /* Sources */,
+				49EA62001DAE1596009874BB /* Frameworks */,
+				49EA62011DAE1596009874BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UnitTestHostApp;
+			productName = UnitTestHostApp;
+			productReference = 49EA62031DAE1596009874BB /* UnitTestHostApp.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -400,7 +464,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0700;
-				LastSwiftUpdateCheck = 0700;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Qvik;
 				TargetAttributes = {
@@ -410,7 +474,19 @@
 					};
 					490C9D991B523FB00024945B = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 2RLYKMD3U8;
 						LastSwiftMigration = 0800;
+						TestTargetID = 49EA62021DAE1596009874BB;
+					};
+					49EA62021DAE1596009874BB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2RLYKMD3U8;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -420,6 +496,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 490C9D851B523FB00024945B;
 			productRefGroup = 490C9D901B523FB00024945B /* Products */;
@@ -428,6 +505,7 @@
 			targets = (
 				490C9D8E1B523FB00024945B /* QvikSwift */,
 				490C9D991B523FB00024945B /* QvikSwiftTests */,
+				49EA62021DAE1596009874BB /* UnitTestHostApp */,
 			);
 		};
 /* End PBXProject section */
@@ -445,6 +523,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				74E3000D1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49EA62011DAE1596009874BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49EA62101DAE1596009874BB /* LaunchScreen.storyboard in Resources */,
+				49EA620D1DAE1596009874BB /* Assets.xcassets in Resources */,
+				49EA620B1DAE1596009874BB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -581,6 +669,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49EA61FD1DAE0EF4009874BB /* KeychainTests.swift in Sources */,
 				7430945D1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift in Sources */,
 				490C9DAF1B5242230024945B /* StringExtensionsTests.swift in Sources */,
 				49516BD11C181DFB00C56FDC /* CGSizeExtensionsTests.swift in Sources */,
@@ -626,6 +715,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49EA61FF1DAE1596009874BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49EA62081DAE1596009874BB /* ViewController.swift in Sources */,
+				49EA62061DAE1596009874BB /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -634,7 +732,31 @@
 			target = 490C9D8E1B523FB00024945B /* QvikSwift */;
 			targetProxy = 490C9D9C1B523FB00024945B /* PBXContainerItemProxy */;
 		};
+		49EA62171DAE1606009874BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49EA62021DAE1596009874BB /* UnitTestHostApp */;
+			targetProxy = 49EA62161DAE1606009874BB /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49EA62091DAE1596009874BB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49EA620A1DAE1596009874BB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49EA620E1DAE1596009874BB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49EA620F1DAE1596009874BB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		490C9DA31B523FB00024945B /* Debug */ = {
@@ -795,6 +917,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E2C4881BD371CED5B735A1F4 /* Pods-QvikSwiftTests.debug.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2RLYKMD3U8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -809,6 +933,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CommonCrypto/";
 				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnitTestHostApp.app/UnitTestHostApp";
 			};
 			name = Debug;
 		};
@@ -816,6 +941,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8FB62C1710F4FA9393F8FE46 /* Pods-QvikSwiftTests.release.xcconfig */;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 2RLYKMD3U8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -825,6 +952,45 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "fi.qvik.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/CommonCrypto/";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/UnitTestHostApp.app/UnitTestHostApp";
+			};
+			name = Release;
+		};
+		49EA62131DAE1596009874BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = UnitTestHostApp/UnitTestHostApp.entitlements;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 2RLYKMD3U8;
+				INFOPLIST_FILE = UnitTestHostApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fi.qvik.UnitTestHostApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		49EA62141DAE1596009874BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_ENTITLEMENTS = UnitTestHostApp/UnitTestHostApp.entitlements;
+				DEVELOPMENT_TEAM = 2RLYKMD3U8;
+				INFOPLIST_FILE = UnitTestHostApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = fi.qvik.UnitTestHostApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -858,6 +1024,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		49EA62121DAE1596009874BB /* Build configuration list for PBXNativeTarget "UnitTestHostApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49EA62131DAE1596009874BB /* Debug */,
+				49EA62141DAE1596009874BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

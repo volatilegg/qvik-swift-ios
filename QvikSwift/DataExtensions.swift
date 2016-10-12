@@ -24,10 +24,10 @@ import Foundation
 
 public extension Data {
     /**
-    Returns a hex string of the bytes of this data, each byte zero-padded to be represented by
-    two hex characters.
-    
-    :return: hex string of this data's bytes
+     Returns a hex string of the bytes of this data, each byte zero-padded to be represented by
+     two hex characters.
+
+     - returns: hex string of this data's bytes
     */
     public func hexString() -> String {
         return reduce("") {$0 + String(format: "%02x", $1)}
