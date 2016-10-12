@@ -42,7 +42,7 @@ class KeychainTests: XCTestCase {
 
     func testAddStringKey() {
         let key = "my-test-key"
-        let value = "My test string"
+        let value = "My test string öäå ÖÄÅ"
 
         defer {
             // Cleanup
@@ -50,6 +50,7 @@ class KeychainTests: XCTestCase {
                 try keychain.remove(key: key)
             } catch {
                 print("Error at cleanup: \(error)")
+                XCTAssert(false)
             }
         }
 
@@ -58,6 +59,84 @@ class KeychainTests: XCTestCase {
             let readValue = try keychain.getValue(key: key)
 
             XCTAssert(readValue == value)
+        } catch {
+            print("Caught exception: \(error)")
+            XCTAssert(false)
+        }
+    }
+
+    func testAddingEmptyData() {
+        let key = "my-test-key"
+        let data = Data()
+
+        defer {
+            // Cleanup
+            do {
+                try keychain.remove(key: key)
+            } catch {
+                print("Error at cleanup: \(error)")
+                XCTAssert(false)
+            }
+        }
+
+        do {
+            try keychain.addData(key: key, data: data)
+            let readData = try keychain.getData(key: key)
+
+            XCTAssert(readData?.count == 0)
+        } catch {
+            print("Caught exception: \(error)")
+            XCTAssert(false)
+        }
+    }
+
+    func testUpdateValue() {
+        let key = "my-test-key"
+        let value = "My test string öäå ÖÄÅ"
+        let newValue = "öäå Foo new value!"
+
+        defer {
+            // Cleanup
+            do {
+                try keychain.remove(key: key)
+            } catch {
+                print("Error at cleanup: \(error)")
+                XCTAssert(false)
+            }
+        }
+
+        do {
+            try keychain.addValue(key: key, value: value)
+            try keychain.updateValue(key: key, newValue: newValue)
+            let readValue = try keychain.getValue(key: key)
+
+            XCTAssert(readValue == newValue)
+        } catch {
+            print("Caught exception: \(error)")
+            XCTAssert(false)
+        }
+    }
+
+    func testRemoveValue() {
+        let key = "my-test-key"
+        let value = "My test string öäå ÖÄÅ"
+
+        defer {
+            // Cleanup
+            do {
+                try keychain.remove(key: key)
+            } catch {
+                print("Error at cleanup: \(error)")
+                XCTAssert(false)
+            }
+        }
+
+        do {
+            try keychain.addValue(key: key, value: value)
+            try keychain.remove(key: key)
+            let readValue = try keychain.getValue(key: key)
+
+            XCTAssert(readValue == nil)
         } catch {
             print("Caught exception: \(error)")
             XCTAssert(false)

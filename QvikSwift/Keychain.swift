@@ -131,7 +131,7 @@ open class Keychain {
 
         let status = SecItemDelete(query as CFDictionary)
 
-        if status != errSecSuccess {
+        if status != errSecSuccess && status != errSecItemNotFound {
             throw Errors.apiCallFailed(statusCode: status)
         }
     }
