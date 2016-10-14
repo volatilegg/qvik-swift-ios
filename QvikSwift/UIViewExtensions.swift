@@ -78,12 +78,6 @@ public extension UIView {
         return image!
     }
     
-    // DEPRECATED and will be removed in a future release.
-    @available(*, deprecated, message: "use snapshot() instead")
-    public func screenshot() -> UIImage {
-        return snapshot()
-    }
-
     /// Shorthand access to view's (bounds') size
     var size: CGSize {
         get {
