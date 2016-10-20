@@ -43,6 +43,7 @@
 		49516BCE1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */; };
 		49516BCF1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */; };
 		49516BD11C181DFB00C56FDC /* CGSizeExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BD01C181DFB00C56FDC /* CGSizeExtensionsTests.swift */; };
+		4992A2A31DB8ED7C00745E4D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4992A2A21DB8ED7C00745E4D /* Podfile */; };
 		499345E11BBA6B9500AFB685 /* QvikButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */; };
 		499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F0E1B93191E00E50D8D /* Utils.swift */; };
 		499D6F131B931C8A00E50D8D /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* DataExtensions.swift */; };
@@ -135,6 +136,7 @@
 		495E95101B958FFE006EEFC6 /* libcommonCrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcommonCrypto.dylib; path = usr/lib/system/libcommonCrypto.dylib; sourceTree = SDKROOT; };
 		498D0DBC1B959B0900339E2B /* QvikSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = QvikSwift.podspec; sourceTree = "<group>"; };
 		498D0DBD1B959B1600339E2B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4992A2A21DB8ED7C00745E4D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvikButtonTests.swift; sourceTree = "<group>"; };
 		499D6F0E1B93191E00E50D8D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		499D6F121B931C8A00E50D8D /* DataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				498D0DBD1B959B1600339E2B /* README.md */,
+				4992A2A21DB8ED7C00745E4D /* Podfile */,
 				498D0DBC1B959B0900339E2B /* QvikSwift.podspec */,
 				490C9D911B523FB00024945B /* QvikSwift */,
 				490C9D9E1B523FB00024945B /* QvikSwiftTests */,
@@ -498,6 +501,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4992A2A31DB8ED7C00745E4D /* Podfile in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -582,7 +586,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		AC9050E74E294DBC5549CDB0 /* [CP] Check Pods Manifest.lock */ = {
@@ -597,7 +601,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DF50ED3A6247E05A07CFE084 /* [CP] Copy Pods Resources */ = {
