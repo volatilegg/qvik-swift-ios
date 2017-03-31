@@ -21,6 +21,8 @@ import QvikSwift
 
 ## Changelog
 
+* 3.0.1
+    * Fixed a Xcode 8.3 / Swift 3.1 deprecation warnings
 * 3.0.0
     * Converted to Swift3
 * 2.0.19 

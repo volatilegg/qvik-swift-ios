@@ -181,7 +181,7 @@ public extension UIImage {
         var effectOutBuffer = createEffectBuffer(effectOutContext!)
         
         let inputRadius = CGFloat(radius) * UIScreen.main.scale
-        let f = inputRadius * 3.0 * CGFloat(sqrt(2 * M_PI))
+        let f = inputRadius * 3.0 * CGFloat(sqrt(2 * Double.pi))
         var radius = UInt32(floor((f / 4) + 0.5))
         if radius % 2 != 1 {
             radius += 1 // force radius to be odd
