@@ -1,6 +1,6 @@
 # Qvik's Swift utility collection
 
-*This library contains Swift3 utilities for use in both Qvik's internal and customer projects.*
+*This library contains Swift 4 utilities for use in both Qvik's internal and customer projects.*
 
 ## Usage
 
@@ -10,7 +10,7 @@ To use the library in your projects, add the following (or what ever suits your 
 use_frameworks!
 source 'https://github.com/qvik/qvik-podspecs.git'
 
-pod 'QvikSwift', '~> 3.0.0'
+pod 'QvikSwift', '~> 4.0.0'
 ```
 
 And the following to your source:
@@ -21,6 +21,8 @@ import QvikSwift
 
 ## Changelog
 
+* 4.0.0
+    * Converted to Swift 4 / Xcode 9 recommended settings
 * 3.0.1
     * Fixed a Xcode 8.3 / Swift 3.1 deprecation warnings
 * 3.0.0
@@ -181,7 +183,7 @@ As a contributor you do not need to do this; we'll update the pod whenever neede
 
 * Update QvikSwift.podspec and set s.version to match the upcoming tag
 * Commit all your changes, merge all pending accepted *Merge ('pull') Requests*
-* Create a new tag following [Semantic Versioning](http://semver.org/); eg. `git tag -a 3.0.1 -m "Your tag comment"`
+* Create a new tag following [Semantic Versioning](http://semver.org/); eg. `git tag -a 4.0.1 -m "Your tag comment"`
 * `git push --tags`
 * `pod repo push qvik-podspecs QvikSwift.podspec`
 
