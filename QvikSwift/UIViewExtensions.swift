@@ -80,9 +80,7 @@ public extension UIView {
     
     /// Shorthand access to view's (bounds') size
     var size: CGSize {
-        get {
-            return bounds.size
-        }
+        return bounds.size
     }
 
     /// Shorthand access to view's frame x position

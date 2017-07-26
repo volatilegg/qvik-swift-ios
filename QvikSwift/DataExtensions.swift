@@ -32,4 +32,64 @@ public extension Data {
     public func hexString() -> String {
         return reduce("") {$0 + String(format: "%02x", $1)}
     }
+
+    /**
+     Initializes the Data buffer from a 32bit Float.
+
+     - param floatValue: the Float value to store in the Data buffer
+     - param bigEndian: whether to store it as big endian (true) or little endian (false)
+     */
+    public init(floatValue: Float, bigEndian: Bool = true) {
+        var bits = bigEndian ? floatValue.bitPattern.bigEndian : floatValue.bitPattern.littleEndian
+        self.init(bytes: &bits, count: MemoryLayout<Float>.size)
+    }
+
+    /**
+     Initializes the Data buffer from a 32bit Double.
+
+     - param doubleValue: the Double value to store in the Data buffer
+     - param bigEndian: whether to store it as big endian (true) or little endian (false)
+     */
+    public init(doubleValue: Double, bigEndian: Bool = true) {
+        var bits = bigEndian ? doubleValue.bitPattern.bigEndian : doubleValue.bitPattern.littleEndian
+        self.init(bytes: &bits, count: MemoryLayout<Double>.size)
+    }
+
+    /**
+     If the Data object is exactly 4 bytes in length, returns a Float represented by the data in the buffer.
+
+     - param bigEndian: true to interpret the data as Big Endian, false to interpret it as Little Endian
+     - returns: Represented Float value or nil if incorrect amount of bytes present
+     */
+    public func floatValue(bigEndian: Bool = true) -> Float? {
+        if self.count != 4 {
+            // Incorrect amount of bytes to represent a 32bit Float type
+            return nil
+        }
+
+        if bigEndian {
+            return Float(bitPattern: UInt32(bigEndian: self.withUnsafeBytes { $0.pointee }))
+        } else {
+            return Float(bitPattern: UInt32(littleEndian: self.withUnsafeBytes { $0.pointee }))
+        }
+    }
+
+    /**
+     If the Data object is exactly 8 bytes in length, returns a Double represented by the data in the buffer.
+
+     - param bigEndian: true to interpret the data as Big Endian, false to interpret it as Little Endian
+     - returns: Represented Double value or nil if incorrect amount of bytes present
+     */
+    public func doubleValue(bigEndian: Bool = true) -> Double? {
+        if self.count != 8 {
+            // Incorrect amount of bytes to represent a 64bit Double type
+            return nil
+        }
+
+        if bigEndian {
+            return Double(bitPattern: UInt64(bigEndian: self.withUnsafeBytes { $0.pointee }))
+        } else {
+            return Double(bitPattern: UInt64(littleEndian: self.withUnsafeBytes { $0.pointee }))
+        }
+    }
 }

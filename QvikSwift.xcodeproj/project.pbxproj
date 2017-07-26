@@ -44,7 +44,6 @@
 		49516BCF1C181C7E00C56FDC /* CGSizeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BCD1C181C7E00C56FDC /* CGSizeExtensions.swift */; };
 		49516BD11C181DFB00C56FDC /* CGSizeExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49516BD01C181DFB00C56FDC /* CGSizeExtensionsTests.swift */; };
 		4992A2A31DB8ED7C00745E4D /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 4992A2A21DB8ED7C00745E4D /* Podfile */; };
-		499345E11BBA6B9500AFB685 /* QvikButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */; };
 		499D6F0F1B93191E00E50D8D /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F0E1B93191E00E50D8D /* Utils.swift */; };
 		499D6F131B931C8A00E50D8D /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* DataExtensions.swift */; };
 		499D6F141B931C8A00E50D8D /* DataExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499D6F121B931C8A00E50D8D /* DataExtensions.swift */; };
@@ -80,8 +79,6 @@
 		7430945C1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7430945B1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift */; };
 		7430945D1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7430945B1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift */; };
 		743094601D117FC800B8E637 /* NSLayoutConstraintExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7430945E1D117FC800B8E637 /* NSLayoutConstraintExtensionsTests.swift */; };
-		74E3000B1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E3000A1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift */; };
-		74E3000D1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E3000C1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib */; };
 		E2AD0650D9B3EC400AB1BB84 /* Pods_QvikSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4681B3132FC6178DE75A26D6 /* Pods_QvikSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -137,7 +134,6 @@
 		498D0DBC1B959B0900339E2B /* QvikSwift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = QvikSwift.podspec; sourceTree = "<group>"; };
 		498D0DBD1B959B1600339E2B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4992A2A21DB8ED7C00745E4D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QvikButtonTests.swift; sourceTree = "<group>"; };
 		499D6F0E1B93191E00E50D8D /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		499D6F121B931C8A00E50D8D /* DataExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataExtensions.swift; sourceTree = "<group>"; };
 		49AD57D31CDB2D410004DE08 /* SequenceTypeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceTypeExtensions.swift; sourceTree = "<group>"; };
@@ -168,8 +164,6 @@
 		49EA621F1DAE41F0009874BB /* working.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = working.gif; sourceTree = "<group>"; };
 		7430945B1D117F4400B8E637 /* NSLayoutConstraintExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensions.swift; sourceTree = "<group>"; };
 		7430945E1D117FC800B8E637 /* NSLayoutConstraintExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSLayoutConstraintExtensionsTests.swift; sourceTree = "<group>"; };
-		74E3000A1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IBDefinedUIViewTests.swift; sourceTree = "<group>"; };
-		74E3000C1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IBDefinedTestUIView.xib; sourceTree = "<group>"; };
 		8FB62C1710F4FA9393F8FE46 /* Pods-QvikSwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QvikSwiftTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QvikSwiftTests/Pods-QvikSwiftTests.release.xcconfig"; sourceTree = "<group>"; };
 		A72107FE784F9DC6A54670E7 /* Pods-QvikSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QvikSwift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QvikSwift/Pods-QvikSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		E2C4881BD371CED5B735A1F4 /* Pods-QvikSwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QvikSwiftTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QvikSwiftTests/Pods-QvikSwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -271,13 +265,10 @@
 				49516BD01C181DFB00C56FDC /* CGSizeExtensionsTests.swift */,
 				49CBE9DE1B78DFA400B1819B /* CollectionExtensionsTests.swift */,
 				49516BC91C15BC0400C56FDC /* DoubleExtensionsTests.swift */,
-				74E3000A1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift */,
-				74E3000C1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib */,
 				49516BC41C15BB1100C56FDC /* IntExtensionsTests.swift */,
 				49DFEAF11DACEF7C00835200 /* DataExtensionsTests.swift */,
 				490605D01B70D5E100C055AF /* DateFormatterExtensionsTests.swift */,
 				7430945E1D117FC800B8E637 /* NSLayoutConstraintExtensionsTests.swift */,
-				499345E01BBA6B9500AFB685 /* QvikButtonTests.swift */,
 				49CBEA1C1B7B8BDD00B1819B /* ReadWriteLockTests.swift */,
 				490C9DAE1B5242230024945B /* StringExtensionsTests.swift */,
 				490C9DE11B5294790024945B /* UIImageExtensionsTests.swift */,
@@ -509,7 +500,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74E3000D1D114B1C00C3D4A2 /* IBDefinedTestUIView.xib in Resources */,
 				49EA62201DAE41F0009874BB /* animated.gif in Resources */,
 				49EA62231DAE41F0009874BB /* working.gif in Resources */,
 				49EA62221DAE41F0009874BB /* randombytes_broken.gif in Resources */,
@@ -673,10 +663,8 @@
 				49CBEA181B7B892500B1819B /* CGPointExtensions.swift in Sources */,
 				49CBE9E01B78DFA400B1819B /* CollectionExtensionsTests.swift in Sources */,
 				49CBE9DD1B78DF3B00B1819B /* CollectionExtensions.swift in Sources */,
-				74E3000B1D114A9000C3D4A2 /* IBDefinedUIViewTests.swift in Sources */,
 				49CBEA151B7B888C00B1819B /* CGRectExtensions.swift in Sources */,
 				49AD57D81CDB2D840004DE08 /* SequenceTypeExtensionsTests.swift in Sources */,
-				499345E11BBA6B9500AFB685 /* QvikButtonTests.swift in Sources */,
 				49516BCC1C15BC5400C56FDC /* CGFloatExtensionsTests.swift in Sources */,
 				49516BCA1C15BC0400C56FDC /* DoubleExtensionsTests.swift in Sources */,
 				494558651C39352A00F3E8FC /* UIResponderExtensionsTests.swift in Sources */,
