@@ -48,9 +48,7 @@ public extension String {
     - returns: String that is an URL-encoded representation of this string.
     */
     public var urlEncoded: String? {
-        get {
-            return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        }
+        return self.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
     }
 
     /**

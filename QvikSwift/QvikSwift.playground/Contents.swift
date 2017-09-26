@@ -37,7 +37,6 @@ let p3 = p1.middlePoint(p2)
 let rect = CGRect(x: 5, y: 10, width: 20, height: 20)
 let scaled = rect.scaled(x: 2, y: 2)
 
-
 extension String {
     public var length: Int {
         return self.characters.count
@@ -68,7 +67,6 @@ let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
 let comps = calendar?.components([.Year, .Month, .Day, .Minute, .Second, .Nanosecond], fromDate: date!)
 print(comps!.year)
 print(comps!.day)
-
 
 let components = NSDateComponents()
 components.year = 1987
