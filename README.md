@@ -23,6 +23,8 @@ import QvikSwift
 
 * 4.0.0
     * Converted to Swift 4 / Xcode 9 recommended settings
+* 3.0.2
+    * Added storing / extracting Float/Double values into a Data
 * 3.0.1
     * Fixed a Xcode 8.3 / Swift 3.1 deprecation warnings
 * 3.0.0

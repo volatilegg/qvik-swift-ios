@@ -39,4 +39,48 @@ class DataExtensionsTests: XCTestCase {
         let hex = data.hexString()
         XCTAssert(hex == "20304151")
     }
+
+    /// Helper function for testing storing a Float into a Data
+    func myTestStoreFloat(bigEndian: Bool) {
+        let value = Float(123.456)
+        let data = Data(floatValue: value, bigEndian: bigEndian)
+        XCTAssert(data.count == MemoryLayout<Float>.size)
+
+        guard let storedValue = data.floatValue(bigEndian: bigEndian) else {
+            XCTAssert(false, "Failed to extract value from Data")
+            return
+        }
+        XCTAssert(value.bitPattern == storedValue.bitPattern)
+        XCTAssert(value == storedValue)
+    }
+    
+    /// Helper function for testing storing a Double into a Data
+    func myTestStoreDouble(bigEndian: Bool) {
+        let value = Double(123456.123456789)
+        let data = Data(doubleValue: value, bigEndian: bigEndian)
+        XCTAssert(data.count == MemoryLayout<Double>.size)
+
+        guard let storedValue = data.doubleValue(bigEndian: bigEndian) else {
+            XCTAssert(false, "Failed to extract value from Data")
+            return
+        }
+        XCTAssert(value.bitPattern == storedValue.bitPattern)
+        XCTAssert(value == storedValue)
+    }
+
+    func testStoreFloatBigEndian() {
+        myTestStoreFloat(bigEndian: true)
+    }
+
+    func testStoreFloatLittleEndian() {
+        myTestStoreFloat(bigEndian: false)
+    }
+
+    func testStoreDoubleBigEndian() {
+        myTestStoreDouble(bigEndian: true)
+    }
+
+    func testStoreDoubleLittleEndian() {
+        myTestStoreDouble(bigEndian: false)
+    }
 }

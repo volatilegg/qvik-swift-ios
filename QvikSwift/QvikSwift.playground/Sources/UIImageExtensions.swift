@@ -30,7 +30,7 @@ extension UIImage {
     :param: maxSize maximum size for the new image
     :returns: scaled-down image
     */
-    public func scaleDown(maxSize maxSize: CGSize) -> UIImage {
+    public func scaleDown(maxSize: CGSize) -> UIImage? {
         let myWidth = self.size.width
         let myHeight = self.size.height
         
@@ -44,11 +44,11 @@ extension UIImage {
         let yratio = maxSize.height / myHeight
         let ratio = min(xratio, yratio)
         
-        let size = CGSizeApplyAffineTransform(self.size, CGAffineTransformMakeScale(ratio, ratio))
+        let size = self.size.applying(CGAffineTransform(scaleX: ratio, y: ratio))
         let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
         
         UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        drawInRect(CGRect(origin: CGPoint.zero, size: size))
+        draw(in: CGRect(origin: CGPoint.zero, size: size))
         
         let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
@@ -61,10 +61,18 @@ extension UIImage {
     possible square area that fits in the original image.
     
     :returns: the cropped image. Note that the dimensions may be off by +-1 pixels.
+     If the original image is a CIImage-backed image or errors occur, this returns nil
     */
-    public func cropImageToSquare() -> UIImage {
-        let contextImage: UIImage = UIImage(CGImage: self.CGImage!)
-        
+    public func cropImageToSquare() -> UIImage? {
+        guard let cgImage = self.cgImage else {
+            return nil
+        }
+
+        let contextImage: UIImage = UIImage(cgImage: cgImage)
+        guard let contextCgImage = contextImage.cgImage else {
+            return nil
+        }
+
         let contextSize: CGSize = contextImage.size
         
         let posX: CGFloat
@@ -84,9 +92,11 @@ extension UIImage {
             height = contextSize.width
         }
 
-        let rect: CGRect = CGRect(x: posX, y: posY, width: width, height: height)
-        let imageRef: CGImageRef = CGImageCreateWithImageInRect(contextImage.CGImage, rect)!
-        let image: UIImage = UIImage(CGImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
+        let rect = CGRect(x: posX, y: posY, width: width, height: height)
+        guard let imageRef = contextCgImage.cropping(to: rect) else {
+            return nil
+        }
+        let image = UIImage(cgImage: imageRef, scale: self.scale, orientation: self.imageOrientation)
         
         return image
     }

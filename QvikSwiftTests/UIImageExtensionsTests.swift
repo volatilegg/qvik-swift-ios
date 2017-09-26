@@ -27,7 +27,9 @@ import XCTest
 class UIImageExtensionsTests: XCTestCase {
     fileprivate let imageWidth = 400
     fileprivate let imageHeight = 300
-    
+    fileprivate let largeImageWidth = 4000
+    fileprivate let largeImageHeight = 3000
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -42,10 +44,18 @@ class UIImageExtensionsTests: XCTestCase {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: imageWidth, height: imageHeight), false, 1.0)
         let blankImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
+
         return blankImage!
     }
-    
+
+    func createLargeImage() -> UIImage {
+        UIGraphicsBeginImageContextWithOptions(CGSize(width: largeImageWidth, height: largeImageHeight), false, 1.0)
+        let blankImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return blankImage!
+    }
+
     func testImageWithNormalizedOrientation() {
         let image = createImage()
         let normalized = image.imageWithNormalizedOrientation()
@@ -96,6 +106,13 @@ class UIImageExtensionsTests: XCTestCase {
     func testBlur() {
         let image = createImage()
         let blurred = image.blur(radius: 5.0, algorithm: .tentConvolve)
+        XCTAssert(image.width == blurred.width)
+        XCTAssert(image.height == blurred.height)
+    }
+
+    func testLargeRadiusBlur() {
+        let image = createLargeImage()
+        let blurred = image.blur(radius: 35.0, algorithm: .boxConvolve)
         XCTAssert(image.width == blurred.width)
         XCTAssert(image.height == blurred.height)
     }
