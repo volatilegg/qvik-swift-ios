@@ -10,7 +10,7 @@ To use the library in your projects, add the following (or what ever suits your 
 use_frameworks!
 source 'https://github.com/qvik/qvik-podspecs.git'
 
-pod 'QvikSwift', '~> 4.0.0'
+pod 'QvikSwift', '~> 4.0'
 ```
 
 And the following to your source:
