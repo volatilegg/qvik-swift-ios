@@ -13,7 +13,6 @@
 		490605D21B70D5E100C055AF /* DateFormatterExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490605D01B70D5E100C055AF /* DateFormatterExtensionsTests.swift */; };
 		490C9D951B523FB00024945B /* QvikSwift.h in Headers */ = {isa = PBXBuildFile; fileRef = 490C9D941B523FB00024945B /* QvikSwift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		490C9D9B1B523FB00024945B /* QvikSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 490C9D8F1B523FB00024945B /* QvikSwift.framework */; };
-		490C9DA21B523FB00024945B /* QvikSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DA11B523FB00024945B /* QvikSwiftTests.swift */; };
 		490C9DAC1B52408E0024945B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DAB1B52408E0024945B /* StringExtensions.swift */; };
 		490C9DAD1B52408E0024945B /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DAB1B52408E0024945B /* StringExtensions.swift */; };
 		490C9DAF1B5242230024945B /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490C9DAE1B5242230024945B /* StringExtensionsTests.swift */; };
@@ -109,7 +108,6 @@
 		490C9D941B523FB00024945B /* QvikSwift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QvikSwift.h; sourceTree = "<group>"; };
 		490C9D9A1B523FB00024945B /* QvikSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QvikSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		490C9DA01B523FB00024945B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		490C9DA11B523FB00024945B /* QvikSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QvikSwiftTests.swift; sourceTree = "<group>"; };
 		490C9DAB1B52408E0024945B /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		490C9DAE1B5242230024945B /* StringExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensionsTests.swift; sourceTree = "<group>"; };
 		490C9DB01B5247020024945B /* QvikSwift.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = QvikSwift.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -275,7 +273,6 @@
 				494558641C39352A00F3E8FC /* UIResponderExtensionsTests.swift */,
 				4916ED031B66163300E6A22D /* UIViewExtensionsTests.swift */,
 				4916ED091B66235F00E6A22D /* UIColorExtensionsTests.swift */,
-				490C9DA11B523FB00024945B /* QvikSwiftTests.swift */,
 				49AD57D61CDB2D840004DE08 /* SequenceTypeExtensionsTests.swift */,
 				490C9D9F1B523FB00024945B /* Supporting Files */,
 			);
@@ -673,7 +670,6 @@
 				490605D21B70D5E100C055AF /* DateFormatterExtensionsTests.swift in Sources */,
 				494558631C3934AA00F3E8FC /* UIResponderExtensions.swift in Sources */,
 				49DFEAF21DACEF7C00835200 /* DataExtensionsTests.swift in Sources */,
-				490C9DA21B523FB00024945B /* QvikSwiftTests.swift in Sources */,
 				499D6F141B931C8A00E50D8D /* DataExtensions.swift in Sources */,
 				49516BC71C15BB8700C56FDC /* CGFloatExtensions.swift in Sources */,
 				49516BC61C15BB8200C56FDC /* IntExtensions.swift in Sources */,

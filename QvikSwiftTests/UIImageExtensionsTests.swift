@@ -30,16 +30,6 @@ class UIImageExtensionsTests: XCTestCase {
     fileprivate let largeImageWidth = 4000
     fileprivate let largeImageHeight = 3000
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
     func createImage() -> UIImage {
         UIGraphicsBeginImageContextWithOptions(CGSize(width: imageWidth, height: imageHeight), false, 1.0)
         let blankImage = UIGraphicsGetImageFromCurrentImageContext()
