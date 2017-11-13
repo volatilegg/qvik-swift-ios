@@ -24,16 +24,7 @@ import Foundation
 import XCTest
 
 class CGSizeExtensionsTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
     
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testAspectSizeToFit() {
         // Check that fitted size dimensions fit max size AND aspect ratio is retained
         let maxSize = CGSize(width: 800, height: 800)
