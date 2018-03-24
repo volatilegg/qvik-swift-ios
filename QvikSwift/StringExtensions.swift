@@ -30,7 +30,7 @@ public extension String {
     - returns: String length in number of characters.
     */
     public var length: Int {
-        return self.characters.count
+        return self.count
     }
 
     /** 
@@ -79,8 +79,8 @@ public extension String {
     - returns: the substring
     */
     public func substring(startIndex: Int, length: Int) -> String {
-        let start = self.characters.index(self.startIndex, offsetBy: startIndex)
-        let end = self.characters.index(self.startIndex, offsetBy: startIndex + length)
+        let start = self.index(self.startIndex, offsetBy: startIndex)
+        let end = self.index(self.startIndex, offsetBy: startIndex + length)
         
         return String(self[start..<end])
     }
@@ -92,7 +92,7 @@ public extension String {
     - returns: the substring from startIndex to the end of this string
     */
     public func substring(startIndex: Int) -> String {
-        let start = self.characters.index(self.startIndex, offsetBy: startIndex)
+        let start = self.index(self.startIndex, offsetBy: startIndex)
         return String(self[start..<self.endIndex])
     }
 
@@ -103,7 +103,7 @@ public extension String {
      - returns: i:th character in the string
      */
     subscript (i: Int) -> Character {
-        return self[self.characters.index(self.startIndex, offsetBy: i)]
+        return self[self.index(self.startIndex, offsetBy: i)]
     }
 
     /**
@@ -113,8 +113,8 @@ public extension String {
      - returns: substring matching the range r
      */
     subscript (r: Range<Int>) -> String {
-        let start = characters.index(startIndex, offsetBy: r.lowerBound)
-        let end = characters.index(start, offsetBy: r.upperBound - r.lowerBound)
+        let start = index(startIndex, offsetBy: r.lowerBound)
+        let end = index(start, offsetBy: r.upperBound - r.lowerBound)
         
         return String(self[Range(start ..< end)])
     }

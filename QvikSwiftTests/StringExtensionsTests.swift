@@ -24,15 +24,6 @@ import UIKit
 import XCTest
 
 class StringExtensionsTests: XCTestCase {
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
     
     func testLength() {
         let s = "hello, world"
@@ -128,7 +119,7 @@ class StringExtensionsTests: XCTestCase {
         let size2 = CGSize(width: 202, height: 12)
         assertRect(rect2, matchesExpectedSize: size2)
         let str3 = "Even longer string with size constraint breaking it to multiple lines"
-        let font3 = UIFont(name: "TimesNewRomanPS-ItalicMT", size:20)!
+        let font3 = UIFont(name: "TimesNewRomanPS-ItalicMT", size: 20)!
         let constraint3 = CGSize(width: 120, height: CGFloat.greatestFiniteMagnitude)
         let rect3 = str3.boundingRectWithFont(font3, constrainedToSize: constraint3)
         let size3 = CGSize(width: 120, height: 111)
