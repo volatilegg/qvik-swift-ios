@@ -21,6 +21,8 @@ import QvikSwift
 
 ## Changelog
 
+* 4.0.4 
+   * Added NSLayoutConstrait.match()
 * 4.0.0
     * Converted to Swift 4 / Xcode 9 recommended settings
 * 3.0.2

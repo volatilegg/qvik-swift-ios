@@ -35,4 +35,19 @@ public extension NSLayoutConstraint {
     convenience init(item: UIView, toItem: UIView, attribute: NSLayoutAttribute, constant: CGFloat = 0) {
         self.init(item: item, attribute: attribute, relatedBy: .equal, toItem: toItem, attribute: attribute, multiplier: 1, constant: constant)
     }
+
+    /**
+     Creates constraints to exactly match the size of the other view, ie. left edge to left edge, top to top, etc.
+
+     - parameter item: first item
+     - parameter toItem: second item
+     */
+    public static func match(item: UIView, toItem: UIView) -> [NSLayoutConstraint] {
+        return [
+            NSLayoutConstraint(item: item, toItem: toItem, attribute: .top),
+            NSLayoutConstraint(item: item, toItem: toItem, attribute: .right),
+            NSLayoutConstraint(item: item, toItem: toItem, attribute: .bottom),
+            NSLayoutConstraint(item: item, toItem: toItem, attribute: .left)
+        ]
+    }
 }
