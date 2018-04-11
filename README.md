@@ -21,6 +21,8 @@ import QvikSwift
 
 ## Changelog
 
+* 4.0.5
+   * Bug fix to UIGestureRecognizerExtensions
 * 4.0.4 
    * Added NSLayoutConstrait.match()
 * 4.0.0

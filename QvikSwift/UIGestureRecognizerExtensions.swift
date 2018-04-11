@@ -22,20 +22,40 @@
 
 import Foundation
 
-/// Extensions to the UIGestureRecognizer class
-public extension UIGestureRecognizer {
-    fileprivate struct InvokeCallback {
-        static var invokeCallback: Any?
+/// Represents a callback for an UIGestureRecognizer
+@objc private class UIGestureRecognizerTarget: NSObject {
+    private static var associationKey: UInt8 = 0
+
+    /// Callback function; either with UIGestureRecognizer parameter or none at all
+    private let callback: Any?
+
+    /// Constructs with a callback accepting a UIGestureRecognizer parameter
+    fileprivate init(callback: @escaping (UIGestureRecognizer) -> Void) {
+        self.callback = callback
     }
 
-    @objc fileprivate func invokeCallback(_ recognizer: UIGestureRecognizer) {
-        if let callbackWithRecognizer = InvokeCallback.invokeCallback as? ((UIGestureRecognizer) -> Void) {
-            callbackWithRecognizer(recognizer)
-        } else if let callback = InvokeCallback.invokeCallback as? (() -> Void) {
+    /// Constructs with a callback accepting no parameters
+    fileprivate init(callback: @escaping () -> Void) {
+        self.callback = callback
+    }
+
+    /// Receives the gesture and passes it on to the callback
+    @objc fileprivate func action(_ gestureRecognizer: UIGestureRecognizer) {
+        if let callbackWithRecognizer = callback as? ((UIGestureRecognizer) -> Void) {
+            callbackWithRecognizer(gestureRecognizer)
+        } else if let callback = callback as? (() -> Void) {
             callback()
         }
     }
 
+    /// Associates this instance with an gesture recognizer
+    fileprivate func associate(with object: UIGestureRecognizer) {
+        objc_setAssociatedObject(object, &UIGestureRecognizerTarget.associationKey, self, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+}
+
+/// Extensions to the UIGestureRecognizer class
+public extension UIGestureRecognizer {
     /**
      Convenience initializer that accepts a callback closure instead of a selector. The callback
      must accept a UIGestureRecognizer parameter.
@@ -43,10 +63,9 @@ public extension UIGestureRecognizer {
      - parameter callbackWithRecognizer: the callback closure that is called when a gesture is recognized.
      */
     convenience init(callbackWithRecognizer: @escaping ((UIGestureRecognizer) -> Void)) {
-        self.init()
-
-        InvokeCallback.invokeCallback = callbackWithRecognizer
-        addTarget(self, action: #selector(invokeCallback))
+        let target = UIGestureRecognizerTarget(callback: callbackWithRecognizer)
+        self.init(target: target, action: #selector(target.action))
+        target.associate(with: self)
     }
 
     /**
@@ -56,9 +75,8 @@ public extension UIGestureRecognizer {
      - parameter callback: the callback closure that is called when a gesture is recognized.
      */
     convenience init(callback: @escaping (() -> Void)) {
-        self.init()
-
-        InvokeCallback.invokeCallback = callback
-        addTarget(self, action: #selector(invokeCallback))
+        let target = UIGestureRecognizerTarget(callback: callback)
+        self.init(target: target, action: #selector(target.action))
+        target.associate(with: self)
     }
 }
