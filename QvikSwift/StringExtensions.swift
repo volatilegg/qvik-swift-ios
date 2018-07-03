@@ -142,7 +142,7 @@ public extension String {
      - returns: the bounding rectangle required to draw the string
      */
     public func boundingRectWithFont(_ font: UIFont, constrainedToSize size: CGSize = CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)) -> CGRect {
-        let attributedString = NSAttributedString(string: self, attributes: [NSAttributedStringKey.font: font])
+        let attributedString = NSAttributedString(string: self, attributes: [NSAttributedString.Key.font: font])
         return attributedString.boundingRect(with: size, options: NSStringDrawingOptions.usesLineFragmentOrigin, context: nil)
     }
 
